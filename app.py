@@ -112,6 +112,31 @@ def profile(username):
     return redirect(url_for("login"))
 
 
+@app.route("/add_route", methods=["GET", "POST"])
+def add_route():
+    if request.method == "POST":
+        route = {
+            "category_name": request.form.get("category_name"),
+            "route_name": request.form.get("course_name"),
+            "route_image": request.form.get("module_name"),
+            "route_distance": request.form.get("route_distance"),
+            "route_difficulty": request.form.get("route_difficulty"),
+            "route_description": request.form.get("route_description"),
+            "route_link": request.form.get("route_link"),
+            "created_by": session["user"]
+        }
+
+        mongo.db.routes.insert_one(route)
+        flash("Route Successfully Added")
+        return redirect(url_for("get_routes"))
+
+    categories = mongo.db.categories.find().sort("category_name", 1)
+    difficulty_levels = mongo.db.difficulty_levels.find().sort(
+        "route_difficulty", 1)
+    return render_template("add_route.html", categories=categories,
+                           difficulty_levels=difficulty_levels)
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
