@@ -1,14 +1,29 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h2>Routes</h2>
+    <h4 class="center-align cyan-text text-darken-2">Routes</h4>
 
-    {% for route in routes %}
-    {{ route.route_name }}<br>
-    {{ route.route_image }}<br>
-    {{ route.category_name }}<br>
-    {{ route.route_distance }}<br>
-    {{ route.route_difficulty }}<br>
-    {% endfor %}
-    
+    <div class="container">
+    <div class="row">
+      {% for route in routes %}
+      <div class="col s12 m6 l4">
+        <div class="card">
+          <div class="card-image">
+            <img src="{{ route.route_image }}">
+          </div>
+          <div class="card-content">
+            <h6>{{ route.route_name }}</h6><br>
+            <p>{{ route.route_description}}</p><br>
+            <p>{{ route.category_name }}</p><br>
+            <p>{{ route.route_distance }}</p><br>
+          </div>
+          <div class="card-action">
+            <a href="{{ route.route_link }}" target="_blank">Route Link</a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+  </div>
+</div>
+
 {% endblock %}
