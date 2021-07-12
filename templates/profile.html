@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="row">
+    <div class="col s12 m6 offset-m3">
+        <div class="card-panel">
+            <h3 class="center-align cyan-text text-darken-2">
+                {{ username }}'s Profile
+            </h3>
+            <p class="center-align cyan-text text-darken-2">
+                First Name: {{ first_name }}
+            </p>
+            <p class="center-align cyan-text text-darken-2">
+                Last Name: {{ last_name }}
+            </p>
+            <p class="center-align cyan-text text-darken-2">
+                Email Address: {{ email }}
+            </p>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
