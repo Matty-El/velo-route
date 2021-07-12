@@ -58,8 +58,8 @@ The key goals for developing the website are:
 -   As a user, I want to be able to add my favourite cycling routes to the website.
 -   As a user, I want to be able to edit or delete routes that I have previously added to the VeloRoute.
 -   As a user, I want to be able to rate cycling routes that have been added to the website.
--   As a user, I want to be able to follow a link to cycling routes that have been added to VeloRoute so that I can view the
-    cycling route on platforms such as Strava.
+-   As a user, I want to be able to follow a link to cycling routes that have been added to VeloRoute so that I can 
+    view the cycling route on platforms such as Strava.
 
 #### Admin Users
 
@@ -73,7 +73,8 @@ The VeloRoute website has been designed to provide an attractive, simple and eas
 
 The website has the following key elements:
 
--   A simple landing page design that provides information about VeloRoute and that presents featured cycling routes to the user.
+-   A simple landing page design that provides information about VeloRoute and that presents featured cycling routes 
+    to the user.
 -   A registration page that allows users to register with VeloRoute.
 -   A log in page so that registered users can log in to VeloRoute.
 -   A Routes page that allows users to search rides that have been submitted by registered users (this page is also

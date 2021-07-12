@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VeloRoute</title>
+</head>
+<body>
+    {% for route in routes %}
+    {{ route.route_name }}<br>
+    {{ route.route_image }}<br>
+    {{ route.category_name }}<br>
+    {{ route.route_distance }}<br>
+    {{ route.route_difficulty }}<br>
+    {% endfor %}
+</body>
+</html>
