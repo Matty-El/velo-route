@@ -164,6 +164,13 @@ def edit_route(route_id):
                            difficulty_levels=difficulty_levels)
 
 
+@app.route("/delete_route/<route_id>")
+def delete_route(route_id):
+    mongo.db.routes.remove({"_id": ObjectId(route_id)})
+    flash("Route Deleted")
+    return redirect(url_for("get_routes"))
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
