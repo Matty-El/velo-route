@@ -139,6 +139,22 @@ def add_route():
 
 @app.route("/edit_route/<route_id>", methods=["GET", "POST"])
 def edit_route(route_id):
+
+    if request.method == "POST":
+        edit = {
+            "category_name": request.form.get("category_name"),
+            "route_name": request.form.get("route_name"),
+            "route_image": request.form.get("route_image"),
+            "route_distance": request.form.get("route_distance"),
+            "route_difficulty": request.form.get("route_difficulty"),
+            "route_description": request.form.get("route_description"),
+            "route_link": request.form.get("route_link"),
+            "created_by": session["user"]
+        }
+
+        mongo.db.routes.update({"_id": ObjectId(route_id)}, edit)
+        flash("Route Successfully Edited")
+
     route = mongo.db.routes.find_one({"_id": ObjectId(route_id)})
     categories = mongo.db.categories.find().sort("category_name", 1)
     difficulty_levels = mongo.db.difficulty_levels.find().sort(
