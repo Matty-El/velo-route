@@ -27,6 +27,7 @@
             <li><a href="{{ url_for('add_route') }}">Add Route</a></li>
             <li><a href="#">Manage Categories</a></li>
             <li><a href="#">Manage Tips</a></li>
+            <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
             <li><a href="{{ url_for('logout') }}">Log Out</a></li>
             <li><a href="{{ url_for('login') }}">Log In</a></li>
             <li><a href="{{ url_for('register') }}">Register</a></li>
@@ -41,11 +42,27 @@
         <li><a href="{{ url_for('add_route') }}">Add Route</a></li>
         <li><a href="#">Manage Categories</a></li>
         <li><a href="#">Manage Tips</a></li>
+        <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
         <li><a href="{{ url_for('logout') }}">Log Out</a></li>
         <li><a href="{{ url_for('login') }}">Log In</a></li>
         <li><a href="{{ url_for('register') }}">Register</a></li>
       </ul>
 </header>
+
+<section>
+  <!-- display flash messages -->
+  <!-- remember to customize differently -->
+  {% with messages = get_flashed_messages() %}
+      {% if messages %}
+          {% for message in messages %}
+          <div class="row flashes">
+              <h4 class="center-align cyan lighten-2 white-text">{{ message }}</h4>
+          </div>
+          {% endfor %}
+      {% endif %}
+  {% endwith %}
+</section>
+
 <body>
     {% block content %}
 

@@ -30,14 +30,14 @@ def register():
     if request.method == "POST":
         # check if username exists in database
         existing_user = mongo.db.users.find_one(
-            {"username": request.form.get("username")})
+            {"username": request.form.get("username").lower()})
 
         if existing_user:
             flash("Username already exists")
             return redirect(url_for("register"))
 
         register = {
-            "username": request.form.get("username"),
+            "username": request.form.get("username").lower(),
             "first_name": request.form.get("first_name"),
             "last_name": request.form.get("last_name"),
             "email": request.form.get("email"),
@@ -48,7 +48,7 @@ def register():
         mongo.db.users.insert_one(register)
 
         # add the new user into session cookie
-        session["user"] = request.form.get("username")
+        session["user"] = request.form.get("username").lower()
         flash("Registration Successful")
         return redirect(url_for("profile", username=session["user"]))
 
@@ -60,14 +60,14 @@ def login():
     if request.method == "POST":
         # check is the username exists in the database
         existing_user = mongo.db.users.find_one(
-            {"username": request.form.get("username")})
+            {"username": request.form.get("username").lower()})
 
         if existing_user:
             # check that hashed password is the password entered by user
             if check_password_hash(
                         existing_user["password"],
                         request.form.get("password")):
-                session["user"] = request.form.get("username")
+                session["user"] = request.form.get("username").lower()
                 flash("Welcome, {}".format(
                     request.form.get("username")))
                 return redirect(url_for(
@@ -117,8 +117,8 @@ def add_route():
     if request.method == "POST":
         route = {
             "category_name": request.form.get("category_name"),
-            "route_name": request.form.get("course_name"),
-            "route_image": request.form.get("module_name"),
+            "route_name": request.form.get("route_name"),
+            "route_image": request.form.get("route_image"),
             "route_distance": request.form.get("route_distance"),
             "route_difficulty": request.form.get("route_difficulty"),
             "route_description": request.form.get("route_description"),
