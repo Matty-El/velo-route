@@ -16,7 +16,11 @@
             <p>{{ route.route_description}}</p><br>
             <p>{{ route.category_name }}</p><br>
             <p>{{ route.route_distance }}</p><br>
-            <p><em>by: {{ route.created_by }}</em></p>
+            <p><em>by: {{ route.created_by }}</em></p><br>
+            <div class="">
+              <a href="" class="btn-small red accent-4 waves-effect">Delete</a>
+              <a href="" class="btn-small light-blue accent-4 waves-effect">Edit</a>
+            </div>
           </div>
           <div class="card-action">
             <a href="{{ route.route_link }}" target="_blank">Route Link</a>
