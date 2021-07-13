@@ -1,26 +1,30 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h4 class="cyan-text text-darken-2 center-align">Add Route</h4>
+<h4 class="cyan-text text-darken-2 center-align">Edit Route</h4>
 
 <div class="container">
     <div class="row card-panel grey lighten-5">
-        <form class="" method="POST" action="{{ url_for('add_route') }}">
+        <form class="col s12" method="POST" action="{{ url_for('edit_route', route_id=route._id) }}">
             <!-- category selector-->
             <div class="row">
-                <div class="input-field">
+                <div class="input-field col s12">
                     <i class="fas fa-graduation-cap prefix cyan-text text-darken-2"></i>
                     <select id="category_name" name="category_name" class="validate" required>
                         <option value="" disabled selected>Choose category</option>
                         {% for category in categories %}
-                        <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+                            {% if category.category_name == route.category_name %}
+                            <option value="{{ category.category_name }}" selected>{{ category.category_name }}</option>
+                            {% else %}
+                            <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+                            {% endif %}
                         {% endfor %}
                     </select>
                     <label for="category_name">Category</label>
                 </div>
             </div>
             <div class="row">
-                <div class="input-field">
+                <div class="input-field col s12">
                     <i class="fas fa-graduation-cap prefix cyan-text text-darken-2"></i>
                     <select id="route_difficulty" name="route_difficulty" class="validate" required>
                         <option value="" disabled selected>Choose category</option>
@@ -34,7 +38,7 @@
             </div>
             <!-- route name -->
             <div class="row">
-                <div class="input-field">
+                <div class="input-field col s12">
                     <i class="fas fa-align-left prefix cyan-text text-darken-2"></i>
                     <textarea id="route_name" name="route_name" minlength="2" maxlength="200"
                         class="materialize-textarea validate" required></textarea>
@@ -43,7 +47,7 @@
             </div>
             <!-- route image -->
             <div class="row">
-                <div class="input-field">
+                <div class="input-field col s12">
                     <i class="fas fa-align-left prefix cyan-text text-darken-2"></i>
                     <textarea id="route_image" name="route_image" minlength="2" maxlength="200"
                         class="materialize-textarea validate" required></textarea>
@@ -52,7 +56,7 @@
             </div>
             <!-- route description -->
             <div class="row">
-                <div class="input-field">
+                <div class="input-field col s12">
                     <i class="fas fa-align-left prefix cyan-text text-darken-2"></i>
                     <textarea id="route_description" name="route_description" minlength="10" maxlength="200"
                         class="materialize-textarea validate" required></textarea>
@@ -61,7 +65,7 @@
             </div>
             <!-- route distance -->
             <div class="row">
-                <div class="input-field">
+                <div class="input-field col s12">
                     <i class="fas fa-align-left prefix cyan-text text-darken-2"></i>
                     <textarea id="route_distance" name="route_distance" minlength="1" maxlength="10"
                         class="materialize-textarea validate" required></textarea>
@@ -70,18 +74,18 @@
             </div>
             <!-- route link -->
             <div class="row">
-                <div class="input-field">
+                <div class="input-field col s12">
                     <i class="fas fa-align-left prefix cyan-text text-darken-2"></i>
                     <textarea id="route_link" name="route_link" minlength="1" maxlength="200"
                         class="materialize-textarea validate" required></textarea>
                     <label for="route_link">Route Link</label>
                 </div>
             </div>
-            <!-- add route button -->
+            <!-- edit route button -->
             <div class="row">
-                <div class="center-align">
+                <div class="col center-align col s12">
                     <button class="btn-large light-blue darken-2 waves-effect waves-light" type="submit">
-                        Add Route<i class="fas fa-plus right"></i>
+                        Edit Route<i class="fas fa-edit right"></i>
                     </button>
                 </div>
             </div>

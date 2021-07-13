@@ -137,6 +137,18 @@ def add_route():
                            difficulty_levels=difficulty_levels)
 
 
+@app.route("/edit_route/<route_id>", methods=["GET", "POST"])
+def edit_route(route_id):
+    route = mongo.db.routes.find_one({"id": ObjectId(route_id)})
+
+    categories = mongo.db.categories.find().sort("category_name", 1)
+    difficulty_levels = mongo.db.difficulty_levels.find().sort(
+        "route_difficulty", 1)
+    return render_template("edit_route.html", route=route,
+                           categories=categories,
+                           difficulty_levels=difficulty_levels)
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
