@@ -4,7 +4,7 @@
 <h4 class="center-align cyan-text text-darken-2">Routes</h4>
 
 <div class="container">
-  <div class="row card-panel grey lighten-5">
+  <div class="row card-panel">
     <form action="{{ url_for('route_search') }}" method="POST" class="col s12">
       <div class="row valign-wrapper center-align">
         <div class="input-field col s12 m8">
@@ -14,7 +14,7 @@
         </div>
         <div class="col s12 m4">
           <button type="submit" class="btn-small light-blue accent-4 waves-effect">
-            <i class="i fas fa-search left"></i> Search
+            <i class="i fas fa-search left"></i>Search
           </button>
           <a href="{{ url_for('get_routes') }}" class="btn-small red accent-4 waves-effect">Reset</a>
         </div>
@@ -23,13 +23,13 @@
   </div>
 </div>
 
-<div class="container center-align">
+<div class="container">
   <div class="row">
     {% for route in routes %}
     <div class="col s12 m12 l6">
-      <div class="card grey lighten-4">
+      <div class="card grey lighten-5">
         <div class="card-image">
-          <img src="{{ route.route_image }}">
+          <img src="{{ route.route_image }}" alt="Route Image">
         </div>
         <div class="card-content">
           <h6 id="routes-name"><strong>{{ route.route_name }}</strong></h6><br>
