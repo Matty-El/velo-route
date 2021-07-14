@@ -25,6 +25,13 @@ def get_routes():
     return render_template("routes.html", routes=routes)
 
 
+@app.route("/route_search", methods=["GET", "POST"])
+def route_search():
+    route_query = request.form.get("route_query")
+    routes = mongo.db.routes.find({"$text": {"$search": route_query}})
+    return render_template("routes.html", routes=routes)
+
+
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
@@ -171,17 +178,17 @@ def delete_route(route_id):
     return redirect(url_for("get_routes"))
 
 
-@app.route("/get_categories")
-def get_categories():
-    categories = list(mongo.db.categories.find().sort("category_name", 1))
-    return render_template("categories.html", categories=categories)
-
-
 @app.route("/get_cycling_tips")
 def get_cycling_tips():
     cycling_tips = list(mongo.db.cycling_tips.find().sort(
                         "cycling_tip_name", 1))
     return render_template("cycling_tips.html", cycling_tips=cycling_tips)
+
+
+@app.route("/get_categories")
+def get_categories():
+    categories = list(mongo.db.categories.find().sort("category_name", 1))
+    return render_template("categories.html", categories=categories)
 
 
 @app.route("/add_category", methods=["GET", "POST"])

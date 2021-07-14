@@ -31,7 +31,6 @@
             <li><a href="{{ url_for('add_route') }}">Add Route</a></li>
             {% if session.user|lower == "admin"|lower %}
             <li><a href="{{ url_for('get_categories') }}">Categories</a></li>
-            <li><a href="#">Manage Tips</a></li>
             {% endif %}
             <li><a href="{{ url_for('logout') }}">Log Out</a></li>
             {% else %}
@@ -52,7 +51,6 @@
             <li><a href="{{ url_for('add_route') }}">Add Route</a></li>
             {% if session.user|lower == "admin"|lower %}
             <li><a href="{{ url_for('get_categories') }}">Categories</a></li>
-            <li><a href="#">Manage Tips</a></li>
             {% endif %}
             <li><a href="{{ url_for('logout') }}">Log Out</a></li>
             {% else %}
@@ -109,7 +107,6 @@
     <div class="footer-copyright">
       <div class="container">
       © 2021 Copyright Matthew Leach
-      <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
       </div>
     </div>
   </footer>
