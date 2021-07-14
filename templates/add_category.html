@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h4 class="cyan-text text-darken-2 center-align">Add Category</h4>
+
+<div class="container">
+    <div class="row card-panel grey lighten-5">
+        <form class="" method="POST" action="{{ url_for('add_category') }}">
+            <!-- route name -->
+            <div class="row">
+                <div class="input-field">
+                    <i class="fas fa-folder-open prefix cyan-text text-darken-2"></i>
+                    <textarea id="category_name" name="category_name" minlength="3" maxlength="25"
+                        class="materialize-textarea validate" required></textarea>
+                    <label for="category_name" id="add-category-label">Category Name</label>
+                </div>
+            </div>
+            <!-- add category button -->
+            <div class="row">
+                <div class="center-align">
+                    <button class="btn-large light-blue darken-2 waves-effect waves-light" type="submit">
+                        Add Category<i class="fas fa-plus right"></i>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

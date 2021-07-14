@@ -9,7 +9,7 @@
             <!-- category selector-->
             <div class="row">
                 <div class="input-field">
-                    <i class="fas fa-graduation-cap prefix cyan-text text-darken-2"></i>
+                    <i class="fas fa-bicycle prefix cyan-text text-darken-2"></i>
                     <select id="category_name" name="category_name" class="validate" required>
                         <option value="" disabled selected>Choose category</option>
                         {% for category in categories %}
@@ -21,9 +21,9 @@
             </div>
             <div class="row">
                 <div class="input-field">
-                    <i class="fas fa-graduation-cap prefix cyan-text text-darken-2"></i>
+                    <i class="fas fa-dumbbell prefix cyan-text text-darken-2"></i>
                     <select id="route_difficulty" name="route_difficulty" class="validate" required>
-                        <option value="" disabled selected>Choose category</option>
+                        <option value="" disabled selected>Choose difficulty</option>
                         {% for difficulty_level in difficulty_levels %}
                         <option value="{{ difficulty_level.route_difficulty }}">{{ difficulty_level.route_difficulty }}
                         </option>
@@ -35,46 +35,46 @@
             <!-- route name -->
             <div class="row">
                 <div class="input-field">
-                    <i class="fas fa-align-left prefix cyan-text text-darken-2"></i>
-                    <textarea id="route_name" name="route_name" minlength="2" maxlength="200"
+                    <i class="fas fa-map-signs prefix cyan-text text-darken-2"></i>
+                    <textarea id="route_name" name="route_name" minlength="2" maxlength="60"
                         class="materialize-textarea validate" required></textarea>
-                    <label for="route_name">Route Name</label>
+                    <label for="route_name" class="routes-label">Route Name (max 60 char)</label>
                 </div>
             </div>
             <!-- route image -->
             <div class="row">
                 <div class="input-field">
-                    <i class="fas fa-align-left prefix cyan-text text-darken-2"></i>
+                    <i class="fas fa-image prefix cyan-text text-darken-2"></i>
                     <textarea id="route_image" name="route_image" minlength="2" maxlength="200"
                         class="materialize-textarea validate" required></textarea>
-                    <label for="route_image">Route Image</label>
+                    <label for="route_image" class="routes-label">Route Image (upload image URL)</label>
                 </div>
             </div>
             <!-- route description -->
             <div class="row">
                 <div class="input-field">
                     <i class="fas fa-align-left prefix cyan-text text-darken-2"></i>
-                    <textarea id="route_description" name="route_description" minlength="10" maxlength="200"
+                    <textarea id="route_description" name="route_description" minlength="10" maxlength="300"
                         class="materialize-textarea validate" required></textarea>
-                    <label for="route_description">Route Description</label>
+                    <label for="route_description" class="routes-label">Route Description (max 300 char)</label>
                 </div>
             </div>
             <!-- route distance -->
             <div class="row">
                 <div class="input-field">
-                    <i class="fas fa-align-left prefix cyan-text text-darken-2"></i>
+                    <i class="fas fa-route prefix cyan-text text-darken-2"></i>
                     <textarea id="route_distance" name="route_distance" minlength="1" maxlength="10"
                         class="materialize-textarea validate" required></textarea>
-                    <label for="route_distance">Route Distance</label>
+                    <label for="route_distance" class="routes-label">Route Distance (distance in miles or kilometres)</label>
                 </div>
             </div>
             <!-- route link -->
             <div class="row">
                 <div class="input-field">
-                    <i class="fas fa-align-left prefix cyan-text text-darken-2"></i>
+                    <i class="fas fa-link prefix cyan-text text-darken-2"></i>
                     <textarea id="route_link" name="route_link" minlength="1" maxlength="200"
                         class="materialize-textarea validate" required></textarea>
-                    <label for="route_link">Route Link</label>
+                    <label for="route_link" class="routes-label">Route Link (link to your route e.g. Strava, MapMyRide)</label>
                 </div>
             </div>
             <!-- add route button -->

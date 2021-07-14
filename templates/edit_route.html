@@ -9,7 +9,7 @@
             <!-- category selector-->
             <div class="row">
                 <div class="input-field col s12">
-                    <i class="fas fa-graduation-cap prefix cyan-text text-darken-2"></i>
+                    <i class="fas fa-bicycle prefix cyan-text text-darken-2"></i>
                     <select id="category_name" name="category_name" class="validate" required>
                         <option value="" disabled>Choose category</option>
                         {% for category in categories %}
@@ -25,7 +25,7 @@
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <i class="fas fa-graduation-cap prefix cyan-text text-darken-2"></i>
+                    <i class="fas fa-dumbbell prefix cyan-text text-darken-2"></i>
                     <select id="route_difficulty" name="route_difficulty" class="validate" required>
                         <option value="" disabled>Choose category</option>
                         {% for difficulty_level in difficulty_levels %}
@@ -44,9 +44,9 @@
             <!-- route name -->
             <div class="row">
                 <div class="input-field col s12">
-                    <i class="fas fa-align-left prefix teal-text"></i>
+                    <i class="fas fa-map-signs prefix teal-text"></i>
                     <textarea id="route_name" name="route_name" minlength="10"
-                        maxlength="200" class="materialize-textarea validate" required>
+                        maxlength="60" class="materialize-textarea validate" required>
                         {{- route.route_name -}}</textarea>
                     <label for="route_name">Route Name</label>
                 </div>
@@ -54,7 +54,7 @@
             <!-- route image -->
             <div class="row">
                 <div class="input-field col s12">
-                    <i class="fas fa-align-left prefix cyan-text text-darken-2"></i>
+                    <i class="fas fa-image prefix cyan-text text-darken-2"></i>
                     <textarea id="route_image" name="route_image" minlength="2" maxlength="200"
                         class="materialize-textarea validate" required>{{- route.route_image -}}</textarea>
                     <label for="route_image">Route Image</label>
@@ -64,7 +64,7 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-align-left prefix cyan-text text-darken-2"></i>
-                    <textarea id="route_description" name="route_description" minlength="10" maxlength="200"
+                    <textarea id="route_description" name="route_description" minlength="10" maxlength="300"
                         class="materialize-textarea validate" required>{{- route.route_description -}}</textarea>
                     <label for="route_description">Route Description</label>
                 </div>
@@ -72,7 +72,7 @@
             <!-- route distance -->
             <div class="row">
                 <div class="input-field col s12">
-                    <i class="fas fa-align-left prefix cyan-text text-darken-2"></i>
+                    <i class="fas fa-route prefix cyan-text text-darken-2"></i>
                     <textarea id="route_distance" name="route_distance" minlength="1" maxlength="10"
                         class="materialize-textarea validate" required>{{- route.route_distance -}}</textarea>
                     <label for="route_distance">Route Distance</label>
@@ -81,7 +81,7 @@
             <!-- route link -->
             <div class="row">
                 <div class="input-field col s12">
-                    <i class="fas fa-align-left prefix cyan-text text-darken-2"></i>
+                    <i class="fas fa-link prefix cyan-text text-darken-2"></i>
                     <textarea id="route_link" name="route_link" minlength="1" maxlength="200"
                         class="materialize-textarea validate" required>{{- route.route_link -}}</textarea>
                     <label for="route_link">Route Link</label>

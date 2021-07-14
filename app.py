@@ -179,8 +179,22 @@ def get_categories():
 
 @app.route("/get_cycling_tips")
 def get_cycling_tips():
-    cycling_tips = list(mongo.db.cycling_tips.find().sort("cycling_tip_name", 1))
+    cycling_tips = list(mongo.db.cycling_tips.find().sort(
+                        "cycling_tip_name", 1))
     return render_template("cycling_tips.html", cycling_tips=cycling_tips)
+
+
+@app.route("/add_category", methods=["GET", "POST"])
+def add_category():
+    if request.method == "POST":
+        category = {
+            "category_name": request.form.get("category_name")
+        }
+        mongo.db.categories.insert_one(category)
+        flash("New Category Added")
+        return redirect(url_for("get_categories"))
+
+    return render_template("add_category.html")
 
 
 if __name__ == "__main__":
