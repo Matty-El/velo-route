@@ -177,6 +177,12 @@ def get_categories():
     return render_template("categories.html", categories=categories)
 
 
+@app.route("/get_cycling_tips")
+def get_cycling_tips():
+    cycling_tips = list(mongo.db.cycling_tips.find().sort("cycling_tip_name", 1))
+    return render_template("cycling_tips.html", cycling_tips=cycling_tips)
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),

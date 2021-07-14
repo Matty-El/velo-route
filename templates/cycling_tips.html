@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h4 class="center-align cyan-text text-darken-2">Cycling Tips</h4>
+
+<div class="container">
+  <div class="row">
+    {% for cycling_tip in cycling_tips %}
+    <div class="col s12 m6 l4">
+      <div class="card grey lighten-4">
+        <div class="card-image">
+          <img src="{{ cycling_tip.cycling_tip_image }}">
+        </div>
+        <div class="card-content">
+          <h6><strong>{{ cycling_tip.cycling_tip_name }}</strong></h6><br>
+          <p>{{ cycling_tip.cycling_tip_description}}</p><br>
+          <div>
+            {% if session.user|lower == cycling_tip.created_by|lower %}
+              <a href="{{ url_for('delete_cycling_tip', cycling_tip_id=cycling_tip._id) }}"
+                class="btn-small red accent-4 waves-effect">Delete</a>
+              <a href="{{ url_for('edit_cycling_tip', cycling_tip_id=cycling_tip._id) }}"
+                class="btn-small light-blue accent-4 waves-effect">Edit</a>
+            {% endif %}
+          </div>
+        </div>
+        <div class="card-action">
+          <a href="{{ cycling_tip.cycling_tip_link }}" target="_blank">Route Link</a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock %}
