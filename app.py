@@ -21,7 +21,7 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/get_routes")
 def get_routes():
-    routes = mongo.db.routes.find()
+    routes = mongo.db.routes.find().sort("_id", -1)
     return render_template("routes.html", routes=routes)
 
 
@@ -181,7 +181,7 @@ def delete_route(route_id):
 @app.route("/get_cycling_tips")
 def get_cycling_tips():
     cycling_tips = list(mongo.db.cycling_tips.find().sort(
-                        "cycling_tip_name", 1))
+                        "_id", 1))
     return render_template("cycling_tips.html", cycling_tips=cycling_tips)
 
 
@@ -241,9 +241,14 @@ def delete_cycling_tip(cycling_tip_id):
 @app.route("/get_categories")
 def get_categories():
     categories = list(mongo.db.categories.find().sort("category_name", 1))
-    return render_template("categories.html", categories=categories)
+    cycling_tip_categories = list(
+        mongo.db.cycling_tip_categories.find().sort("category_name", 1))
+    return render_template(
+        "categories.html", categories=categories,
+        cycling_tip_categories=cycling_tip_categories)
 
 
+# route categories
 @app.route("/add_category", methods=["GET", "POST"])
 def add_category():
     if request.method == "POST":
@@ -251,7 +256,7 @@ def add_category():
             "category_name": request.form.get("category_name")
         }
         mongo.db.categories.insert_one(category)
-        flash("New Category Added")
+        flash("New Route Category Added")
         return redirect(url_for("get_categories"))
 
     return render_template("add_category.html")
@@ -260,10 +265,11 @@ def add_category():
 @app.route("/edit_category/<category_id>", methods=["GET", "POST"])
 def edit_category(category_id):
     if request.method == "POST":
-        submit = {
+        submit_route_category = {
             "category_name": request.form.get("category_name")
         }
-        mongo.db.categories.update({"_id": ObjectId(category_id)}, submit)
+        mongo.db.categories.update({"_id": ObjectId(category_id)},
+                                   submit_route_category)
         flash("Category Updated")
         return redirect(url_for("get_categories"))
 
@@ -275,6 +281,46 @@ def edit_category(category_id):
 def delete_category(category_id):
     mongo.db.categories.remove({"_id": ObjectId(category_id)})
     flash("Category Deleted")
+    return redirect(url_for("get_categories"))
+
+
+# cycling tip categories
+@app.route("/add_cycling_tip_category", methods=["GET", "POST"])
+def add_cycling_tip_category():
+    if request.method == "POST":
+        cycling_tip_category = {
+            "category_name": request.form.get("category_name")
+        }
+        mongo.db.cycling_tip_categories.insert_one(cycling_tip_category)
+        flash("New Cycling Tip Category Added")
+        return redirect(url_for("get_categories"))
+
+    return render_template("add_cycling_tip_category.html")
+
+
+@app.route("/edit_cycling_tip_category/<cycling_tip_category_id>",
+           methods=["GET", "POST"])
+def edit_cycling_tip_category(cycling_tip_category_id):
+    if request.method == "POST":
+        submit_cycling_tip_category = {
+            "category_name": request.form.get("category_name")
+        }
+        mongo.db.categories.update({"_id": ObjectId(cycling_tip_category_id)},
+                                   submit_cycling_tip_category)
+        flash("Cycling Tip Category Updated")
+        return redirect(url_for("get_categories"))
+
+    cycling_tip_category = mongo.db.cycling_tip_categories.find_one(
+        {"_id": ObjectId(cycling_tip_category_id)})
+    return render_template("edit_cycling_tip_category.html",
+                           cycling_tip_category=cycling_tip_category)
+
+
+@app.route("/delete_cycling_tip_category/<cycling_tip_category_id>")
+def delete_cycling_tip_category(cycling_tip_category_id):
+    mongo.db.cycling_tip_categories.remove(
+        {"_id": ObjectId(cycling_tip_category_id)})
+    flash("Cycling Tip Category Deleted")
     return redirect(url_for("get_categories"))
 
 
