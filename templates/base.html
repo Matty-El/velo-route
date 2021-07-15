@@ -30,6 +30,7 @@
             <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
             <li><a href="{{ url_for('add_route') }}">Add Route</a></li>
             {% if session.user|lower == "admin"|lower %}
+            <li><a href="{{ url_for('add_cycling_tip') }}">Add Cycling Tip</a></li>
             <li><a href="{{ url_for('get_categories') }}">Categories</a></li>
             {% endif %}
             <li><a href="{{ url_for('logout') }}">Log Out</a></li>
@@ -50,6 +51,7 @@
             <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
             <li><a href="{{ url_for('add_route') }}">Add Route</a></li>
             {% if session.user|lower == "admin"|lower %}
+            <li><a href="{{ url_for('add_cycling_tip') }}">Add Cycling Tip</a></li>
             <li><a href="{{ url_for('get_categories') }}">Categories</a></li>
             {% endif %}
             <li><a href="{{ url_for('logout') }}">Log Out</a></li>

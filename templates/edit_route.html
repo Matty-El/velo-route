@@ -13,11 +13,11 @@
                     <select id="category_name" name="category_name" class="validate" required>
                         <option value="" disabled>Choose category</option>
                         {% for category in categories %}
-                            {% if category.category_name == route.category_name %}
-                            <option value="{{ category.category_name }}" selected>{{ category.category_name }}</option>
-                            {% else %}
-                            <option value="{{ category.category_name }}">{{ category.category_name }}</option>
-                            {% endif %}
+                        {% if category.category_name == route.category_name %}
+                        <option value="{{ category.category_name }}" selected>{{ category.category_name }}</option>
+                        {% else %}
+                        <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+                        {% endif %}
                         {% endfor %}
                     </select>
                     <label for="category_name">Category</label>
@@ -44,10 +44,9 @@
             <!-- route name -->
             <div class="row">
                 <div class="input-field col s12">
-                    <i class="fas fa-map-signs prefix teal-text"></i>
-                    <textarea id="route_name" name="route_name" minlength="10"
-                        maxlength="60" class="materialize-textarea validate" required>
-                        {{- route.route_name -}}</textarea>
+                    <i class="fas fa-map-signs prefix cyan-text text-darken-2"></i>
+                    <input id="route_name" name="route_name" minlength="10" maxlength="60" type="text"
+                        value="{{- route.route_name -}}" class="materialize-textarea validate" required>
                     <label for="route_name">Route Name</label>
                 </div>
             </div>
@@ -55,8 +54,8 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-image prefix cyan-text text-darken-2"></i>
-                    <textarea id="route_image" name="route_image" minlength="2" maxlength="200"
-                        class="materialize-textarea validate" required>{{- route.route_image -}}</textarea>
+                    <input id="route_image" name="route_image" minlength="2" maxlength="200" type="text"
+                        value="{{- route.route_image -}}" class="materialize-textarea validate" required>
                     <label for="route_image">Route Image</label>
                 </div>
             </div>
@@ -64,8 +63,7 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-align-left prefix cyan-text text-darken-2"></i>
-                    <textarea id="route_description" name="route_description" minlength="10" maxlength="300"
-                        class="materialize-textarea validate" required>{{- route.route_description -}}</textarea>
+                    <input id="route_description" name="route_description" minlength="10" maxlength="300" type="text" value="{{- route.route_description -}}" class="materialize-textarea validate" required>
                     <label for="route_description">Route Description</label>
                 </div>
             </div>
@@ -73,8 +71,7 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-route prefix cyan-text text-darken-2"></i>
-                    <textarea id="route_distance" name="route_distance" minlength="1" maxlength="10"
-                        class="materialize-textarea validate" required>{{- route.route_distance -}}</textarea>
+                    <input id="route_distance" name="route_distance" minlength="1" maxlength="10" type="text" value="{{- route.route_distance -}}" class="materialize-textarea validate" required>
                     <label for="route_distance">Route Distance</label>
                 </div>
             </div>
@@ -82,8 +79,8 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-link prefix cyan-text text-darken-2"></i>
-                    <textarea id="route_link" name="route_link" minlength="1" maxlength="200"
-                        class="materialize-textarea validate" required>{{- route.route_link -}}</textarea>
+                    <input id="route_link" name="route_link" minlength="1" maxlength="200" type="text" value="{{- route.route_link -}}"
+                        class="materialize-textarea validate" required>
                     <label for="route_link">Route Link</label>
                 </div>
             </div>

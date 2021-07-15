@@ -185,6 +185,59 @@ def get_cycling_tips():
     return render_template("cycling_tips.html", cycling_tips=cycling_tips)
 
 
+@app.route("/add_cycling_tip", methods=["GET", "POST"])
+def add_cycling_tip():
+    if request.method == "POST":
+        cycling_tip = {
+            "category_name": request.form.get("category_name"),
+            "cycling_tip_name": request.form.get("cycling_tip_name"),
+            "cycling_tip_description": request.form.get(
+                "cycling_tip_description"),
+            "cycling_tip_image": request.form.get("cycling_tip_image"),
+            "cycling_tip_link": request.form.get("cycling_tip_link"),
+            "created_by": session["user"]
+        }
+        mongo.db.cycling_tips.insert_one(cycling_tip)
+        flash("New Cycling Tip Added")
+        return redirect(url_for("get_cycling_tips"))
+
+    cycling_tip_categories = mongo.db.cycling_tip_categories.find().sort(
+        "category_name", 1)
+    return render_template("add_cycling_tip.html",
+                           cycling_tip_categories=cycling_tip_categories)
+
+
+@app.route("/edit_cycling_tip/<cycling_tip_id>", methods=["GET", "POST"])
+def edit_cycling_tip(cycling_tip_id):
+    if request.method == "POST":
+        submit_cycling_tip = {
+            "cycling_tip_name": request.form.get("cycling_tip_name"),
+            "cycling_tip_description": request.form.get(
+                "cycling_tip_description"),
+            "cycling_tip_image": request.form.get("cycling_tip_image"),
+            "cycling_tip_link": request.form.get("cycling_tip_link"),
+            "created_by": session["user"]
+        }
+        mongo.db.cycling_tips.update(
+            {"_id": ObjectId(cycling_tip_id)}, submit_cycling_tip)
+        flash("Cycling Tip Updated")
+        return redirect(url_for("get_cycling_tips"))
+
+    cycling_tip = mongo.db.cycling_tips.find_one(
+        {"_id": ObjectId(cycling_tip_id)})
+    cycling_tip_categories = mongo.db.cycling_tip_categories.find().sort(
+        "category_name", 1)
+    return render_template("edit_cycling_tip.html", cycling_tip=cycling_tip,
+                           cycling_tip_categories=cycling_tip_categories)
+
+
+@app.route("/delete_cycling_tip/<cycling_tip_id>")
+def delete_cycling_tip(cycling_tip_id):
+    mongo.db.cycling_tips.remove({"_id": ObjectId(cycling_tip_id)})
+    flash("Cycling Tip Deleted")
+    return redirect(url_for("get_cycling_tips"))
+
+
 @app.route("/get_categories")
 def get_categories():
     categories = list(mongo.db.categories.find().sort("category_name", 1))
