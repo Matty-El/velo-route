@@ -5,7 +5,6 @@
 <div class="row" id="hero-image">
     <div class="col s12 intro-text">
         <h3 class="grey-text text-lighten-5" id="tagline">Where will your next ride take you?</h3>
-        <p class="grey-text text-lighten-5" id="sub-tagline">Cycling routes for inspiration.</p>
     </div>
 </div>
 
@@ -13,22 +12,25 @@
 <div class="container">
     <div class="row">
         <div class="col s12">
-            <h3 class="center-align">Find your perfect route</h3>
+            <h3 class="center-align">Find your perfect cycling route</h3>
             <h5 class="center-align">
-                Road, gravel, trail or commute? Want to try a new route but don't have the time to create a new one?
+                Road, gravel, trail or commute?<br><br>Want to try a new route but stuck for ideas?<br><br>Our members submit their favourite cycling routes so you can find the best cycling routes wherever you are in the world.
             </h5>
-            <h5 class="center-align">
-                Find the best cycle routes around the world.
-            </h5>
+            <div class="row" id="join-us-button">
+                <button href="{{ url_for('join_us') }}" class="col s6 offset-s3 btn-large orange darken-2">
+                    Join Us</i>
+                </button>
+            </div>
         </div>
     </div>
 </div>
 
-<!-- call to action to join us -->
+<!-- call to action to join us
     <div class="blue-grey darken-3" id="join-us">
         <h4 class="center-align grey-text text-lighten-5">SHARE YOUR FAVOURITE ROUTES FOR OTHER CYCLISTS TO ENJOY.</h4>
         <p class="center-align grey-text text-lighten-5"><a href="{{ url_for('join_us') }}">Join Us</a></p>
     </div>
+-->
 
 <div class="container" id="home-routes-section">
     <!-- small device routes display  -->
