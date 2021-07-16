@@ -3,6 +3,7 @@
 
 <h4 class="center-align blue-grey-text text-darken-5">Routes</h4>
 
+<!-- routes search -->
 <div class="container">
   <div class="row card-panel z-depth-0" id="route-search">
     <form action="{{ url_for('route_search') }}" method="POST" class="col s12">
@@ -26,6 +27,7 @@
     </form>
   </div>
 
+  <!-- routes search display -->
   {% if routes.count() > 0 %}
   <div class="row">
     {% for route in routes %}
@@ -49,12 +51,11 @@
     </div>
     {% endfor %}
     {% else %}
-    <div>
+    <!-- search no results message -->
       <div class="row">
         <div class="col s12"></div>
         <h4 class="blue-grey-text text-darken-5 center-align">No results found! Please try another search.</h4>
       </div>
-    </div>
   </div>
   {% endif %}
 </div>

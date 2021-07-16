@@ -11,6 +11,7 @@ if os.path.exists("env.py"):
 
 app = Flask(__name__)
 
+# ------------------------ configuration ----------------------------------- #
 app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 app.secret_key = os.environ.get("SECRET_KEY")
@@ -18,6 +19,7 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 
+# ------------------------ home page --------------------------------------- #
 @app.route("/")
 def index():
     # first six routes for medium and large devices
@@ -29,19 +31,7 @@ def index():
         small_routes=small_routes)
 
 
-@app.route("/get_routes")
-def get_routes():
-    routes = mongo.db.routes.find().sort("_id", -1)
-    return render_template("routes.html", routes=routes)
-
-
-@app.route("/route_search", methods=["GET", "POST"])
-def route_search():
-    route_query = request.form.get("route_query")
-    routes = mongo.db.routes.find({"$text": {"$search": route_query}})
-    return render_template("routes.html", routes=routes)
-
-
+# ------------------------ users ------------------------------------------- #
 @app.route("/join_us", methods=["GET", "POST"])
 def join_us():
     if request.method == "POST":
@@ -121,13 +111,27 @@ def profile(username):
     email = mongo.db.users.find_one(
         {"username": session["user"]})["email"]
     routes = mongo.db.routes.find().sort("_id", -1)
-    
+
     if session["user"]:
         return render_template("profile.html", username=username,
                                first_name=first_name, last_name=last_name,
                                email=email, routes=routes)
 
     return redirect(url_for("login"))
+
+
+# ------------------------ cycling routes ---------------------------------- #
+@app.route("/get_routes")
+def get_routes():
+    routes = mongo.db.routes.find().sort("_id", -1)
+    return render_template("routes.html", routes=routes)
+
+
+@app.route("/route_search", methods=["GET", "POST"])
+def route_search():
+    route_query = request.form.get("route_query")
+    routes = mongo.db.routes.find({"$text": {"$search": route_query}})
+    return render_template("routes.html", routes=routes)
 
 
 @app.route("/add_route", methods=["GET", "POST"])
@@ -189,6 +193,7 @@ def delete_route(route_id):
     return redirect(url_for("get_routes"))
 
 
+# ------------------------ cycling tips ------------------------------------ #
 @app.route("/get_cycling_tips")
 def get_cycling_tips():
     cycling_tips = list(mongo.db.cycling_tips.find().sort(
@@ -249,6 +254,7 @@ def delete_cycling_tip(cycling_tip_id):
     return redirect(url_for("get_cycling_tips"))
 
 
+# ------------------------ categories -------------------------------------- #
 @app.route("/get_categories")
 def get_categories():
     categories = list(mongo.db.categories.find().sort("category_name", 1))
@@ -335,6 +341,23 @@ def delete_cycling_tip_category(cycling_tip_category_id):
     return redirect(url_for("get_categories"))
 
 
+# ------------------------ error handlers ---------------------------------- #
+@app.errorhandler(404)
+def not_found(e):
+    return render_template("error_handlers/404.html"), 404
+
+
+@app.errorhandler(500)
+def server_error(e):
+    return render_template("error_handlers/500.html"), 500
+
+
+@app.errorhandler(403)
+def forbidden(e):
+    return render_template("error_handlers/403.html"), 403
+
+
+# ------------------------ run app ----------------------------------------- #
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),

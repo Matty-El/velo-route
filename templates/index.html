@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
-<!-- Tagline -->
+<!-- tagline -->
 <div class="row" id="hero-image">
     <div class="col s12 intro-text">
         <h3 class="grey-text text-lighten-5" id="tagline">Where will your next ride take you?</h3>
@@ -9,7 +9,7 @@
     </div>
 </div>
 
-<!-- Info -->
+<!-- intro -->
 <div class="container">
     <div class="row">
         <div class="col s12">
@@ -24,14 +24,14 @@
     </div>
 </div>
 
-<!-- Call to action to join us -->
+<!-- call to action to join us -->
     <div class="blue-grey darken-3" id="join-us">
         <h4 class="center-align grey-text text-lighten-5">SHARE YOUR FAVOURITE ROUTES FOR OTHER CYCLISTS TO ENJOY.</h4>
         <p class="center-align grey-text text-lighten-5"><a href="{{ url_for('join_us') }}">Join Us</a></p>
     </div>
 
 <div class="container" id="home-routes-section">
-    <!-- small device routes  -->
+    <!-- small device routes display  -->
     <div class="row show-on-small hide-on-med-and-up">
         {% for route in small_routes %}
         <div class="col s12">
@@ -47,7 +47,7 @@
         {% endfor %}
     </div>
 
-    <!-- medium and large device routes  -->
+    <!-- medium and large device routes display  -->
     <div class="row hide-on-small-only">
         {% for route in med_large_routes %}
         <div class="col s12 m6 l4">
