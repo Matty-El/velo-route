@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h4 class="cyan-text text-darken-2 center-align">Add Route</h4>
+<h4 class="blue-grey-text darken-5 center-align">Add Route</h4>
 
 <div class="container">
     <div class="row card-panel grey lighten-5">
@@ -9,7 +9,7 @@
             <!-- category selector-->
             <div class="row">
                 <div class="input-field">
-                    <i class="fas fa-bicycle prefix cyan-text text-darken-2"></i>
+                    <i class="fas fa-bicycle prefix blue-grey-text darken-5"></i>
                     <select id="category_name" name="category_name" class="validate" required>
                         <option value="" disabled selected>Choose category</option>
                         {% for category in categories %}
@@ -21,7 +21,7 @@
             </div>
             <div class="row">
                 <div class="input-field">
-                    <i class="fas fa-dumbbell prefix cyan-text text-darken-2"></i>
+                    <i class="fas fa-dumbbell prefix blue-grey-text darken-5"></i>
                     <select id="route_difficulty" name="route_difficulty" class="validate" required>
                         <option value="" disabled selected>Choose difficulty</option>
                         {% for difficulty_level in difficulty_levels %}
@@ -35,7 +35,7 @@
             <!-- route name -->
             <div class="row">
                 <div class="input-field">
-                    <i class="fas fa-map-signs prefix cyan-text text-darken-2"></i>
+                    <i class="fas fa-map-signs prefix blue-grey-text darken-5"></i>
                     <input id="route_name" name="route_name" minlength="2" maxlength="60" type="text" 
                         class="materialize-textarea validate" required>
                     <label for="route_name" class="routes-label">Route Name (max 60 char)</label>
@@ -44,7 +44,7 @@
             <!-- route image -->
             <div class="row">
                 <div class="input-field">
-                    <i class="fas fa-image prefix cyan-text text-darken-2"></i>
+                    <i class="fas fa-image prefix blue-grey-text darken-5"></i>
                     <input id="route_image" name="route_image" minlength="2" maxlength="200" type="text"
                         class="materialize-textarea validate" required>
                     <label for="route_image" class="routes-label">Route Image (upload image URL)</label>
@@ -53,7 +53,7 @@
             <!-- route description -->
             <div class="row">
                 <div class="input-field">
-                    <i class="fas fa-align-left prefix cyan-text text-darken-2"></i>
+                    <i class="fas fa-align-left prefix blue-grey-text darken-5"></i>
                     <textarea id="route_description" name="route_description" minlength="10" maxlength="300"
                         class="materialize-textarea validate" required></textarea>
                     <label for="route_description" class="routes-label">Route Description (max 300 char)</label>
@@ -62,7 +62,7 @@
             <!-- route distance -->
             <div class="row">
                 <div class="input-field">
-                    <i class="fas fa-route prefix cyan-text text-darken-2"></i>
+                    <i class="fas fa-route prefix blue-grey-text darken-5"></i>
                     <input id="route_distance" name="route_distance" minlength="1" maxlength="10" type="text"
                         class="materialize-textarea validate" required>
                     <label for="route_distance" class="routes-label">Route Distance (distance in miles or kilometres)</label>
@@ -71,7 +71,7 @@
             <!-- route link -->
             <div class="row">
                 <div class="input-field">
-                    <i class="fas fa-link prefix cyan-text text-darken-2"></i>
+                    <i class="fas fa-link prefix blue-grey-text darken-5"></i>
                     <input id="route_link" name="route_link" minlength="1" maxlength="200" type="text"
                         class="materialize-textarea validate" required>
                     <label for="route_link" class="routes-label">Route Link (link to your route e.g. Strava, MapMyRide)</label>

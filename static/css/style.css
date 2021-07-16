@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
 .flashes h4 {
     line-height: 2;
 }
@@ -8,6 +10,14 @@
 
 .card-content {
     height: 500px;
+}
+
+.card-action-home {
+    height: 100px;
+}
+
+.card {
+    border-radius: 10px;
 }
 
 #routes-description {
@@ -32,4 +42,90 @@
 
 #search-label {
     font-size: 0.8rem;
+}
+
+
+/*------------------------------------- Navbar */
+
+.nav-wrapper {
+    height: 200px;
+}
+
+/*------------------------------------- Homepage */
+#hero-image {
+    background: url("https://i.postimg.cc/rmNDq4C7/pexels-pixabay-163305.jpg");
+    background-size: cover;
+    background-position: right center;
+    min-height: 450px;
+    width: 100%;
+    padding: 15px;
+}
+
+#tagline {
+    padding-top: 15%;
+    padding-left: 55%;
+    margin-bottom: 0;
+
+}
+
+#sub-tagline {
+    padding-left: 55%;
+    margin-top: 0;
+}
+
+#body {
+    font-family: 'Roboto' sans-serif !important;
+    color: #000;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    min-height: 100vh;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+/*------------------------------------- Call to action row */
+
+#join-us {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 2rem;
+}
+
+#home-routes-section {
+    margin-top: 50px;
+}
+
+/*------------------------------------- Social media */
+
+.social-media-icons {
+    font-size: 2rem;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 0 auto;
+            flex: 1 0 auto;
+}
+
+#route-search {
+    margin-left: 0;
+    padding-bottom: 0;
+    padding-right: 10px;
 }

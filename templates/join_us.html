@@ -1,15 +1,15 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h4 class="center-align cyan-text text-darken-2">Register</h4>
+<h4 class="center-align blue-grey-text darken-5">Join Us</h4>
 
 <div class="row">
-    <form class="col s12 m6 offset-m3" method="POST" action="{{ url_for('register') }}">
+    <form class="col s12 m8 offset-m2 l6 offset-l3" method="POST" action="{{ url_for('join_us') }}">
         <div class="card-panel">
             <!-- username -->
             <div class="row">
                 <div class="input-field col s12">
-                    <i class="fas fa-user prefix cyan-text text-darken-2"></i>
+                    <i class="fas fa-user prefix blue-grey-text darken-5"></i>
                     <input id="username" name="username" type="text" minlength="5" maxlength="15"
                         pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
                     <label for="username">Username</label>
@@ -18,7 +18,7 @@
             <!-- first name -->
             <div class="row">
                 <div class="input-field col s12">
-                    <i class="fas fa-file-signature prefix cyan-text text-darken-2"></i>
+                    <i class="fas fa-file-signature prefix blue-grey-text darken-5"></i>
                     <input id="first_name" name="first_name" type="text" minlength="2" class="validate" required>
                     <label for="first_name">First Name</label>
                 </div>
@@ -26,7 +26,7 @@
             <!-- last name -->
             <div class="row">
                 <div class="input-field col s12">
-                    <i class="fas fa-file-signature prefix cyan-text text-darken-2"></i>
+                    <i class="fas fa-file-signature prefix blue-grey-text darken-5"></i>
                     <input id="last_name" name="last_name" type="text" minlength="2" class="validate" required>
                     <label for="last_name">Last Name</label>
                 </div>
@@ -34,7 +34,7 @@
             <!-- email address -->
             <div class="row">
                 <div class="input-field col s12">
-                    <i class="fas fa-envelope prefix cyan-text text-darken-2"></i>
+                    <i class="fas fa-envelope prefix blue-grey-text darken-5"></i>
                     <input id="email" name="email" type="text" pattern="^[A-Za-z0-9+_.-]+@(.+)$" class="validate"
                         required>
                     <label for="email">Email Address</label>
@@ -43,16 +43,16 @@
             <!-- password -->
             <div class="row">
                 <div class="input-field col s12 tooltipped" data-position="bottom" data-tooltip="Please enter password 5 to 15 characters, numbers and letters only">
-                    <i class="fas fa-user-lock prefix cyan-text text-darken-2"></i>
+                    <i class="fas fa-user-lock prefix blue-grey-text darken-5"></i>
                     <input id="password" name="password" type="password" minlength="5" maxlength="15"
                         pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
                     <label for="password">Password</label>
                 </div>
             </div>
-            <!-- register button -->
-            <div class="row">
-                <button type="submit" class="col s12 btn-large cyan darken-2">
-                    Register <i class="fas fa-sign-in-alt"></i>
+            <!-- join us button -->
+            <div class="row center-align">
+                <button type="submit" class="col s6 offset-s3 btn-large cyan darken-2">
+                    Join Us
                 </button>
             </div>
         </div>
@@ -61,7 +61,7 @@
     <div class="row">
         <div class="col s12">
             <p class="center-align">
-                Already Registered? <a href="{{ url_for('login') }}" class="light-blue-text text-darken-4">Log In</a>
+                Already Joined? <a href="{{ url_for('login') }}" class="light-blue-text text-darken-4">Log In</a>
             </p>
         </div>
     </div>

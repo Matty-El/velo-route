@@ -19,6 +19,16 @@ mongo = PyMongo(app)
 
 
 @app.route("/")
+def index():
+    # first six routes for medium and large devices
+    med_large_routes = mongo.db.routes.find().limit(6)
+    # first four routes for mobile devices
+    small_routes = mongo.db.routes.find().limit(3)
+    return render_template(
+        "index.html", med_large_routes=med_large_routes,
+        small_routes=small_routes)
+
+
 @app.route("/get_routes")
 def get_routes():
     routes = mongo.db.routes.find().sort("_id", -1)
@@ -32,8 +42,8 @@ def route_search():
     return render_template("routes.html", routes=routes)
 
 
-@app.route("/register", methods=["GET", "POST"])
-def register():
+@app.route("/join_us", methods=["GET", "POST"])
+def join_us():
     if request.method == "POST":
         # check if username exists in database
         existing_user = mongo.db.users.find_one(
@@ -41,9 +51,9 @@ def register():
 
         if existing_user:
             flash("Username already exists")
-            return redirect(url_for("register"))
+            return redirect(url_for("join_us"))
 
-        register = {
+        join_us = {
             "username": request.form.get("username").lower(),
             "first_name": request.form.get("first_name"),
             "last_name": request.form.get("last_name"),
@@ -52,14 +62,14 @@ def register():
             # remember to add user type
             "password": generate_password_hash(request.form.get("password"))
         }
-        mongo.db.users.insert_one(register)
+        mongo.db.users.insert_one(join_us)
 
         # add the new user into session cookie
         session["user"] = request.form.get("username").lower()
-        flash("Registration Successful")
+        flash("Welcome to VeloRoute")
         return redirect(url_for("profile", username=session["user"]))
 
-    return render_template("register.html")
+    return render_template("join_us.html")
 
 
 @app.route("/login", methods=["GET", "POST"])
@@ -110,11 +120,12 @@ def profile(username):
         {"username": session["user"]})["last_name"]
     email = mongo.db.users.find_one(
         {"username": session["user"]})["email"]
-
+    routes = mongo.db.routes.find().sort("_id", -1)
+    
     if session["user"]:
         return render_template("profile.html", username=username,
                                first_name=first_name, last_name=last_name,
-                               email=email)
+                               email=email, routes=routes)
 
     return redirect(url_for("login"))
 
@@ -174,7 +185,7 @@ def edit_route(route_id):
 @app.route("/delete_route/<route_id>")
 def delete_route(route_id):
     mongo.db.routes.remove({"_id": ObjectId(route_id)})
-    flash("Route Deleted")
+    flash("Route Successfully Deleted")
     return redirect(url_for("get_routes"))
 
 

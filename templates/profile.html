@@ -1,23 +1,58 @@
 {% extends "base.html" %}
 {% block content %}
 
-<div class="row">
-    <div class="col s12 m6 offset-m3">
-        <div class="card-panel">
-            <h3 class="center-align cyan-text text-darken-2">
-                {{ username }}'s Profile
-            </h3>
-            <p class="center-align cyan-text text-darken-2">
-                First Name: {{ first_name }}
-            </p>
-            <p class="center-align cyan-text text-darken-2">
-                Last Name: {{ last_name }}
-            </p>
-            <p class="center-align cyan-text text-darken-2">
-                Email Address: {{ email }}
-            </p>
-        </div>
+<div class="container">
+  <div class="col s12 m6 offset-m3">
+    <div class="card-panel">
+      <h3 class="center-align blue-grey-text darken-5">
+        {{ username }}'s Profile
+      </h3>
+      <p class="center-align blue-grey-text darken-5">
+        First Name: {{ first_name }}
+      </p>
+      <p class="center-align blue-grey-text darken-5">
+        Last Name: {{ last_name }}
+      </p>
+      <p class="center-align blue-grey-text darken-5">
+        Email Address: {{ email }}
+      </p>
     </div>
+  </div>
+</div>
+
+<h4 class="blue-grey-text darken-5 center-align">Your Routes</h4>
+
+<div class="container">
+  <div class="row">
+    {% for route in routes %}
+    {% if session.user|lower == route.created_by|lower %}
+    <div class="col s12 m12 l6">
+      <div class="card grey lighten-5">
+        <div class="card-image">
+          <img src="{{ route.route_image }}" alt="Route Image">
+        </div>
+        <div class="card-content">
+          <h6 id="routes-name"><strong>{{ route.route_name }}</strong></h6><br>
+          <p id="routes-description">{{ route.route_description}}</p><br>
+          <p><strong>Type: </strong>{{ route.category_name }}</p><br>
+          <p><strong>Distance: </strong>{{ route.route_distance }}</p><br>
+          <p><strong>Difficulty: </strong>{{ route.route_difficulty }}</p><br>
+          <p><strong>Added By: </strong><em>{{ route.created_by }}</em></p><br>
+          <div>
+            <a href="{{ url_for('delete_route', route_id=route._id) }}"
+              class="btn-small red accent-4 waves-effect">Delete</a>
+            <a href="{{ url_for('edit_route', route_id=route._id) }}"
+              class="btn-small light-blue accent-4 waves-effect">Edit</a>
+          </div>
+        </div>
+        <div class="card-action">
+          <a href="{{ route.route_link }}" target="_blank">Route Link</a>
+        </div>
+      </div>
+    </div>
+    {% endif %}
+    {% endfor %}
+  </div>
 </div>
 
 {% endblock %}
