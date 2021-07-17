@@ -21,31 +21,31 @@
   <!-- main navigation menu -->
   <nav class="nav-extended blue-grey darken-4 grey-text text-lighten-5 active">
     <div class="nav-wrapper">
-      <a href="#!" class="brand-logo">VeloRoute</a>
-      <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
+      <img href="{{ url_for('index') }}" class="brand-logo" id="logo" src="{{ url_for('static', filename='images/veloroute_logo_crop.png') }}" height="60" width="150" alt="VeloRoute Logo"></img>
+      <a href="#" data-target="mobile-nav" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
       <ul class="right hide-on-med-and-down">
-        <li><a href="{{ url_for('index') }}">Home</a></li>
-        <li><a href="{{ url_for('get_routes') }}">Routes</a></li>
-        <li><a href="{{ url_for('get_cycling_tips') }}">Cycling Tips</a></li>
+        <li class="navbar-li"><a href="{{ url_for('index') }}">Home</a></li>
+        <li class="navbar-li"><a href="{{ url_for('get_routes') }}">Routes</a></li>
+        <li class="navbar-li"><a href="{{ url_for('get_cycling_tips') }}">Cycling Tips</a></li>
         {% if session.user %}
-        <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
-        <li><a href="{{ url_for('add_route') }}">Add Route</a></li>
+        <li class="navbar-li"><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
+        <li class="navbar-li"><a href="{{ url_for('add_route') }}">Add Route</a></li>
         {% if session.user|lower == "admin"|lower %}
-        <li><a href="{{ url_for('add_cycling_tip') }}">Add Cycling Tip</a></li>
-        <li><a href="{{ url_for('get_categories') }}">Categories</a></li>
+        <li class="navbar-li"><a href="{{ url_for('add_cycling_tip') }}">Add Cycling Tip</a></li>
+        <li class="navbar-li"><a href="{{ url_for('get_categories') }}">Categories</a></li>
         {% endif %}
-        <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+        <li class="navbar-li"><a href="{{ url_for('logout') }}">Log Out</a></li>
         {% else %}
-        <li><a href="{{ url_for('login') }}">Log In</a></li>
-        <li><a href="{{ url_for('join_us') }}">Join Us</a></li>
+        <li class="navbar-li"><a href="{{ url_for('login') }}">Log In</a></li>
+        <li class="navbar-li"><a href="{{ url_for('join_us') }}">Join Us</a></li>
         {% endif %}
       </ul>
     </div>
   </nav>
   <!-- mobile collabsible side navigation menu -->
-  <ul class="sidenav right" id="mobile-demo">
+  <ul class="sidenav right" id="mobile-nav">
     <li>
-      <h4 class="center-align blue-grey-text text-darken-4">VeloRoute</h4>
+      <img class="center-align blue-grey-text text-darken-4" height="60" width="150" src="{{ url_for('static', filename='images/veloroute_logo_crop.png') }}"></img>
     </li>
     <li><a href="{{ url_for('index') }}">Home</a></li>
     <li><a href="{{ url_for('get_routes') }}">Routes</a></li>

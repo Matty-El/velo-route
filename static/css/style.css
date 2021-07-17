@@ -67,11 +67,20 @@ main {
 /*------------------------------------- navbar */
 
 nav.nav-extended .nav-wrapper {
-    min-height: 80px;
+    min-height: 100px;
+    padding-left: 20px;
 }
 
-nav .brand-logo {
+nav .sidenav-trigger i {
+    margin-top: 20px;
+}
 
+.navbar-li {
+    padding-top: 20px;
+}
+
+#logo {
+    margin-top: 20px;
 }
 
 /*------------------------------------- homepage */
