@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
     type="text/css">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
+  <link rel="icon" href="{{ url_for('static', filename='images/bicycle-solid.svg') }}">
   {% block styles %}
   {% endblock %}
   <title>VeloRoute</title>
@@ -18,7 +19,7 @@
 
 <header>
   <!-- main navigation menu -->
-  <nav class="nav-extended blue-grey darken-3 grey-text text-lighten-5 active">
+  <nav class="nav-extended blue-grey darken-4 grey-text text-lighten-5 active">
     <div class="nav-wrapper">
       <a href="#!" class="brand-logo">VeloRoute</a>
       <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
