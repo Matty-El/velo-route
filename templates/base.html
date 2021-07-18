@@ -21,7 +21,11 @@
   <!-- main navigation menu -->
   <nav class="nav-extended blue-grey darken-4 grey-text text-lighten-5 active">
     <div class="nav-wrapper">
-      <img href="{{ url_for('index') }}" class="brand-logo" id="logo" src="{{ url_for('static', filename='images/veloroute_logo_crop.png') }}" height="60" width="150" alt="VeloRoute Logo"></img>
+      <a href="{{ url_for('index') }}">
+      <img class="brand-logo" id="logo"
+        src="{{ url_for('static', filename='images/veloroute_logo_crop.png') }}" height="60" width="150"
+        alt="VeloRoute Logo"></img>
+      </a>
       <a href="#" data-target="mobile-nav" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
       <ul class="right hide-on-med-and-down">
         <li class="navbar-li"><a href="{{ url_for('index') }}">Home</a></li>
@@ -45,7 +49,8 @@
   <!-- mobile collabsible side navigation menu -->
   <ul class="sidenav right" id="mobile-nav">
     <li>
-      <img class="center-align blue-grey-text text-darken-4" height="60" width="150" src="{{ url_for('static', filename='images/veloroute_logo_crop.png') }}"></img>
+      <img class="center-align blue-grey-text text-darken-4" height="60" width="150"
+        src="{{ url_for('static', filename='images/veloroute_logo_crop.png') }}"></img>
     </li>
     <li><a href="{{ url_for('index') }}">Home</a></li>
     <li><a href="{{ url_for('get_routes') }}">Routes</a></li>
@@ -72,7 +77,9 @@
     {% if messages %}
     {% for message in messages %}
     <div class="row flashes">
-      <h4 class="center-align cyan lighten-2 white-text">{{ message }}</h4>
+      <div class="col s8 offset-s2 center-align">
+        <h4 class="center-align cyan lighten-2 white-text">{{ message }}</h4>
+      </div>
     </div>
     {% endfor %}
     {% endif %}
@@ -98,25 +105,27 @@
       <div class="col l6 s12">
         <h5 class="grey-text text-lighten-5">About Us</h5>
         <p class="grey-text text-lighten-4">The team at VeloRoute have a passion for all things cycling related.</p>
-        <p>We try to cycle every day, whether that be the commute to work, a moring blast around the local trails, a quick evening ride or a weekend epic. We hope you enjoy exploring new cycling routes and adding your favourites for other VeloRoute members to explore.</p>
+        <p>We try to cycle every day, whether that be the commute to work, a morning blast around the local trails, a
+          quick evening ride or a weekend epic. We hope you enjoy exploring new cycling routes and adding your
+          favourites for other VeloRoute members to explore.</p>
         <p>Happy cycling!</p>
       </div>
       <div class="col l4 offset-l2 s12">
         <h5 class="grey-text text-lighten-5">Social Media</h5>
         <ul>
           <li><a class="grey-text text-lighten-5 social-media-icons" href="https://pinterest.com/"><i
-            class="fab fa-pinterest-square"></i></a></li>
+                class="fab fa-pinterest-square"></i></a></li>
           <li><a class="grey-text text-lighten-5 social-media-icons" href="https://www.instagram.com/"><i
-            class="fab fa-instagram-square"></i></a></li>
+                class="fab fa-instagram-square"></i></a></li>
           <li><a class="grey-text text-lighten-5 social-media-icons" href="https://www.facebook.com/"><i
-            class="fab fa-facebook-square"></i></a></li>
+                class="fab fa-facebook-square"></i></a></li>
         </ul>
       </div>
     </div>
   </div>
   <div class="footer-copyright">
     <div class="container grey-text text-lighten-5">
-    © 2021 Matthew Leach
+      © 2021 Matthew Leach
     </div>
   </div>
 </footer>

@@ -8,7 +8,7 @@
   <div class="row">
     {% for cycling_tip in cycling_tips %}
     <div class="col s12 m6 l4">
-      <div class="card grey lighten-4">
+      <div class="card grey lighten-5 z-depth-4">
         <div class="card-image">
           <img src="{{ cycling_tip.cycling_tip_image }}" alt="Cycling Tip Image">
         </div>
@@ -18,7 +18,7 @@
           <div>
             {% if session.user|lower == cycling_tip.created_by|lower %}
               <a href="{{ url_for('delete_cycling_tip', cycling_tip_id=cycling_tip._id) }}"
-                class="btn-small red accent-4 waves-effect">Delete</a>
+                class="btn-small red accent-4 waves-effect" data-target="delete-cycling-tip-modal">Delete</a>
               <a href="{{ url_for('edit_cycling_tip', cycling_tip_id=cycling_tip._id) }}"
                 class="btn-small light-blue accent-4 waves-effect">Edit</a>
             {% endif %}
@@ -27,6 +27,16 @@
         <div class="card-action">
           <a href="{{ cycling_tip.cycling_tip_link }}" target="_blank">Tip Link</a>
         </div>
+      </div>
+    </div>
+    <div id="delete-cycling-tip-modal" class="modal">
+      <div class="modal-content s4">
+        <h5>Delete Cycling Tip</h5>
+        <p>Are you sure you want to permanently delete this cycling tip?</p>
+      </div>
+      <div class="modal-footer">
+        <a href="{{ url_for('get_cycling_tips') }}" class="modal-close btn-small light-blue accent-4 waves-effect">Cancel</a>
+        <a href="{{ url_for('delete_cycling_tip', cycling_tip_id=cycling_tip._id) }}}" class="modal-close btn-small red accent-4 waves-effect">Delete</a>
       </div>
     </div>
     {% endfor %}

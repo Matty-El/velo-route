@@ -1,39 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
-.flashes h4 {
-    line-height: 2;
-}
+
+/*------------------------------------- buttons */
 
 .btn-small {
     margin: 5px;
 }
 
-.card-content {
-    height: 500px;
-}
-
-.card-action-home {
-    height: 100px;
-}
-
-.card {
-    border-radius: 10px;
-}
-
-#routes-description {
-    height: 175px;
-}
-
-#routes-name {
-    height: 20px;
-}
+/*------------------------------------- forms */
 
 .input-field>label {
      font-size: 0.75rem;
-}
-
-.card-content-category {
-    height: 100px;
 }
 
 #add-category-label {
@@ -62,6 +39,40 @@ main {
     -webkit-box-flex: 1;
         -ms-flex: 1 0 auto;
             flex: 1 0 auto;
+}
+
+.flashes h4 {
+    line-height: 2;
+}
+
+.modal {
+    max-width: 400px;
+}
+
+/*------------------------------------- cards */
+
+.card-content {
+    height: 500px;
+}
+
+.card-action-home {
+    height: 100px;
+}
+
+/*.card {
+    border-radius: 10px;
+}*/
+
+#routes-description {
+    height: 175px;
+}
+
+#routes-name {
+    height: 20px;
+}
+
+.card-content-category {
+    height: 100px;
 }
 
 /*------------------------------------- navbar */
