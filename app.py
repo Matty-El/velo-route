@@ -75,7 +75,7 @@ def login():
                         existing_user["password"],
                         request.form.get("password")):
                 session["user"] = request.form.get("username").lower()
-                flash("Welcome, {}".format(
+                flash("Welcome back, {}".format(
                     request.form.get("username")))
                 return redirect(url_for(
                     "profile", username=session["user"]))
@@ -190,7 +190,7 @@ def edit_route(route_id):
 def delete_route(route_id):
     mongo.db.routes.remove({"_id": ObjectId(route_id)})
     flash("Route Successfully Deleted")
-    return redirect(url_for("get_routes"))
+    return redirect(url_for("profile", username=session['user']))
 
 
 # ------------------------ cycling tips ------------------------------------ #
@@ -251,7 +251,7 @@ def edit_cycling_tip(cycling_tip_id):
 def delete_cycling_tip(cycling_tip_id):
     mongo.db.cycling_tips.remove({"_id": ObjectId(cycling_tip_id)})
     flash("Cycling Tip Deleted")
-    return redirect(url_for("get_cycling_tips"))
+    return redirect(url_for("profile", username=session['user']))
 
 
 # ------------------------ categories -------------------------------------- #

@@ -29,7 +29,7 @@
     {% for route in routes %}
     {% if session.user|lower == route.created_by|lower %}
     <div class="col s12 m12 l6">
-      <div class="card grey lighten-5">
+      <div class="card grey lighten-5 z-depth-4">
         <div class="card-image">
           <img src="{{ route.route_image }}" alt="Route Image">
         </div>
@@ -48,7 +48,7 @@
           </div>
         </div>
         <div class="card-action">
-          <a class="blue-grey-text darken-5 link-text" href="{{ route.route_link }}" target="_blank">Route Link</a>
+          <a class="light-blue-text darken-2" href="{{ route.route_link }}" target="_blank">Route Link</a>
         </div>
       </div>
     </div>
