@@ -1,10 +1,10 @@
-[<img src="" width="250">](https://matty-el.github.io/velo-route/)
+[<img src="static/images/veloroute_logo_crop.png" width="250">](https://matty-el.github.io/velo-route/)
 
 # VeloRoute Website
 
 ![VeloRoute](readme-files/velo-route-presented.png)
 
-Cycling is a global and accessible sport that has shown a huge increase in popularity over recent years. The global market for bicycles alone is in excess of $54 billion dollars. Alongside the growth in bicycle sales there has been significant growth in cycling related products such as GPS cycle computers and related software platforms that allow users to record, analyse and share their rides.
+Cycling is a global and accessible sport that has shown a huge increase in popularity over recent years. The global market is for bicycles alone is in excess of $54 billion dollars. Alongside the growth in bicycle sales there has been significant growth in cycling related products such as GPS cycle computers and related software platforms that allow users to record, analyse and share their rides.
 
 VeloRoute has been developed to allow users to share their favourite cycling routes, to search routes that other users have added to the site, to rate routes that have been added and to link to the routes that have been saved to platforms such as Strava and MapMyRide so that the routes can then be downloaded to their GPS devices.
 
@@ -56,10 +56,12 @@ The key goals for developing the website are:
 -   As a user, I want to register with VeloRoute with a secure username and password.
 -   As a user, I want to find new cycling routes so that I can see try new recommended routes.
 -   As a user, I want to be able to add my favourite cycling routes to the website.
+-   As a user, I want my routes to be displayed on my profile page so that I can see routes I have previosuly submitted.
 -   As a user, I want to be able to edit or delete routes that I have previously added to the VeloRoute.
+-   As a user, I want to be able to view cycling tips that have been added to VeloRoute so that I can find tips to help me with my cycling.
 -   As a user, I want to be able to rate cycling routes that have been added to the website.
--   As a user, I want to be able to follow a link to cycling routes that have been added to VeloRoute so that I can 
-    view the cycling route on platforms such as Strava.
+-   As a user, I want to be able to follow a link to cycling routes that have been added to VeloRoute so that I can view the
+    cycling route on platforms such as Strava.
 
 #### Admin Users
 
@@ -73,17 +75,17 @@ The VeloRoute website has been designed to provide an attractive, simple and eas
 
 The website has the following key elements:
 
--   A simple landing page design that provides information about VeloRoute and that presents featured cycling routes 
-    to the user.
+-   A simple landing page design that provides information about VeloRoute and that presents cycling routes to the user.
 -   A registration page that allows users to register with VeloRoute.
 -   A log in page so that registered users can log in to VeloRoute.
--   A Routes page that allows users to search rides that have been submitted by registered users (this page is also
-    where registered users can view and edit or delete rides that they have previously added to VeloRoute).
+-   A Routes page that allows users to search rides that have been submitted by registered users.
 -   An Add Route page for users to add their favourite cycling routes to VeloRoute.
--   A Cycling Tips page offering tips related to cycling.
--   A Manage Categories page for admin users to edit route categories.
--   A Manage Cycling Tips page for admin users to edit cycling tips.
--   A footer containing VeloRoute social media links and copyright information.
+-   A user profile page that displays the user's details that they registered with and also displays the routes that the
+    user has added to VeloRoute. The profile page is where users can edit routes they have previously submitted.
+-   A cycling tips page offering tips related to cycling.
+-   A categories page for admin users to edit route and cycling tip categories.
+-   A add cycling tips page for admin users to add and to edit or delete cycling tips.
+-   A footer containing information about the VeloRoute team, social media links and copyright information.
 
 
 _Notes:_
@@ -118,7 +120,7 @@ A simple colour palette using #202020 for backgrounds and #fefefe for text to pr
 
 #### Typography
 
-Poppins font has been utilised for all text across the website. This is a simple and modern font available from the Google Fonts library which is unobtrusive and easy to read. Font Awesome icons have been utilised for footer links to social media sites.
+Raleway font has been utilised for all text across the website. This is a simple and modern font available from the Google Fonts library which is unobtrusive and easy to read. Font Awesome icons have been utilised for icons throughout the site.
 
 ## Features
 
@@ -358,7 +360,6 @@ Comments have been included in the code for code that has been sourced and adapt
 ### Media
 
 -   All images, with the exception of the topography image below, were licensed for use from [Adobe Stock](https://stock.adobe.com/).
--   The topography image was sourced as a free file from [Spoon Graphics](https://blog.spoongraphics.co.uk/).
 
 ### Acknowledgements
 
