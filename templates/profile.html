@@ -44,11 +44,11 @@
             <a href="{{ url_for('delete_route', route_id=route._id) }}"
               class="btn-small red accent-4 waves-effect modal-trigger" data-target="delete-route-modal">Delete</a>
             <a href="{{ url_for('edit_route', route_id=route._id) }}"
-              class="btn-small light-blue accent-4 waves-effect">Edit</a>
+              class="btn-small cyan darken-2 waves-effect">Edit</a>
           </div>
         </div>
         <div class="card-action">
-          <a href="{{ route.route_link }}" target="_blank">Route Link</a>
+          <a class="blue-grey-text darken-5 link-text" href="{{ route.route_link }}" target="_blank">Route Link</a>
         </div>
       </div>
     </div>
@@ -58,7 +58,7 @@
         <p>Are you sure you want to permanently delete this route?</p>
       </div>
       <div class="modal-footer">
-        <a href="{{ url_for('profile', username=session['user']) }}" class="modal-close btn-small light-blue accent-4 waves-effect">Cancel</a>
+        <a href="{{ url_for('profile', username=session['user']) }}" class="modal-close btn-small cyan darken-2 waves-effect">Cancel</a>
         <a href="{{ url_for('delete_route', route_id=route._id) }}" class="modal-close btn-small red accent-4 waves-effect">Delete</a>
       </div>
     </div>

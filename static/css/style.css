@@ -49,6 +49,9 @@ main {
     max-width: 400px;
 }
 
+.link-text {
+    text-decoration: underline;
+}
 /*------------------------------------- cards */
 
 .card-content {
@@ -72,7 +75,7 @@ main {
 }
 
 .card-content-category {
-    height: 100px;
+    height: 50px;
 }
 
 /*------------------------------------- navbar */
