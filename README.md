@@ -1,4 +1,4 @@
-[<img src="static/images/veloroute_logo_crop.png" width="250">](https://matty-el.github.io/velo-route/)
+[<img src="static/images/veloroute_logo_crop.png" width="250">](https://velo-route.herokuapp.com/)
 
 # VeloRoute Website
 
@@ -10,7 +10,9 @@ VeloRoute has been developed to allow users to share their favourite cycling rou
 
 The site was developed using knowledge gained from the Code Institute HTML Essentials, CSS Essentials, User Centric Frontend Development, Interactive Frontend Development and Backend Development modules.
 
-View the live website [here.](https://matty-el.github.io/trail-running-uk/)
+View the live website [here.](https://velo-route.herokuapp.com/)
+
+---
 
 ## Contents
 
@@ -20,6 +22,8 @@ View the live website [here.](https://matty-el.github.io/trail-running-uk/)
 4.  [Testing](#testing)
 5.  [Deployment](#deployment)
 6.  [Credits](#credits)
+
+---
 
 ## User Experience Design
 
@@ -83,7 +87,7 @@ The website has the following key elements:
 -   A user profile page that displays the user's details that they registered with and also displays the routes that the
     user has added to VeloRoute. The profile page is where users can edit routes they have previously submitted.
 -   A cycling tips page offering tips related to cycling.
--   A categories page for admin users to edit route and cycling tip categories.
+-   A categories page for admin users to edit route, difficulty levels and cycling tip categories.
 -   A add cycling tips page for admin users to add and to edit or delete cycling tips.
 -   A footer containing information about the VeloRoute team, social media links and copyright information.
 
@@ -98,9 +102,9 @@ _........_
 
 The wireframes were developed using [Balsamiq](https://balsamiq.com/).
 
--   Small device [wireframes](design/velo-route-small-device.png).
--   Medium device [wireframes](design/velo-route-medium-device.png).
--   Large device [wireframes](design/velo-route-large-device.png).
+-   Small device [wireframes](design/veloroute-small-device.png).
+-   Medium device [wireframes](design/veloroute-medium-device.png).
+-   Large device [wireframes](design/veloroute-large-device.png).
 
 After the initial design was finalised the following changes were made:
 
@@ -108,7 +112,7 @@ After the initial design was finalised the following changes were made:
 
 ### Surface
 
-VeloRoute features a clean and simple design with .... background and ... text to provide good contrast....
+VeloRoute features a clean and simple design with #263238 used for dark backgrounds and text and #fafafa for light backgrounds and text to provide good contrast. 
 
 #### Branding
 
@@ -116,11 +120,13 @@ A simple VeloRoute logo was created using Canva.
 
 #### Colours
 
-A simple colour palette using #202020 for backgrounds and #fefefe for text to provide a good contrast whilst avoiding the potential eyestrain of using pure black and white. Images are used to add colour to the website and have been specifically chosen to emphasise the outdoor aspect of trail running.
+A simple colour palette using #263238 for navigation and footer backgrounds and #fafafa for text to provide a good contrast whilst avoiding the potential eyestrain of using pure black and white. Images are used to add colour to the website.
 
 #### Typography
 
 Raleway font has been utilised for all text across the website. This is a simple and modern font available from the Google Fonts library which is unobtrusive and easy to read. Font Awesome icons have been utilised for icons throughout the site.
+
+---
 
 ## Features
 
@@ -167,6 +173,8 @@ _Note: The social media links currently link to the social media websites and no
 
 In future additional content will be added to the website including product reviews, race reviews and a blog related to training and races entered.
 
+---
+
 ## Technologies Used
 
 The following technologies have been used to complete the UX design, capture user stories and defects and assign for development and to develop the Urban Paws website.
@@ -175,102 +183,43 @@ The following technologies have been used to complete the UX design, capture use
 
 -   [HTML5](https://en.wikipedia.org/wiki/HTML5) - used for the structure and content of the Trail Running UK website.
 -   [CSS3](https://en.wikipedia.org/wiki/CSS) - used to style the Trail Running UK website.
--   [JavaScript](https://www.javascript.com/) / [jQuery](https://jquery.com/)- used for scripts for the why trail running and races sections of the Trail Running UK website and for the newsletter.
+-   [jQuery](https://jquery.com/)- used for scripts for the why trail running and races sections of the Trail Running UK website and for the newsletter.
+-   [Python](https://www.python.org/) - used to style the Trail Running UK website.
 
-### Frameworks - Tools - Libraries
+### Frameworks - Libraries - Other
 
--   [Bootstrap library](https://getbootstrap.com/) - utilised for the carousel, buttons, navigation bar and modal elements of the website.
+-   [Materialize](https://getbootstrap.com/) - utilised for the front-end design framework.
+- [MongoDB](https://www.mongodb.com/) - used as the database for the project.
 -   [GitHub](https://github.com/) - for hosting the website repository.
 -   [GitPod](https://gitpod.io/) - used as the development environment for the website.
--   [Google Fonts](https://fonts.google.com/) - used to source the Poppins font used throughout the website.
--   [Font Awesome](https://fontawesome.com/) - used to source icons for the footer section of the website.
+-   [Google Fonts](https://fonts.google.com/) - used to source the Raleway font used throughout the website.
+-   [Font Awesome](https://fontawesome.com/) - used to source icons for use throughout website.
 -   [Balsamiq](https://balsamiq.com/) - utilised for the development of the website wireframes.
--   [Tiny PNG](https://tinypng.com/) - for the compression of images for all pages of the website.
--   [Canva](https://canva.com/) - used for the design of the Trail Running UK website logo.
--   [Google Maps API](https://developers.google.com/maps/documentation/javascript/tutorials) - used to embed the get started section and races section maps on the website.
--   [Google Maps Places API](https://developers.google.com/maps/documentation/places/web-service/overview) - used to find places local to the user for the local running clubs and local sports stores.
+-   [Canva](https://canva.com/) - used for the design of the VeloRoute website logo.
 -   [Beautify Tools](https://beautifytools.com/javascript-validator.php) - for the validation of the JavaScript code.
 -   [Markup validation service](https://validator.w3.org/) - for the validation of HTML5 code.
 -   [CSS validation service](https://jigsaw.w3.org/css-validator/) - for the validation of the CSS3 code.
+
+### Testing tools used
+
 -   [Google Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools) - used to edit changes prior to implementing the code changes, to diagnose problems and for performance, accessibility, best practice and search engine optimisation testing.
+- [Autoprefixer](https://autoprefixer.github.io/) - Autoprefixer is used to parse the CSS and to add vendor prefixes to CSS rules. 
+-   [Markup validation service](https://validator.w3.org/) - for the validation of HTML5 code.
+-   [CSS validation service](https://jigsaw.w3.org/css-validator/) - for the validation of the CSS3 code.
+- [JShint](https://jshint.com/) - used to check for errors in the JavaScript code. 
+- [PEP8](http://pep8online.com/) - used to check for errors in the Python code.
+
+---
 
 ## Testing
 
 ### Functionality Testing
 
-Each user story has been tested based on the acceptance criteria defined in the attached test plan below. The user stories have been written from the perspective of the website owner and the website user.
+Each user story has been tested based on the acceptance criteria defined in the attached test plan below. The user stories have been written from the perspective of the website owner, the website user and website administration user.
 
-[User Acceptance Testing](https://matty-el.github.io/trail-running-uk/testing-files/trail-running-uk-user-acceptance-criteria-testing.pdf).
+[User Acceptance Testing](https://github.com/Matty-El/velo-route/testing-files/veloroute-user-acceptance-criteria-testing.pdf).
 
-Results:
-
-### User Story Testing Summary
-
-**As a user, I want to be able to access the website on all types of device so that i can use the device that is most convenient to me at the time.**
-
--   The website has been tested on large screen desktop devices, laptops, tablets and mobile devices.
-
-**As a user, I want a website that is clearly laid out and easy to navigate so that I can find the information i am looking for.**
-
--   When the website is loaded on devices with a screen above 768 pixels a full screen hero image is visible with a navigation menu across the top right of the page.
--   When the website is loaded on a device with a screen size below 768 pixels, a full screen hero image is visible with a collapsed burger menu on the top right of the screen.
--   The website is divided into three main sections 'Why Trail Running', 'Get Started' and 'Races'. The user can scroll down to each section or use the navigation links.
--   On clicking the 'Why Trail Running' menu link the page smooth scrolls to the carousel section. Back and advance icons are visible on the carousel as are buttons that allows the user to select a specific image. On clicking the advance icon the image advances to the next slide and on clicking the back icon the image moves to the previous slide. On selecting an image button a different image is selected corresponding to the carousel sequence.
--   On clicking the 'Get Started' menu link the page smooth scrolls to the 'Get Started' section. Introductory text is displayed with a brief introduction to trail running in the UK and the map is populated with markers and clusters showing the best trail running sections around the UK and Ireland. Three buttons are visible 'THE BEST TRAILS', 'LOCAL RUNNING CLUBS' and 'LOCAL SPORTS STORES'.
--   On clicking the 'Races' menu link the page smooth scrolls to the Races section. Introductory text is displayed, and a map is displayed centred on the UK. Dropdown menus are visible for the selection of a region and a race and on selecting a race information about that race is displayed along with a website link and a race location marker is populated on the map.
--   On scrolling to the bottom of the page the user is presented with social media icons and copyright text.
-
-**As a user, I want to find out more about trail running and it's benefits so that I can see if it is a sport I would like to participate in.**
-
--   When the user clicks on the 'Why Trail Running' navigation link the webpage smooth scrolls to the carousel section.
--   The carousel scrolls through 5 images which contain text related to the benefits of trail running.
--   When the user clicks on the advance (right) control the slide changes to the next slide.
--   When the user clicks on the back (left) control the slide changes to the previous slide.
--   When the user selects a slide button below the text area of the image slides the selected image and text is displayed.
--   A motivational quote is displayed on loading of the webpage beneath the carousel.
--   When the user navigates to the 'Get Started' section they are presented with introductory text and a brief introduction to trail running in the UK and Ireland.
-
-**As a user, I want to be able to find the best trail running locations near to me so that I can identify places to go trail running.**
-
--   On clicking the 'Get Started' menu link the page smooth scrolls to the get started section.
--   Introductory text is displayed with a brief introduction to trail running in the UK and the map is populated with markers and clusters showing the best trail running sections around the UK and Ireland.
--   On clicking a cluster the map zooms in to reveal further clusters and markers located around the UK and Ireland. The map can be zoomed in and out and the user can move around the map with the standard Google maps functionality.
--   Once the user has navigated away from the best trails - by selecting another button in the 'Get Started' section - when the button is clicked the map will be repopulated with the markers and clusters and the 'BEST TRAILS IN THE UK AND IRELAND' text will be added.
-
-**As a user, I want to be able to find local running clubs so that I can consider becoming a member.**
-
--   On clicking the 'Get Started' menu link the page smooth scrolls to the 'Get Started' section.
--   Three buttons are visible 'THE BEST TRAILS', 'LOCAL RUNNING CLUBS' and 'LOCAL SPORTS STORES'.
--   On clicking the 'LOCAL RUNNING CLUBS' button the user is geolocated if permissions have been set on their device and if not they are presented with a text box stating that the website wants to know the user location. If the user selects 'Allow' the user is geolocated on the map with an information window stating their location. The map is populated with the 20 closest results based on a 'running clubs' search. Markers are added to the map for each search returned.
--   When the user clicks on a marker they are presented with an information window with details of the running club and a hyperlink to the running club website. When the hyperlink is clicked the running club website opens on a new tab in the user's browser.
-
-**As a user, I want to be able to find local sports shops that sell the gear I need so that I can participate in trail running.**
-
--   On clicking the 'Get Started' menu link the page smooth scrolls to the 'Get Started' section.
--   Three buttons are visible 'THE BEST TRAILS', 'LOCAL RUNNING CLUBS' and 'LOCAL SPORTS STORES'.
--   On clicking the 'LOCAL SPORTS STORES' button the user is geolocated if permissions have been set on their device and if not they are presented with a text box stating that the website wants to know the user location. If the user selects 'Allow' the user is geolocated on the map with an information window stating their location. The map is populated with the 20 closest results based on a 'sports stores' search. Markers are added to the map for each search returned.
--   When the user clicks on a marker they are presented with an information window with details of the sports store and a hyperlink to the sports store website. When the hyperlink is clicked the sports store website opens on a new tab in the user's browser.
-
-**As a user, I want to find information about races around the world so that I can decide if i want to enter a race.**
-
--   On clicking the 'Races' menu link the page smooth scrolls to the Races section. Introductory text is displayed and a map is displayed centred on the UK.
--   Dropdown menus are visible for the selection of a region and a race to populate details about the race.
--   When the user selects a region the 'Select a race' dropdown is populated with races in that region.
--   On selecting a race the information section is populated with information relating to the races selected.
--   On selecting a race the map is centred on the location of the race with a marker visible in on the map.
-
-**As a user, I want to sign up for the Trail Running UK newsletter so that I can find out more about trail running in the UK.**
-
--   When the user clicks on the 'Newsletter' navigation link a modal opens with fields for the user to populate first name, last name, email address, race distance preference a checkbox to sign up to the newsletter and a submit button.
--   On entering details, selecting a preferred race distance and then submitting the form the user is sent an email welcoming them and thanking them for signing up to the newsletter.
--   Once the form is submitted the modal closes and a 'Thank you for signing up to our newsletter. Happy trail running!' message is displayed.
--   If the user does not populate a mandatory field a message is displayed asking them to please populate the field with the required data.
--   If the user enters data in an invalid format the user is presented with a message stating that the data has been entered in the incorrect format.
-
-    **As a user, I want to be able to link to the websites social media so that I can follow on social media.**
-
--   When the user scrolls to the footer section of the website they are presented with icons to link to social media sites.
--   When the social media icons are selected the website for the social media selected will open in a new tab on the user's web browser.
+**For test results see the separate [testing document](TESTING.md)**
 
 ### Responsiveness
 
@@ -294,7 +243,7 @@ The CSS code was validated using the [W3.org CSS validation service](https://jig
 
 ![CSS Validator](testing-files/css-validation.png)
 
-**JavaScript**
+**JQuery**
 
 The JavaScript code was validated using the [Beautify Tools JavaScript validator](https://beautifytools.com/javascript-validator.php).
 
@@ -325,18 +274,73 @@ The performance score for mobile devices is sub-optimal and improvements will be
 
 ### Deployment
 
-The Trail Running UK project is hosted on GitHub Pages.
+#### Requirements
 
-**To deploy the project on GitHub**
+To be able to deploy this project you will need the following:
 
-1.  Navigate to the menu at the top of the project repository on GitHub and select **Settings**.
-2.  Select the **Pages** section on the left-hand menu.
-3.  Click on the dropdown menu under **Source** and select **master** branch.
-4.  Ensure that the folder selected is the **(root)** folder.
-5.  Click the **Save** button.
-6.  The page will refresh automatically, and the website is now deployed - a green tick will be visible against a green background with the site URL. It may take a few minutes for the site to be published.
+- Python3 
+- A Github account 
+- A MongoDB account 
+- A Heroku account
 
-A single master branch has been used for this project.
+#### To clone the project locally
+
+To clone this project from GitHub.
+
+1.  Open the project repository on GitHub and click the **Code** dropdown button.
+2.  Select the **HTTPS** tab and copy the URL.
+3.  Open your terminal (Mac OS, Linux) or Git-Bash terminal (Windows).
+4.  Change the current working directory to the location where you want the cloned directory to be created.
+5.  Type **git clone**, enter a space and then paste the URL copied from GitHub.
+6.  Press **Enter** and the local clone will be created in the specified directory.
+
+#### Working with the local copy
+
+1. Install all the requirements: Go to the workspace of your local copy. In the terminal window of your IDE type: **pip3 install -r requirements.txt**.
+2. Create a database in MongoDB  
+    - Signup or login to your MongoDB account.
+    - Create a cluster and a database.
+    - Create six collections in the database: **categories, cycling_tips, cycling_tip_categories, difficulty_levels, routes, users.**
+    - Add the data to the collections. See <a href="#ux-architecture">my Information architecture</a> how the database is set up for this project.
+3. Create the environment variables 
+    - Create a .gitignore file in the root directory of the project.
+    - Add the env.py file in the .gitignore.
+    - Create the file env.py. This  will contain all the envornment variables.
+
+    ```
+    Import os
+    os.environ.setdefault("IP", "Added by developer")
+    os.environ.setdefault("PORT", "Added by developer")
+    os.environ.setdefault("SECRET_KEY", "Added by developer")
+    os.environ.setdefault("MONGO_URI", "Added by developer")
+    os.environ.setdefault("MONGO_DBNAME", "Added by developer")
+    ```
+4. Run the app: Open your terminal window in your IDE. Type python3 app.py and run the app.
+
+#### Heroku Deployment  
+1. Set up local workspace for Heroku 
+    - In terminal window of your IDE type: **pip3 freeze -- local > requirements.txt.** (The file is needed for Heroku to know which filed to install.)
+    - In termial window of your IDE type: **python app.py > Procfile** (The file is needed for Heroku to know which file is needed as entry point.)
+2. Set up Heroku: create a Heroku account and create a new app and select your region. 
+3. Deployment method 'Github'
+    - Click on the **Connect to GitHub** section in the deploy tab in Heroku. 
+        - Search your repository to connect with it.
+        - When your repository appears click on **connect** to connect your repository with the Heroku. 
+    - Go to the settings app in Heroku and go to **Config Vars**. Click on **Reveal Config Vars**.
+        - Enter the variables contained in your env.py file. it is about: **IP, PORT, SECRET_KEY, MONGO_URI, MONGO_DBNAME**
+4. Push the requirements.txt and Procfile to repository. 
+     ```
+    $ git add requirements.txt
+    $ git commit -m "Add requirements.txt"
+
+    $ git add Procfile 
+    $ git commit -m "Add Procfile"
+    ```
+5. Automatic deployment: Go to the deploy tab in Heroku and scroll down to **Aotmatic deployments**. Click on **Enable Automatic Deploys**. By **Manual deploy** click on **Deploy Branch**.
+
+Heroku will receive the code from Github and host the app using the required packages. 
+Click on **Open app** in the right corner of your Heroku account. The app wil open and the live link is available from the address bar. 
+
 
 **To run the project locally**
 
