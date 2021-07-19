@@ -4,17 +4,17 @@
 
 ## Contents 
 
-1.  [Code validation](#code-validation)
-2.  [Browser compatibility](#browser-compatibility)
+1.  [Code Validation](#code-validation)
+2.  [Browser Compatibility](#browser-compatibility)
 3.  [Responsiveness](#browser-compatibility)
-4.  [Lighthouse reports](#lighthouse-reports)
-5.  [User story testiing](#user-story-testing)
-6.  [Defensive design](#defensive-testing)
-7.  [Bugs & Reolution](#bugs)
+4.  [Lighthouse Reports](#lighthouse-reports)
+5.  [User Story Testiing](#user-story-testing)
+6.  [Defensive Design](#defensive-testing)
+7.  [Bugs & Reolution](#bugs-resolution)
 
 ---
 
-## 1. Code validation
+## 1. Code Validation
  - **[HTML Validator](https://validator.w3.org/):**
     - ...
 
@@ -29,7 +29,7 @@
 
 ---
 
-## 2. Browser compatibility 
+## 2. Browser Compatibility 
 - Responsiveness of the site has been tested with [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools) and [Responsive Design Checker](https://www.responsivedesignchecker.com/).
 - The site has been tested on the following devices: 
     - Desktop: 1024px, 1366px, 1440px, 1600px and 1680px. 
@@ -47,12 +47,12 @@
 
 --- 
 
-## 4. Lighthouse reports
+## 4. Lighthouse Reports
 ![Browser compatibility](testing-files/browser-compatibility.png)
 
 --- 
 
-## 5. Testing user stories 
+## 5. Testing User Stories 
 
 ### Website Owner
 
@@ -85,7 +85,7 @@
 
 ---
 
-## 6. Defensive design 
+## 6. Defensive Design 
 
 1. When deleting routes, cycling tips or categories on the site a modal will appear where the user has to confirm that they want to delete the item. Once they have confirmed then the item will be deleted.
 
