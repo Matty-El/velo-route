@@ -21,6 +21,17 @@
     font-size: 0.8rem;
 }
 
+/*------------------------------------- text */
+
+.divert-text {
+    color: #263238;
+    font-size: 1.5rem;
+}
+
+.footer {
+    color: #fafafa;
+}
+
 /*------------------------------------- general */
 #body {
     font-family: 'Roboto' sans-serif !important;
@@ -49,13 +60,11 @@ main {
     max-width: 400px;
 }
 
-.link-text {
-    text-decoration: underline;
-}
 /*------------------------------------- cards */
 
 .card-content {
     height: 500px;
+    color: #263238;
 }
 
 .card-action-home {
@@ -89,15 +98,23 @@ nav .sidenav-trigger i {
     margin-top: 20px;
 }
 
+.sidenav li>a {
+    color: #263238;
+}
+
 .navbar-li {
     padding-top: 20px;
+}
+
+nav ul a {
+    color: #fafafa;
 }
 
 #logo {
     margin-top: 20px;
 }
 
-/*------------------------------------- homepage */
+/*------------------------------------- home page */
 #hero-image {
     background: url("https://i.postimg.cc/rmNDq4C7/pexels-pixabay-163305.jpg");
     background-size: cover;
@@ -126,8 +143,6 @@ nav .sidenav-trigger i {
 #join-us-button {
     margin-top: 50px;
 }
-
-
 
 /*------------------------------------- search */
 

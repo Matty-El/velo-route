@@ -120,7 +120,7 @@ A simple VeloRoute logo was created using Canva.
 
 #### Colours
 
-A simple colour palette using #263238 for navigation and footer backgrounds and #fafafa for text to provide a good contrast whilst avoiding the potential eyestrain of using pure black and white. Images are used to add colour to the website.
+A simple colour palette using #263238 for navigation and footer backgrounds and #fafafa for text to provide a good contrast whilst avoiding the potential eyestrain of using pure black and white. Images are used to add colour to the website. All icons with the exception of the social media icons use colour #607d8b. Social media icons are #fafafa.
 
 #### Typography
 

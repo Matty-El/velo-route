@@ -9,7 +9,7 @@
             <!-- category selector-->
             <div class="row">
                 <div class="input-field col s12">
-                    <i class="fas fa-bicycle prefix blue-grey-text darken-5"></i>
+                    <i class="fas fa-bicycle prefix blue-grey-text"></i>
                     <select id="category_name" name="category_name" class="validate" required>
                         <option value="" disabled>Choose category</option>
                         {% for category in categories %}
@@ -26,7 +26,7 @@
             <!-- route difficulty -->
             <div class="row">
                 <div class="input-field col s12">
-                    <i class="fas fa-dumbbell prefix blue-grey-text darken-5"></i>
+                    <i class="fas fa-dumbbell prefix blue-grey-text"></i>
                     <select id="route_difficulty" name="route_difficulty" class="validate" required>
                         <option value="" disabled>Choose category</option>
                         {% for difficulty_level in difficulty_levels %}
@@ -45,7 +45,7 @@
             <!-- route name -->
             <div class="row">
                 <div class="input-field col s12">
-                    <i class="fas fa-map-signs prefix blue-grey-text darken-5"></i>
+                    <i class="fas fa-map-signs prefix blue-grey-text"></i>
                     <input id="route_name" name="route_name" minlength="10" maxlength="60" type="text"
                         value="{{- route.route_name -}}" class="materialize-textarea validate" required>
                     <label for="route_name">Route Name</label>
@@ -54,7 +54,7 @@
             <!-- route image -->
             <div class="row">
                 <div class="input-field col s12">
-                    <i class="fas fa-image prefix blue-grey-text darken-5"></i>
+                    <i class="fas fa-image prefix blue-grey-text"></i>
                     <input id="route_image" name="route_image" minlength="2" maxlength="200" type="text"
                         value="{{- route.route_image -}}" class="materialize-textarea validate" required>
                     <label for="route_image">Route Image</label>
@@ -63,7 +63,7 @@
             <!-- route description -->
             <div class="row">
                 <div class="input-field col s12">
-                    <i class="fas fa-align-left prefix blue-grey-text darken-5"></i>
+                    <i class="fas fa-align-left prefix blue-grey-text"></i>
                     <input id="route_description" name="route_description" minlength="10" maxlength="300" type="text" value="{{- route.route_description -}}" class="materialize-textarea validate" required>
                     <label for="route_description">Route Description</label>
                 </div>
@@ -71,7 +71,7 @@
             <!-- route distance -->
             <div class="row">
                 <div class="input-field col s12">
-                    <i class="fas fa-route prefix blue-grey-text darken-5"></i>
+                    <i class="fas fa-route prefix blue-grey-text"></i>
                     <input id="route_distance" name="route_distance" minlength="1" maxlength="10" type="text" value="{{- route.route_distance -}}" class="materialize-textarea validate" required>
                     <label for="route_distance">Route Distance</label>
                 </div>
@@ -79,7 +79,7 @@
             <!-- route link -->
             <div class="row">
                 <div class="input-field col s12">
-                    <i class="fas fa-link prefix blue-grey-text darken-5"></i>
+                    <i class="fas fa-link prefix blue-grey-text"></i>
                     <input id="route_link" name="route_link" minlength="1" maxlength="200" type="text" value="{{- route.route_link -}}"
                         class="materialize-textarea validate" required>
                     <label for="route_link">Route Link</label>
