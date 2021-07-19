@@ -321,7 +321,7 @@ def delete_cycling_tip(cycling_tip_id):
         if session["user"] == "admin":
             mongo.db.cycling_tips.remove({"_id": ObjectId(cycling_tip_id)})
             flash("Cycling Tip Deleted")
-            return redirect(url_for("profile", username=session['user']))
+            return redirect(url_for("get_cycling_tips"))
         else:
             # display 403 error page
             flash("You have tried to access an admin only page.")

@@ -16,15 +16,27 @@
   <div class="row">
     {% for category in categories %}
     <div class="col s8 offset-s2 m4">
-      <div class="card card-categoriesgrey lighten-5 center-align z-depth-4">
+      <div class="card card-categories grey lighten-5 center-align z-depth-4">
         <div class="card-content-category blue-grey-text darken-5">
           <span class="card-title valign">{{ category.category_name }}</span>
         </div>
         <div class="card-action card-action-categories">
           <a href="{{ url_for('delete_category', category_id=category._id) }}"
-            class="btn-small red accent-4 waves-effect">Delete</a>
+            class="btn-small red accent-4 waves-effect modal-trigger" data-target="delete-category-modal">Delete</a>
           <a href="{{ url_for('edit_category', category_id=category._id) }}"
             class="btn-small cyan darken-2 waves-effect waves-effect">Edit</a>
+        </div>
+      </div>
+      <div id="delete-category-modal" class="modal">
+        <div class="modal-content s4">
+          <h5>Delete Route Category</h5>
+          <p>Are you sure you want to permanently delete this route category?</p>
+        </div>
+        <div class="modal-footer">
+          <a href="{{ url_for('get_cycling_tips') }}"
+            class="modal-close btn-small cyan darken-2 waves-effect">Cancel</a>
+          <a href="{{ url_for('delete_category', category_id=category._id) }}"
+            class="modal-close btn-small red accent-4 waves-effect">Delete</a>
         </div>
       </div>
     </div>
@@ -51,9 +63,22 @@
         </div>
         <div class="card-action card-action-categories">
           <a href="{{ url_for('delete_cycling_tip_category', cycling_tip_category_id=cycling_tip_category._id) }}"
-            class="btn-small red accent-4 waves-effect">Delete</a>
+            class="btn-small red accent-4 waves-effect modal-trigger"
+            data-target="delete-cycling-tip-category-modal">Delete</a>
           <a href="{{ url_for('edit_cycling_tip_category', cycling_tip_category_id=cycling_tip_category._id) }}"
             class="btn-small cyan darken-2 waves-effect">Edit</a>
+        </div>
+      </div>
+      <div id="delete-cycling-tip-category-modal" class="modal">
+        <div class="modal-content s4">
+          <h5>Delete Cycling Tip Category</h5>
+          <p>Are you sure you want to permanently delete this cycling tip category?</p>
+        </div>
+        <div class="modal-footer">
+          <a href="{{ url_for('get_cycling_tips') }}"
+            class="modal-close btn-small cyan darken-2 waves-effect">Cancel</a>
+          <a href="{{ url_for('delete_cycling_tip_category', cycling_tip_category_id=cycling_tip_category._id) }}"
+            class="modal-close btn-small red accent-4 waves-effect">Delete</a>
         </div>
       </div>
     </div>
@@ -79,9 +104,23 @@
           <span class="card-title">{{ difficulty_level.route_difficulty }}</span>
         </div>
         <div class="card-action card-action-categories">
-          <a href="{{ url_for('delete_difficulty_level', difficulty_level_id=difficulty_level._id) }}"class="btn-small red accent-4 waves-effect">Delete</a>
+          <a href="{{ url_for('delete_difficulty_level', difficulty_level_id=difficulty_level._id) }}"
+            class="btn-small red accent-4 waves-effect modal-trigger"
+            data-target="delete-difficulty-level-modal">Delete</a>
           <a href="{{ url_for('edit_difficulty_level', difficulty_level_id=difficulty_level._id) }}"
             class="btn-small cyan darken-2 waves-effect">Edit</a>
+        </div>
+      </div>
+      <div id="delete-difficulty-level-modal" class="modal">
+        <div class="modal-content s4">
+          <h5>Delete Difficulty Level</h5>
+          <p>Are you sure you want to permanently delete this difficulty level?</p>
+        </div>
+        <div class="modal-footer">
+          <a href="{{ url_for('get_cycling_tips') }}"
+            class="modal-close btn-small cyan darken-2 waves-effect">Cancel</a>
+          <a href="{{ url_for('delete_difficulty_level', difficulty_level_id=difficulty_level._id) }}"
+            class="modal-close btn-small red accent-4 waves-effect">Delete</a>
         </div>
       </div>
     </div>
