@@ -11,6 +11,7 @@
 
 .input-field>label {
      font-size: 0.75rem;
+     color: #607d8b;
 }
 
 #add-category-label {
@@ -19,6 +20,10 @@
 
 #search-label {
     font-size: 0.8rem;
+}
+
+input {
+    color: #263238;
 }
 
 /*------------------------------------- text */
@@ -69,6 +74,7 @@ main {
 
 .card-action-home {
     height: 100px;
+    font-size: 1rem;
 }
 
 /*.card {
@@ -128,12 +134,8 @@ nav ul a {
     padding-top: 15%;
     padding-left: 55%;
     margin-bottom: 0;
+    color: #fafafa;
 
-}
-
-#sub-tagline {
-    padding-left: 55%;
-    margin-top: 0;
 }
 
 #home-routes-section {
