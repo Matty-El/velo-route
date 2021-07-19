@@ -52,7 +52,9 @@
 
 --- 
 
-## 5. Testing User Stories 
+## 5. Testing User Stories
+
+The user stories below have all been tested against defined acceptance criteria. The full test results for all user stories are detailed in attached ![testing report](testing-files/browser-compatibility.png).
 
 ### Website Owner
 
@@ -73,14 +75,12 @@
 -   As a user, I want my routes to be displayed on my profile page so that I can see routes I have previosuly submitted.
 -   As a user, I want to be able to edit or delete routes that I have previously added to the VeloRoute.
 -   As a user, I want to be able to view cycling tips that have been added to VeloRoute so that I can find tips to help me with my cycling.
--   As a user, I want to be able to rate cycling routes that have been added to the website.
--   As a user, I want to be able to follow a link to cycling routes that have been added to VeloRoute so that I can view the
-    cycling route on platforms such as Strava.
+-   As a user, I want to be able to follow a link to cycling routes that have been added to VeloRoute so that I can view the cycling route on platforms such as Strava.
 
 ### Admin Users
 
 -   As an admin user, I want to be able to log in to VeloRoute and have access to the same functionality that a standard website user has.
--   As an admin user, I want to be able to edit cycling route categories.
+-   As an admin user, I want to be able to edit cycling route, cycling tip and difficulty level categories.
 -   As an admin user I want to be able to edit cycling tips so that I can add or delete cycling tips.
 
 ---

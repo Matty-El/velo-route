@@ -77,29 +77,27 @@ main {
 /*------------------------------------- cards */
 
 .card-content {
-    height: 500px;
+    height: 600px;
     color: #263238;
 }
 
-.card-action-home {
-    height: 100px;
+.card-action {
+    height: 75px;
     font-size: 1rem;
 }
 
-/*.card {
-    border-radius: 10px;
-}*/
-
-#routes-description {
-    height: 175px;
+#card-description {
+    height: 200px;
 }
 
-#routes-name {
-    height: 20px;
+#card-name {
+    height: 75px;
+    padding-bottom: 10px;
 }
 
-.card-content-category {
+#card-buttons {
     height: 50px;
+    padding-bottom: 10px;
 }
 
 /*------------------------------------- navbar */

@@ -120,7 +120,7 @@ A simple VeloRoute logo was created using Canva.
 
 #### Colours
 
-A simple colour palette using #263238 for navigation and footer backgrounds and #fafafa for text to provide a good contrast whilst avoiding the potential eyestrain of using pure black and white. Images are used to add colour to the website. All icons with the exception of the social media icons use colour #607d8b. Social media icons are #fafafa.
+A simple colour palette using #263238 for navigation and footer backgrounds and #fafafa for text to provide a good contrast whilst avoiding the potential eyestrain of using pure black and white. Images are used to add colour to the website. All icons with the exception of the social media icons use colour #607d8b. Social media icons use #fafafa.
 
 #### Typography
 
@@ -136,22 +136,25 @@ Raleway font has been utilised for all text across the website. This is a simple
 
 #### Landing Page
 
--   VeloRoute logo.
--   A navigation menu on the top right of the website hero section that allows the user to navigate the website by clicking the links or open a newsletter form by selecting the Newsletter menu item. The navigation menu collapses to a burger icon on smaller devices.
--   The newsletter form can be populated with mandatory first name, last name, email address and race distance preference to sign up to the Trail Running UK newsletter. The newsletter form is integrated with EmailJS and sends a confirmation email to the user to say they are now signed up
+-   VeloRoute logo that links to the home page.
+-   A navigation menu on the top right of the website hero section that allows the user to navigate the website by clicking the navigation links. The navigation menu collapses to a burger icon on smaller devices.
+-   A call to action button prompting users to join us at VeloRoute.
+-   The six most recently added routes are displayed on medium and larger devices and the three most recently added routes are displayed on small devices.
 
-*Note: The final version of the newsletter form will submit data to a back-end database.*
+#### Join Us Page
 
-#### Register Page
-
--   This section of contains a slideshow with images of trail running locations around the UK and text highlighting some of the key benefits of trail running as a sport and a quotes section for inspiration.
+-   The Join Us page has a form for the user to provide their details so that the user can be registered.
+-   Upon registration the user's details are stored in the MongoDB database with the password hashed for additional security.
 
 #### Log In Page
 
--   Buttons to select trail running locations in the UK and running clubs and sports stores local to the user.
--   The Best Trails in Your Region button populates trail running locations around the UK with a Google maps API integration displaying markers and marker clusters. Information about trail running is populated on clicking the button.
--   The Local Running Clubs button geolocates the user via a Google Maps API integration and populates the map with running clubs local to the user. Information about the benefits of joining a running club is populated on clicking the button.
--   The Local Sports Stores button geolocates the user via a Google Maps API integration and populates the map with sports stores local to the user. Information about the gear required to start trail running is populated on clicking the button.
+-   The log in page provides a form for the user to log in to VeloRoute with the details they provided on registration.
+-   The user is directed to their profile page when they log in.
+
+#### Profile Page
+
+-   The profile page displays the logged in user's profile details and the routes they have added which are displayed with the most recently added listed first.
+-   The routes dsplyed can be edited by selecting the edit button or they can be deleted.
 
 #### Routes Page
 
@@ -167,11 +170,11 @@ Raleway font has been utilised for all text across the website. This is a simple
 
 -   This section has copyright wording and links to Facebook, Twitter, YouTube, Instagram and Pinterest social media sites.
 
-_Note: The social media links currently link to the social media websites and not Trail Running UK specific pages_
+_Note: The social media links currently link to the social media websites and not VeloRoute specific pages_
 
 #### Future features
 
-In future additional content will be added to the website including product reviews, race reviews and a blog related to training and races entered.
+-   The ability for users to add ratings to the routes that have been added.
 
 ---
 

@@ -37,12 +37,14 @@
           <img src="{{ route.route_image }}" alt="Route Image">
         </div>
         <div class="card-content">
-          <h6 id="routes-name"><strong>{{ route.route_name }}</strong></h6><br>
-          <p id="routes-description">{{ route.route_description}}</p><br>
+          <div>
+          <h6 id="card-name"><strong>{{ route.route_name }}</strong></h6><br>
+          </div>
+          <p id="card-description">{{ route.route_description}}</p><br>
           <p><strong>Type: </strong>{{ route.category_name }}</p><br>
-          <p><strong>Distance: </strong>{{ route.route_distance }}</p><br>
+          <p><strong>Distance: </strong>{{ route.route_distance }} km</p><br>
           <p><strong>Difficulty: </strong>{{ route.route_difficulty }}</p><br>
-          <p><strong>Added By: </strong><em>{{ route.created_by }}</em></p><br>
+          <p><strong>Created By: </strong><em>{{ route.created_by }}</em></p><br>
         </div>
         <div class="card-action">
           <a class="light-blue-text darken-2" href="{{ route.route_link }}" target="_blank">Route Link</a>

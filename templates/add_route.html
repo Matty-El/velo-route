@@ -37,8 +37,7 @@
             <div class="row">
                 <div class="input-field">
                     <i class="fas fa-map-signs prefix blue-grey-text"></i>
-                    <input id="route_name" name="route_name" minlength="5" maxlength="60" pattern="^[^\s][A-Za-z0-9\s]{5,60}$" type="text" 
-                        class="materialize-textarea validate" required>
+                    <input id="route_name" name="route_name" minlength="5" maxlength="60" pattern="^[^\s][A-Za-z0-9\s]{5,60}$" type="text" class="materialize-textarea validate" required>
                     <label for="route_name" class="routes-label">Route Name (max 70 char)</label>
                 </div>
             </div>
@@ -46,7 +45,7 @@
             <div class="row">
                 <div class="input-field">
                     <i class="fas fa-image prefix blue-grey-text"></i>
-                    <input id="route_image" name="route_image" minlength="2" maxlength="200" pattern="https?://.+" type="text" class="materialize-textarea validate" required>
+                    <input id="route_image" name="route_image" minlength="2" maxlength="200" pattern="^https?://(?:[a-z0-9\-]+\.)+[a-z]{2,6}(?:/[^/#?]+)+\.(?:jpg|jpeg|gif|png)$" type="text" class="materialize-textarea validate" required>
                     <label for="route_image" class="routes-label">Route Image (upload image URL)</label>
                 </div>
             </div>
@@ -64,7 +63,7 @@
                     <i class="fas fa-route prefix blue-grey-text"></i>
                     <input id="route_distance" name="route_distance" minlength="1" maxlength="10" pattern="^[1-9][0-9]*$" type="text"
                         class="materialize-textarea validate" required>
-                    <label for="route_distance" class="routes-label">Route Distance (distance in miles or kilometres)</label>
+                    <label for="route_distance" class="routes-label">Route Distance (distance in kilometres)</label>
                 </div>
             </div>
             <!-- route link -->
