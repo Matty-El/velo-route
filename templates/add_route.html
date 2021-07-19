@@ -37,7 +37,7 @@
             <div class="row">
                 <div class="input-field">
                     <i class="fas fa-map-signs prefix blue-grey-text"></i>
-                    <input id="route_name" name="route_name" minlength="5" maxlength="70" type="text" 
+                    <input id="route_name" name="route_name" minlength="5" maxlength="60" pattern="^[^\s][A-Za-z0-9\s]{5,60}$" type="text" 
                         class="materialize-textarea validate" required>
                     <label for="route_name" class="routes-label">Route Name (max 70 char)</label>
                 </div>
@@ -46,8 +46,7 @@
             <div class="row">
                 <div class="input-field">
                     <i class="fas fa-image prefix blue-grey-text"></i>
-                    <input id="route_image" name="route_image" minlength="2" maxlength="200" type="text"
-                        class="materialize-textarea validate" required>
+                    <input id="route_image" name="route_image" minlength="2" maxlength="200" pattern="https?://.+" type="text" class="materialize-textarea validate" required>
                     <label for="route_image" class="routes-label">Route Image (upload image URL)</label>
                 </div>
             </div>
@@ -55,8 +54,7 @@
             <div class="row">
                 <div class="input-field">
                     <i class="fas fa-align-left prefix blue-grey-text"></i>
-                    <textarea id="route_description" name="route_description" minlength="10" maxlength="300"
-                        class="materialize-textarea validate" required></textarea>
+                    <textarea id="route_description" name="route_description" minlength="10" maxlength="300" pattern="^[^\s][A-Za-z0-9\s]{10,300}$" class="materialize-textarea validate" required></textarea>
                     <label for="route_description" class="routes-label">Route Description (max 300 char)</label>
                 </div>
             </div>
@@ -64,7 +62,7 @@
             <div class="row">
                 <div class="input-field">
                     <i class="fas fa-route prefix blue-grey-text"></i>
-                    <input id="route_distance" name="route_distance" minlength="1" maxlength="10" type="text"
+                    <input id="route_distance" name="route_distance" minlength="1" maxlength="10" pattern="^[1-9][0-9]*$" type="text"
                         class="materialize-textarea validate" required>
                     <label for="route_distance" class="routes-label">Route Distance (distance in miles or kilometres)</label>
                 </div>
@@ -73,8 +71,7 @@
             <div class="row">
                 <div class="input-field">
                     <i class="fas fa-link prefix blue-grey-text"></i>
-                    <input id="route_link" name="route_link" minlength="1" maxlength="200" type="text"
-                        class="materialize-textarea validate" required>
+                    <input id="route_link" name="route_link" minlength="1" maxlength="200" type="text" pattern="https?://.+" class="materialize-textarea validate" required>
                     <label for="route_link" class="routes-label">Route Link (link to your route e.g. Strava, MapMyRide)</label>
                 </div>
             </div>

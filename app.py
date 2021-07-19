@@ -212,6 +212,7 @@ def edit_route(route_id):
 
         mongo.db.routes.update({"_id": ObjectId(route_id)}, edit)
         flash("Route Successfully Edited")
+        return redirect(url_for("profile", username=session['user']))
 
     route = mongo.db.routes.find_one({"_id": ObjectId(route_id)})
     categories = mongo.db.categories.find().sort("category_name", 1)
