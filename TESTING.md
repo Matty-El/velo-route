@@ -6,7 +6,7 @@
 
 1.  [Code Validation](#code-validation)
 2.  [Browser Compatibility](#browser-compatibility)
-3.  [Responsiveness](#browser-compatibility)
+3.  [Responsiveness](#responsiveness)
 4.  [Lighthouse Reports](#lighthouse-reports)
 5.  [User Story Testiing](#user-story-testing)
 6.  [Defensive Design](#defensive-testing)
