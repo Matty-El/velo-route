@@ -101,7 +101,12 @@ def logout():
 
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
-    # get session user's username from the database
+
+    # only users can access the profile page
+    if not session.get("user"):
+        return render_template("error_handlers/404.html")
+
+    # get session user's username and other details from the database
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
     first_name = mongo.db.users.find_one(
@@ -113,6 +118,14 @@ def profile(username):
     routes = mongo.db.routes.find().sort("_id", -1)
 
     if session["user"]:
+        # admin can view / edit all routes
+        if session["user"] == "admin":
+            routes = list(mongo.db.routes.find())
+        else:
+            # user can view / edit own routes
+            routes = list(
+                mongo.db.routes.find({"created_by": session["user"]}))
+
         return render_template("profile.html", username=username,
                                first_name=first_name, last_name=last_name,
                                email=email, routes=routes)
@@ -136,6 +149,11 @@ def route_search():
 
 @app.route("/add_route", methods=["GET", "POST"])
 def add_route():
+
+    # only users can access the add route page
+    if not session.get("user"):
+        return render_template("404.html")
+
     if request.method == "POST":
         route = {
             "category_name": request.form.get("category_name"),
@@ -150,7 +168,7 @@ def add_route():
 
         mongo.db.routes.insert_one(route)
         flash("Route Successfully Added")
-        return redirect(url_for("get_routes"))
+        return redirect(url_for("profile", username=session['user']))
 
     categories = mongo.db.categories.find().sort("category_name", 1)
     difficulty_levels = mongo.db.difficulty_levels.find().sort(
@@ -161,6 +179,10 @@ def add_route():
 
 @app.route("/edit_route/<route_id>", methods=["GET", "POST"])
 def edit_route(route_id):
+
+    # only users can access the edit route page
+    if not session.get("user"):
+        return render_template("404.html")
 
     if request.method == "POST":
         edit = {
@@ -188,6 +210,11 @@ def edit_route(route_id):
 
 @app.route("/delete_route/<route_id>")
 def delete_route(route_id):
+
+    # only users can delete a route
+    if not session.get("user"):
+        return render_template("404.html")
+
     mongo.db.routes.remove({"_id": ObjectId(route_id)})
     flash("Route Successfully Deleted")
     return redirect(url_for("profile", username=session['user']))
@@ -203,184 +230,265 @@ def get_cycling_tips():
 
 @app.route("/add_cycling_tip", methods=["GET", "POST"])
 def add_cycling_tip():
-    if request.method == "POST":
-        cycling_tip = {
-            "category_name": request.form.get("category_name"),
-            "cycling_tip_name": request.form.get("cycling_tip_name"),
-            "cycling_tip_description": request.form.get(
-                "cycling_tip_description"),
-            "cycling_tip_image": request.form.get("cycling_tip_image"),
-            "cycling_tip_link": request.form.get("cycling_tip_link"),
-            "created_by": session["user"]
-        }
-        mongo.db.cycling_tips.insert_one(cycling_tip)
-        flash("New Cycling Tip Added")
-        return redirect(url_for("get_cycling_tips"))
 
-    cycling_tip_categories = mongo.db.cycling_tip_categories.find().sort(
-        "category_name", 1)
-    return render_template("add_cycling_tip.html",
-                           cycling_tip_categories=cycling_tip_categories)
+    # admin only access
+    if session["user"] == "admin":
+        if request.method == "POST":
+            cycling_tip = {
+                "category_name": request.form.get("category_name"),
+                "cycling_tip_name": request.form.get("cycling_tip_name"),
+                "cycling_tip_description": request.form.get(
+                    "cycling_tip_description"),
+                "cycling_tip_image": request.form.get("cycling_tip_image"),
+                "cycling_tip_link": request.form.get("cycling_tip_link"),
+                "created_by": session["user"]
+            }
+            mongo.db.cycling_tips.insert_one(cycling_tip)
+            flash("New Cycling Tip Added")
+            return redirect(url_for("get_cycling_tips"))
+
+        cycling_tip_categories = mongo.db.cycling_tip_categories.find().sort(
+            "category_name", 1)
+        return render_template("add_cycling_tip.html",
+                               cycling_tip_categories=cycling_tip_categories)
+    else:
+        # display 403 error page
+        return render_template("403.html")
 
 
 @app.route("/edit_cycling_tip/<cycling_tip_id>", methods=["GET", "POST"])
 def edit_cycling_tip(cycling_tip_id):
-    if request.method == "POST":
-        submit_cycling_tip = {
-            "cycling_tip_name": request.form.get("cycling_tip_name"),
-            "cycling_tip_description": request.form.get(
-                "cycling_tip_description"),
-            "cycling_tip_image": request.form.get("cycling_tip_image"),
-            "cycling_tip_link": request.form.get("cycling_tip_link"),
-            "created_by": session["user"]
-        }
-        mongo.db.cycling_tips.update(
-            {"_id": ObjectId(cycling_tip_id)}, submit_cycling_tip)
-        flash("Cycling Tip Updated")
-        return redirect(url_for("get_cycling_tips"))
 
-    cycling_tip = mongo.db.cycling_tips.find_one(
-        {"_id": ObjectId(cycling_tip_id)})
-    cycling_tip_categories = mongo.db.cycling_tip_categories.find().sort(
-        "category_name", 1)
-    return render_template("edit_cycling_tip.html", cycling_tip=cycling_tip,
-                           cycling_tip_categories=cycling_tip_categories)
+    # admin only access
+    if session["user"] == "admin":
+        if request.method == "POST":
+            submit_cycling_tip = {
+                "cycling_tip_name": request.form.get("cycling_tip_name"),
+                "cycling_tip_description": request.form.get(
+                    "cycling_tip_description"),
+                "cycling_tip_image": request.form.get("cycling_tip_image"),
+                "cycling_tip_link": request.form.get("cycling_tip_link"),
+                "created_by": session["user"]
+            }
+            mongo.db.cycling_tips.update(
+                {"_id": ObjectId(cycling_tip_id)}, submit_cycling_tip)
+            flash("Cycling Tip Updated")
+            return redirect(url_for("get_cycling_tips"))
+
+        cycling_tip = mongo.db.cycling_tips.find_one(
+            {"_id": ObjectId(cycling_tip_id)})
+        cycling_tip_categories = mongo.db.cycling_tip_categories.find().sort(
+            "category_name", 1)
+        return render_template(
+            "edit_cycling_tip.html", cycling_tip=cycling_tip,
+            cycling_tip_categories=cycling_tip_categories)
+
+    else:
+        # display 403 error page
+        return render_template("403.html")
 
 
 @app.route("/delete_cycling_tip/<cycling_tip_id>")
 def delete_cycling_tip(cycling_tip_id):
-    mongo.db.cycling_tips.remove({"_id": ObjectId(cycling_tip_id)})
-    flash("Cycling Tip Deleted")
-    return redirect(url_for("profile", username=session['user']))
+    # admin only access
+    if session["user"] == "admin":
+        mongo.db.cycling_tips.remove({"_id": ObjectId(cycling_tip_id)})
+        flash("Cycling Tip Deleted")
+        return redirect(url_for("profile", username=session['user']))
+
+    else:
+        # display 403 error page
+        return render_template("403.html")
 
 
 # ------------------------ categories -------------------------------------- #
 @app.route("/get_categories")
 def get_categories():
-    categories = list(mongo.db.categories.find().sort("category_name", 1))
-    cycling_tip_categories = list(
-        mongo.db.cycling_tip_categories.find().sort("category_name", 1))
-    difficulty_levels = list(
-    mongo.db.difficulty_levels.find().sort("route_difficulty", 1))
-    return render_template(
-        "categories.html", categories=categories,
-        cycling_tip_categories=cycling_tip_categories, difficulty_levels=difficulty_levels)
+    # admin only access
+    if session["user"] == "admin":
+        categories = list(mongo.db.categories.find().sort("category_name", 1))
+        cycling_tip_categories = list(
+            mongo.db.cycling_tip_categories.find().sort("category_name", 1))
+        difficulty_levels = list(mongo.db.difficulty_levels.find().sort(
+                                 "route_difficulty", 1))
+        return render_template(
+            "categories.html", categories=categories,
+            cycling_tip_categories=cycling_tip_categories,
+            difficulty_levels=difficulty_levels)
+
+    else:
+        # display 403 error page
+        return render_template("403.html")
 
 
 # route categories
 @app.route("/add_category", methods=["GET", "POST"])
 def add_category():
-    if request.method == "POST":
-        category = {
-            "category_name": request.form.get("category_name")
-        }
-        mongo.db.categories.insert_one(category)
-        flash("New Route Category Added")
-        return redirect(url_for("get_categories"))
+    # admin only access
+    if session["user"] == "admin":
+        if request.method == "POST":
+            category = {
+                "category_name": request.form.get("category_name")
+            }
+            mongo.db.categories.insert_one(category)
+            flash("New Route Category Added")
+            return redirect(url_for("get_categories"))
 
-    return render_template("add_category.html")
+        return render_template("add_category.html")
+
+    else:
+        # display 403 error page
+        return render_template("403.html")
 
 
 @app.route("/edit_category/<category_id>", methods=["GET", "POST"])
 def edit_category(category_id):
-    if request.method == "POST":
-        submit_route_category = {
-            "category_name": request.form.get("category_name")
-        }
-        mongo.db.categories.update({"_id": ObjectId(category_id)},
-                                   submit_route_category)
-        flash("Category Updated")
-        return redirect(url_for("get_categories"))
+    # admin only access
+    if session["user"] == "admin":
+        if request.method == "POST":
+            submit_route_category = {
+                "category_name": request.form.get("category_name")
+            }
+            mongo.db.categories.update({"_id": ObjectId(category_id)},
+                                       submit_route_category)
+            flash("Category Updated")
+            return redirect(url_for("get_categories"))
 
-    category = mongo.db.categories.find_one({"_id": ObjectId(category_id)})
-    return render_template("edit_category.html", category=category)
+        category = mongo.db.categories.find_one({"_id": ObjectId(category_id)})
+        return render_template("edit_category.html", category=category)
+
+    else:
+        # display 403 error page
+        return render_template("403.html")
 
 
 @app.route("/delete_category/<category_id>")
 def delete_category(category_id):
-    mongo.db.categories.remove({"_id": ObjectId(category_id)})
-    flash("Category Deleted")
-    return redirect(url_for("get_categories"))
+    # admin only access
+    if session["user"] == "admin":
+        mongo.db.categories.remove({"_id": ObjectId(category_id)})
+        flash("Category Deleted")
+        return redirect(url_for("get_categories"))
+
+    else:
+        # display 403 error page
+        return render_template("403.html")
 
 
 # cycling tip categories
 @app.route("/add_cycling_tip_category", methods=["GET", "POST"])
 def add_cycling_tip_category():
-    if request.method == "POST":
-        cycling_tip_category = {
-            "category_name": request.form.get("category_name")
-        }
-        mongo.db.cycling_tip_categories.insert_one(cycling_tip_category)
-        flash("New Cycling Tip Category Added")
-        return redirect(url_for("get_categories"))
+    # admin only access
+    if session["user"] == "admin":
+        if request.method == "POST":
+            cycling_tip_category = {
+                "category_name": request.form.get("category_name")
+            }
+            mongo.db.cycling_tip_categories.insert_one(cycling_tip_category)
+            flash("New Cycling Tip Category Added")
+            return redirect(url_for("get_categories"))
 
-    return render_template("add_cycling_tip_category.html")
+        return render_template("add_cycling_tip_category.html")
+
+    else:
+        # display 403 error page
+        return render_template("403.html")
 
 
 @app.route("/edit_cycling_tip_category/<cycling_tip_category_id>",
            methods=["GET", "POST"])
 def edit_cycling_tip_category(cycling_tip_category_id):
-    if request.method == "POST":
-        submit_cycling_tip_category = {
-            "category_name": request.form.get("category_name")
-        }
-        mongo.db.categories.update({"_id": ObjectId(cycling_tip_category_id)},
-                                   submit_cycling_tip_category)
-        flash("Cycling Tip Category Updated")
-        return redirect(url_for("get_categories"))
+    # admin only access
+    if session["user"] == "admin":
+        if request.method == "POST":
+            submit_cycling_tip_category = {
+                "category_name": request.form.get("category_name")
+            }
+            mongo.db.categories.update({"_id": ObjectId(
+                cycling_tip_category_id)}, submit_cycling_tip_category)
+            flash("Cycling Tip Category Updated")
+            return redirect(url_for("get_categories"))
 
-    cycling_tip_category = mongo.db.cycling_tip_categories.find_one(
-        {"_id": ObjectId(cycling_tip_category_id)})
-    return render_template("edit_cycling_tip_category.html",
-                           cycling_tip_category=cycling_tip_category)
+        cycling_tip_category = mongo.db.cycling_tip_categories.find_one(
+            {"_id": ObjectId(cycling_tip_category_id)})
+        return render_template("edit_cycling_tip_category.html",
+                               cycling_tip_category=cycling_tip_category)
+
+    else:
+        # display 403 error page
+        return render_template("403.html")
 
 
 @app.route("/delete_cycling_tip_category/<cycling_tip_category_id>")
 def delete_cycling_tip_category(cycling_tip_category_id):
-    mongo.db.cycling_tip_categories.remove(
-        {"_id": ObjectId(cycling_tip_category_id)})
-    flash("Cycling Tip Category Deleted")
-    return redirect(url_for("get_categories"))
+    # admin only access
+    if session["user"] == "admin":
+        mongo.db.cycling_tip_categories.remove(
+            {"_id": ObjectId(cycling_tip_category_id)})
+        flash("Cycling Tip Category Deleted")
+        return redirect(url_for("get_categories"))
+
+    else:
+        # display 403 error page
+        return render_template("403.html")
 
 
 # difficulty level categories
 @app.route("/add_difficulty_level", methods=["GET", "POST"])
 def add_difficulty_level():
-    if request.method == "POST":
-        difficulty_level = {
-            "route_difficulty": request.form.get("route_difficulty")
-        }
-        mongo.db.difficulty_levels.insert_one(difficulty_level)
-        flash("New Difficulty Level Added")
-        return redirect(url_for("get_categories"))
+    # admin only access
+    if session["user"] == "admin":
+        if request.method == "POST":
+            difficulty_level = {
+                "route_difficulty": request.form.get("route_difficulty")
+            }
+            mongo.db.difficulty_levels.insert_one(difficulty_level)
+            flash("New Difficulty Level Added")
+            return redirect(url_for("get_categories"))
 
-    return render_template("add_difficulty_level.html")
+        return render_template("add_difficulty_level.html")
+
+    else:
+        # display 403 error page
+        return render_template("403.html")
 
 
 @app.route("/edit_difficulty_level/<difficulty_level_id>",
            methods=["GET", "POST"])
 def edit_difficulty_level(difficulty_level_id):
-    if request.method == "POST":
-        submit_difficulty_level = {
-            "route_difficulty": request.form.get("route_difficulty")
-        }
-        mongo.db.difficulty_levels.update({"_id": ObjectId(
-            difficulty_level_id)}, submit_difficulty_level)
-        flash("Difficulty Level Updated")
-        return redirect(url_for("get_categories"))
+    # admin only access
+    if session["user"] == "admin":
+        if request.method == "POST":
+            submit_difficulty_level = {
+                "route_difficulty": request.form.get("route_difficulty")
+            }
+            mongo.db.difficulty_levels.update({"_id": ObjectId(
+                difficulty_level_id)}, submit_difficulty_level)
+            flash("Difficulty Level Updated")
+            return redirect(url_for("get_categories"))
 
-    difficulty_level = mongo.db.difficulty_levels.find_one(
-        {"_id": ObjectId(difficulty_level_id)})
-    return render_template("edit_difficulty_level.html",
-                           difficulty_level=difficulty_level)
+        difficulty_level = mongo.db.difficulty_levels.find_one(
+            {"_id": ObjectId(difficulty_level_id)})
+        return render_template("edit_difficulty_level.html",
+                               difficulty_level=difficulty_level)
+
+    else:
+        # display 403 error page
+        return render_template("403.html")
 
 
 @app.route("/delete_difficulty_level/<difficulty_level_id>")
 def delete_difficulty_level(difficulty_level_id):
-    mongo.db.difficulty_levels.remove(
-        {"_id": ObjectId(difficulty_level_id)})
-    flash("Difficulty Level Deleted")
-    return redirect(url_for("get_categories"))
+    # admin only access
+    if session["user"] == "admin":
+        mongo.db.difficulty_levels.remove(
+            {"_id": ObjectId(difficulty_level_id)})
+        flash("Difficulty Level Deleted")
+        return redirect(url_for("get_categories"))
+
+    else:
+        # display 403 error page
+        return render_template("403.html")
 
 
 # ------------------------ error handlers ---------------------------------- #

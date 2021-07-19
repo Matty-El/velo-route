@@ -27,7 +27,6 @@
 <div class="container">
   <div class="row">
     {% for route in routes %}
-    {% if session.user|lower == route.created_by|lower %}
     <div class="col s12 m12 l6">
       <div class="card grey lighten-5 z-depth-4">
         <div class="card-image">
@@ -39,7 +38,7 @@
           <p><strong>Type: </strong>{{ route.category_name }}</p><br>
           <p><strong>Distance: </strong>{{ route.route_distance }}</p><br>
           <p><strong>Difficulty: </strong>{{ route.route_difficulty }}</p><br>
-          <p><strong>Added By: </strong><em>{{ route.created_by }}</em></p><br>
+          <p><strong>Created By: </strong><em>{{ route.created_by }}</em></p><br>
           <div>
             <a href="{{ url_for('delete_route', route_id=route._id) }}"
               class="btn-small red accent-4 waves-effect modal-trigger" data-target="delete-route-modal">Delete</a>
@@ -62,7 +61,6 @@
         <a href="{{ url_for('delete_route', route_id=route._id) }}" class="modal-close btn-small red accent-4 waves-effect">Delete</a>
       </div>
     </div>
-    {% endif %}
     {% endfor %}
   </div>
 </div>
