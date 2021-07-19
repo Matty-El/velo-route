@@ -162,6 +162,7 @@ def add_route():
 
     # only users can access the add route page
     if not session.get("user"):
+        flash("Please join VeloRoute for full user access.")
         return render_template("403.html")
 
     if request.method == "POST":
@@ -192,6 +193,7 @@ def edit_route(route_id):
 
     # only users can access the edit route page
     if not session.get("user"):
+        flash("Please join us for full user access.")
         return render_template("403.html")
 
     if request.method == "POST":
@@ -223,6 +225,7 @@ def delete_route(route_id):
 
     # only users can delete a route
     if not session.get("user"):
+        flash("Please join us for full user access.")
         return render_template("403.html")
 
     mongo.db.routes.remove({"_id": ObjectId(route_id)})
@@ -263,6 +266,7 @@ def add_cycling_tip():
                                cycling_tip_categories=cycling_tip_categories)
     else:
         # display 403 error page
+        flash("You have tried to access an admin only page.")
         return render_template("403.html")
 
 
@@ -295,6 +299,7 @@ def edit_cycling_tip(cycling_tip_id):
 
     else:
         # display 403 error page
+        flash("You have tried to access an admin only page.")
         return render_template("403.html")
 
 
@@ -308,6 +313,7 @@ def delete_cycling_tip(cycling_tip_id):
 
     else:
         # display 403 error page
+        flash("You have tried to access an admin only page.")
         return render_template("403.html")
 
 
@@ -328,6 +334,7 @@ def get_categories():
 
     else:
         # display 403 error page
+        flash("You have tried to access an admin only page.")
         return render_template("403.html")
 
 
@@ -348,6 +355,7 @@ def add_category():
 
     else:
         # display 403 error page
+        flash("You have tried to access an admin only page.")
         return render_template("403.html")
 
 
@@ -369,6 +377,7 @@ def edit_category(category_id):
 
     else:
         # display 403 error page
+        flash("You have tried to access an admin only page.")
         return render_template("403.html")
 
 
@@ -382,6 +391,7 @@ def delete_category(category_id):
 
     else:
         # display 403 error page
+        flash("You have tried to access an admin only page.")
         return render_template("403.html")
 
 
@@ -402,6 +412,7 @@ def add_cycling_tip_category():
 
     else:
         # display 403 error page
+        flash("You have tried to access an admin only page.")
         return render_template("403.html")
 
 
@@ -426,6 +437,7 @@ def edit_cycling_tip_category(cycling_tip_category_id):
 
     else:
         # display 403 error page
+        flash("You have tried to access an admin only page.")
         return render_template("403.html")
 
 
@@ -440,6 +452,7 @@ def delete_cycling_tip_category(cycling_tip_category_id):
 
     else:
         # display 403 error page
+        flash("You have tried to access an admin only page.")
         return render_template("403.html")
 
 
