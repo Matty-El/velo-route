@@ -192,7 +192,7 @@ The following technologies have been used to complete the UX design, capture use
 ### Frameworks - Libraries - Other
 
 -   [Materialize](https://getbootstrap.com/) - utilised for the front-end design framework.
-- [MongoDB](https://www.mongodb.com/) - used as the database for the project.
+-   [MongoDB](https://www.mongodb.com/) - used as the database for the project.
 -   [GitHub](https://github.com/) - for hosting the website repository.
 -   [GitPod](https://gitpod.io/) - used as the development environment for the website.
 -   [Google Fonts](https://fonts.google.com/) - used to source the Raleway font used throughout the website.
@@ -206,74 +206,17 @@ The following technologies have been used to complete the UX design, capture use
 ### Testing tools used
 
 -   [Google Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools) - used to edit changes prior to implementing the code changes, to diagnose problems and for performance, accessibility, best practice and search engine optimisation testing.
-- [Autoprefixer](https://autoprefixer.github.io/) - Autoprefixer is used to parse the CSS and to add vendor prefixes to CSS rules. 
+-   [Autoprefixer](https://autoprefixer.github.io/) - Autoprefixer is used to parse the CSS and to add vendor prefixes to CSS rules. 
 -   [Markup validation service](https://validator.w3.org/) - for the validation of HTML5 code.
 -   [CSS validation service](https://jigsaw.w3.org/css-validator/) - for the validation of the CSS3 code.
-- [JShint](https://jshint.com/) - used to check for errors in the JavaScript code. 
-- [PEP8](http://pep8online.com/) - used to check for errors in the Python code.
+-   [JShint](https://jshint.com/) - used to check for errors in the JavaScript code. 
+-   [PEP8](http://pep8online.com/) - used to check for errors in the Python code.
 
 ---
 
 ## Testing
 
-### Functionality Testing
-
-Each user story has been tested based on the acceptance criteria defined in the attached test plan below. The user stories have been written from the perspective of the website owner, the website user and website administration user.
-
-[User Acceptance Testing](https://github.com/Matty-El/velo-route/testing-files/veloroute-user-acceptance-criteria-testing.pdf).
-
-**For test results see the separate [testing document](TESTING.md)**
-
-### Responsiveness
-
-The website was tested for responsiveness using [Google Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools) and [Responsive Design Checker](https://www.responsivedesignchecker.com/).
-
-Results:
-
-[Responsiveness](https://matty-el.github.io/trail-running-uk/testing-files/trail-running-uk-responsiveness-testing.pdf).
-
-### Code Validation
-
-**HTML**
-
-The HTML code was validated using the [W3.org markup validation service](https://validator.w3.org/). The code passed validation with no errors.
-
-![HTML Validator](testing-files/html-validation.png)
-
-**CSS**
-
-The CSS code was validated using the [W3.org CSS validation service](https://jigsaw.w3.org/css-validator/). The code passed validation with no errors.
-
-![CSS Validator](testing-files/css-validation.png)
-
-**JQuery**
-
-The JavaScript code was validated using the [Beautify Tools JavaScript validator](https://beautifytools.com/javascript-validator.php).
-
-The validator did not highlight any significant errors.
-
-### Compatibility Testing
-
-The site was tested across multiple devices and screen sizes and all expected functionality worked with some minor issues detailed below.
-
-Issues discovered during compatibility testing:
-
--   The parallax effect does not work on iPhones and iPads so a decision was made to remove this so that there is a consistent experience across devices.
-
-#### Performance, Accessibility, Best Practice and SEO Testing
-
-The website has been tested using the Google Developer Tools Lighthouse feature for both mobile and desktop. Performance issues were identified with desktop and particularly mobile performance - these issues will need to be addressed in future.
-
-**Desktop:**
-
-[Performance 93%, Accessibility 100%, Best Practices 93%, SEO 100%](https://matty-el.github.io/trail-running-uk/testing-files/desktop-lighthouse-report.html).
-
-
-**Mobile:**
-
-[Performance 63%, Accessibility 100%, Best Practices 93%, SEO 100%](https://matty-el.github.io/trail-running-uk/testing-files/mobile-lighthouse-report.html).
-
-The performance score for mobile devices is sub-optimal and improvements will be required to improve performance in this area.
+Full details of testing are contained in the [testing document](README.md).
 
 ### Deployment
 
@@ -360,7 +303,7 @@ To clone this project from GitHub.
 
 ### Content
 
-All text content included in the Urban Paws website is my own with race information researched from https://ultra-x.co/best-and-most-beautiful-ultra-marathons-in-the-world/.
+All text content included in the Urban Paws website is my own.
 
 Comments have been included in the code for code that has been sourced and adapted for this website.
 
