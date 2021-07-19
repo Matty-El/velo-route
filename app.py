@@ -34,61 +34,71 @@ def index():
 # ------------------------ users ------------------------------------------- #
 @app.route("/join_us", methods=["GET", "POST"])
 def join_us():
-    if request.method == "POST":
-        # check if username exists in database
-        existing_user = mongo.db.users.find_one(
-            {"username": request.form.get("username").lower()})
-
-        if existing_user:
-            flash("Username already exists")
-            return redirect(url_for("join_us"))
-
-        join_us = {
-            "username": request.form.get("username").lower(),
-            "first_name": request.form.get("first_name"),
-            "last_name": request.form.get("last_name"),
-            "email": request.form.get("email"),
-            # remember to add password confirmation
-            # remember to add user type
-            "password": generate_password_hash(request.form.get("password"))
-        }
-        mongo.db.users.insert_one(join_us)
-
-        # add the new user into session cookie
-        session["user"] = request.form.get("username").lower()
-        flash("Welcome to VeloRoute")
+    # check if user is logged in
+    if session.get("user"):
+        # redirect to profile
         return redirect(url_for("profile", username=session["user"]))
+    else:
+        if request.method == "POST":
+            # check if username exists in database
+            existing_user = mongo.db.users.find_one(
+                {"username": request.form.get("username").lower()})
 
-    return render_template("join_us.html")
+            if existing_user:
+                flash("Username already exists")
+                return redirect(url_for("join_us"))
+
+            join_us = {
+                "username": request.form.get("username").lower(),
+                "first_name": request.form.get("first_name"),
+                "last_name": request.form.get("last_name"),
+                "email": request.form.get("email"),
+                # remember to add password confirmation
+                # remember to add user type
+                "password": generate_password_hash(request.form.get("password"))
+            }
+            mongo.db.users.insert_one(join_us)
+
+            # add the new user into session cookie
+            session["user"] = request.form.get("username").lower()
+            flash("Welcome to VeloRoute")
+            return redirect(url_for("profile", username=session["user"]))
+
+        return render_template("join_us.html")
 
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
-    if request.method == "POST":
-        # check is the username exists in the database
-        existing_user = mongo.db.users.find_one(
-            {"username": request.form.get("username").lower()})
+    # check if user is logged in
+    if session.get("user"):
+        # redirect to profile
+        return redirect(url_for("profile", username=session["user"]))
+    else:
+        if request.method == "POST":
+            # check is the username exists in the database
+            existing_user = mongo.db.users.find_one(
+                {"username": request.form.get("username").lower()})
 
-        if existing_user:
-            # check that hashed password is the password entered by user
-            if check_password_hash(
-                        existing_user["password"],
-                        request.form.get("password")):
-                session["user"] = request.form.get("username").lower()
-                flash("Welcome back, {}".format(
-                    request.form.get("username")))
-                return redirect(url_for(
-                    "profile", username=session["user"]))
+            if existing_user:
+                # check that hashed password is the password entered by user
+                if check_password_hash(
+                            existing_user["password"],
+                            request.form.get("password")):
+                    session["user"] = request.form.get("username").lower()
+                    flash("Welcome back, {}".format(
+                        request.form.get("username")))
+                    return redirect(url_for(
+                        "profile", username=session["user"]))
+                else:
+                    # passwords do not match
+                    flash("Incorrect Username and/or Password")
+                    return redirect(url_for("login"))
             else:
-                # passwords do not match
+                # username does not exist
                 flash("Incorrect Username and/or Password")
                 return redirect(url_for("login"))
-        else:
-            # username does not exist
-            flash("Incorrect Username and/or Password")
-            return redirect(url_for("login"))
 
-    return render_template("login.html")
+        return render_template("login.html")
 
 
 @app.route("/logout")
