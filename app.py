@@ -152,7 +152,7 @@ def add_route():
 
     # only users can access the add route page
     if not session.get("user"):
-        return render_template("404.html")
+        return render_template("403.html")
 
     if request.method == "POST":
         route = {
@@ -182,7 +182,7 @@ def edit_route(route_id):
 
     # only users can access the edit route page
     if not session.get("user"):
-        return render_template("404.html")
+        return render_template("403.html")
 
     if request.method == "POST":
         edit = {
@@ -213,7 +213,7 @@ def delete_route(route_id):
 
     # only users can delete a route
     if not session.get("user"):
-        return render_template("404.html")
+        return render_template("403.html")
 
     mongo.db.routes.remove({"_id": ObjectId(route_id)})
     flash("Route Successfully Deleted")
