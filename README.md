@@ -136,7 +136,7 @@ Raleway font has been utilised for all text across the website. This is a simple
 
 #### Landing Page
 
--   Trail Running UK logo.
+-   VeloRoute logo.
 -   A navigation menu on the top right of the website hero section that allows the user to navigate the website by clicking the links or open a newsletter form by selecting the Newsletter menu item. The navigation menu collapses to a burger icon on smaller devices.
 -   The newsletter form can be populated with mandatory first name, last name, email address and race distance preference to sign up to the Trail Running UK newsletter. The newsletter form is integrated with EmailJS and sends a confirmation email to the user to say they are now signed up
 

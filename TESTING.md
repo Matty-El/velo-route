@@ -7,10 +7,10 @@
 1.  [Code validation](#code-validation)
 2.  [Browser compatibility](#browser-compatibility)
 3.  [Responsiveness](#browser-compatibility)
-4.  [Lighthouse reports] (#lighthouse-reports)
+4.  [Lighthouse reports](#lighthouse-reports)
 5.  [User story testiing](#user-story-testing)
 6.  [Defensive design](#defensive-testing)
-7.  [Bugs](#bugs)
+7.  [Bugs & Reolution](#bugs)
 
 ---
 
@@ -85,13 +85,13 @@
 
 ---
 
-## 5. Defensive design 
+## 6. Defensive design 
 
 1. When deleting routes, cycling tips or categories on the site a modal will appear where the user has to confirm that they want to delete the item. Once they have confirmed then the item will be deleted.
 
 ---
 
-## 6. Bugs & Resolution
+## 7. Bugs & Resolution
 1. 
 
 ---
