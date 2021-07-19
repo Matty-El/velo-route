@@ -88,6 +88,9 @@
             <!-- edit route button -->
             <div class="row">
                 <div class="col center-align col s12">
+                    <a href="{{ url_for('profile', username=session['user']) }}" class="btn red accent-4 waves-effect">
+                        Cancel
+                    </a>
                     <button class="btn cyan darken-2 waves-effect" type="submit">
                         Edit Route
                     </button>

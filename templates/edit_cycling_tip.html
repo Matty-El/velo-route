@@ -59,8 +59,11 @@
             <!-- edit cycling tip button -->
             <div class="row">
                 <div class="center-align">
-                    <button class="btn-large light-blue darken-2 waves-effect waves-light" type="submit">
-                        Edit Cycling Tip<i class="fas fa-plus right"></i>
+                    <a href="{{ url_for('get_cycling_tips') }}" class="btn red accent-4 waves-effect">
+                        Cancel
+                    </a>
+                    <button class="btn cyan darken-2 waves-effect" type="submit">
+                        Edit Cycling Tip
                     </button>
                 </div>
             </div>

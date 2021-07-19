@@ -260,9 +260,11 @@ def get_categories():
     categories = list(mongo.db.categories.find().sort("category_name", 1))
     cycling_tip_categories = list(
         mongo.db.cycling_tip_categories.find().sort("category_name", 1))
+    difficulty_levels = list(
+    mongo.db.difficulty_levels.find().sort("route_difficulty", 1))
     return render_template(
         "categories.html", categories=categories,
-        cycling_tip_categories=cycling_tip_categories)
+        cycling_tip_categories=cycling_tip_categories, difficulty_levels=difficulty_levels)
 
 
 # route categories
@@ -338,6 +340,46 @@ def delete_cycling_tip_category(cycling_tip_category_id):
     mongo.db.cycling_tip_categories.remove(
         {"_id": ObjectId(cycling_tip_category_id)})
     flash("Cycling Tip Category Deleted")
+    return redirect(url_for("get_categories"))
+
+
+# difficulty level categories
+@app.route("/add_difficulty_level", methods=["GET", "POST"])
+def add_difficulty_level():
+    if request.method == "POST":
+        difficulty_level = {
+            "route_difficulty": request.form.get("route_difficulty")
+        }
+        mongo.db.difficulty_levels.insert_one(difficulty_level)
+        flash("New Difficulty Level Added")
+        return redirect(url_for("get_categories"))
+
+    return render_template("add_difficulty_level.html")
+
+
+@app.route("/edit_difficulty_level/<difficulty_level_id>",
+           methods=["GET", "POST"])
+def edit_difficulty_level(difficulty_level_id):
+    if request.method == "POST":
+        submit_difficulty_level = {
+            "route_difficulty": request.form.get("route_difficulty")
+        }
+        mongo.db.difficulty_levels.update({"_id": ObjectId(
+            difficulty_level_id)}, submit_difficulty_level)
+        flash("Difficulty Level Updated")
+        return redirect(url_for("get_categories"))
+
+    difficulty_level = mongo.db.difficulty_levels.find_one(
+        {"_id": ObjectId(difficulty_level_id)})
+    return render_template("edit_difficulty_level.html",
+                           difficulty_level=difficulty_level)
+
+
+@app.route("/delete_difficulty_level/<difficulty_level_id>")
+def delete_difficulty_level(difficulty_level_id):
+    mongo.db.difficulty_levels.remove(
+        {"_id": ObjectId(difficulty_level_id)})
+    flash("Difficulty Level Deleted")
     return redirect(url_for("get_categories"))
 
 

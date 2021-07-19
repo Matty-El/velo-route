@@ -1,18 +1,18 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h4 class="blue-grey-text darken-5 center-align">Edit Category</h4>
+<h4 class="blue-grey-text darken-5 center-align">Edit Difficulty Level</h4>
 
 <div class="container">
     <div class="row card-panel grey lighten-5">
-        <form class="" method="POST" action="{{ url_for('edit_category', category_id=category._id) }}">
+        <form class="" method="POST" action="{{ url_for('edit_difficulty_level', difficulty_level_id=difficulty_level._id) }}">
             <!-- route name -->
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-folder-open prefix blue-grey-text darken-5"></i>
-                    <input id="category_name" name="category_name" minlength="3" maxlength="25" type="text" value="{{ category.category_name }}"
+                    <input id="route_difficulty" name="route_difficulty" minlength="3" maxlength="25" type="text" value="{{ difficulty_level.route_difficulty }}"
                         class="validate" required>
-                    <label for="category_name" id="add-category-label">Category Name</label>
+                    <label for="route_difficulty" id="add-category-label">Difficulty Level</label>
                 </div>
             </div>
             <!-- add category button -->
@@ -22,7 +22,7 @@
                         Cancel
                     </a>
                     <button class="btn cyan darken-2 waves-effect" type="submit">
-                        Edit Category
+                        Edit Difficulty Level
                     </button>
                 </div>
             </div>

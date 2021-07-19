@@ -61,5 +61,32 @@
   </div>
 </div>
 
+<!-- difficulty level categories -->
+<div class="row">
+  <div class="col s12 center-align">
+    <a href="{{ url_for('add_difficulty_level') }}" class="btn cyan darken-2 waves-effect">
+      Add Difficulty Level
+    </a>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    {% for difficulty_level in difficulty_levels %}
+    <div class="col s8 offset-s2 m4">
+      <div class="card card-categories grey lighten-5 center-align z-depth-4">
+        <div class="card-content-category blue-grey-text darken-5">
+          <span class="card-title">{{ difficulty_level.route_difficulty }}</span>
+        </div>
+        <div class="card-action card-action-categories">
+          <a href="{{ url_for('delete_difficulty_level', difficulty_level_id=difficulty_level._id) }}"class="btn-small red accent-4 waves-effect">Delete</a>
+          <a href="{{ url_for('edit_difficulty_level', difficulty_level_id=difficulty_level._id) }}"
+            class="btn-small cyan darken-2 waves-effect">Edit</a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
 
 {% endblock %}
