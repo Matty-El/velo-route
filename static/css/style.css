@@ -33,9 +33,9 @@ input {
     font-size: 1.5rem;
 }
 
-.footer {
+/*.footer {
     color: #fafafa;
-}
+}*/
 
 /*------------------------------------- general */
 #body {
@@ -49,6 +49,11 @@ input {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+}
+
+html {
+    height: 100%;
+    width: 100%;
 }
 
 main {
