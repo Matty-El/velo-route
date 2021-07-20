@@ -8,9 +8,9 @@
 2.  [Browser Compatibility](#browser-compatibility)
 3.  [Responsiveness](#responsiveness)
 4.  [Lighthouse Reports](#lighthouse-reports)
-5.  [User Story Testiing](#user-story-testing)
-6.  [Defensive Design](#defensive-testing)
-7.  [Bugs & Reolution](#bugs-resolution)
+5.  [User Story Testing](#user-story-testing)
+6.  [Defensive Design Testing](#defensive-design-testing)
+7.  [Defects](#defects)
 
 ---
 
@@ -52,7 +52,7 @@
 
 --- 
 
-## Testing User Stories
+## User Story Testing
 
 The user stories below have all been tested against defined acceptance criteria. The full test results for all user stories are detailed in attached ![testing report](testing-files/browser-compatibility.png).
 
@@ -85,7 +85,7 @@ The user stories below have all been tested against defined acceptance criteria.
 
 ---
 
-## Defensive Design & Testing
+## Defensive Design Testing
 
 1. When deleting routes, cycling tips or categories on the site a modal will appear where the user has to confirm that they want to delete the item. Once they have confirmed then the item will be deleted.
 2. Validation has been included on all form fields as listed and tested below:
@@ -107,7 +107,7 @@ The user stories below have all been tested against defined acceptance criteria.
 
 ---
 
-## Bugs & Resolution
+## Defects
 1. 
 
 ---
