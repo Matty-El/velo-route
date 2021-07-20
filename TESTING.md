@@ -14,7 +14,7 @@
 
 ---
 
-## 1. Code Validation
+## Code Validation
  - **[HTML Validator](https://validator.w3.org/):**
     - ...
 
@@ -29,7 +29,7 @@
 
 ---
 
-## 2. Browser Compatibility 
+## Browser Compatibility 
 - Responsiveness of the site has been tested with [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools) and [Responsive Design Checker](https://www.responsivedesignchecker.com/).
 - The site has been tested on the following devices: 
     - Desktop: 1024px, 1366px, 1440px, 1600px and 1680px. 
@@ -42,17 +42,17 @@
 
 ---
 
-## 3. Responsiveness
+## Responsiveness
 ![Browser compatibility](testing-files/browser-compatibility.png)
 
 --- 
 
-## 4. Lighthouse Reports
+## Lighthouse Reports
 ![Browser compatibility](testing-files/browser-compatibility.png)
 
 --- 
 
-## 5. Testing User Stories
+## Testing User Stories
 
 The user stories below have all been tested against defined acceptance criteria. The full test results for all user stories are detailed in attached ![testing report](testing-files/browser-compatibility.png).
 
@@ -85,13 +85,13 @@ The user stories below have all been tested against defined acceptance criteria.
 
 ---
 
-## 6. Defensive Design 
+## Defensive Design 
 
 1. When deleting routes, cycling tips or categories on the site a modal will appear where the user has to confirm that they want to delete the item. Once they have confirmed then the item will be deleted.
 
 ---
 
-## 7. Bugs & Resolution
+## Bugs & Resolution
 1. 
 
 ---
