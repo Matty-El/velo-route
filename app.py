@@ -337,6 +337,7 @@ def delete_cycling_tip(cycling_tip_id):
 
 
 # ------------------------ categories -------------------------------------- #
+# get all categories
 @app.route("/get_categories")
 def get_categories():
     if not session.get("user"):
