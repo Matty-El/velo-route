@@ -331,6 +331,45 @@ Comments have been included in the code for code that has been sourced and adapt
 
 -   All images, with the exception of the topography image below, were licensed for use from [Adobe Stock](https://stock.adobe.com/).
 
+**Routes**
+
+-   Photo by <a href="https://unsplash.com/@ocen?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Coen van de Broek</a> on <a href="https://unsplash.com/s/photos/cycling?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  
+-   Photo by <a href="https://unsplash.com/@xokvictor?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Viktor Bystrov</a> on <a href="https://unsplash.com/s/photos/cycling?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  
+-   Photo by <a href="https://unsplash.com/@davidmarcu?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">David Marcu</a> on <a href="https://unsplash.com/s/photos/cycling?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  
+-   Photo by <a href="https://unsplash.com/@mmagnemyr?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Martin Magnemyr</a> on <a href="https://unsplash.com/s/photos/cycling?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  
+-   Photo by <a href="https://unsplash.com/@munbaik_cycling?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Munbaik Cycling Clothing</a> on <a href="https://unsplash.com/s/photos/cycling?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+
+-   Photo by <a href="https://unsplash.com/@nincsapro?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Yury Kirillov</a> on <a href="https://unsplash.com/s/photos/cycling?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  
+-   Photo by <a href="https://unsplash.com/@polina_art?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Polina Rytova</a> on <a href="https://unsplash.com/s/photos/cycling?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  
+-   Photo by <a href="https://unsplash.com/@jeremy0?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Jeremy Zero</a> on <a href="https://unsplash.com/s/photos/cycling?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  
+-   Photo by <a href="https://unsplash.com/@vaccinium?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Dmitrii Vaccinium</a> on <a href="https://unsplash.com/s/photos/cycling?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  
+-   Photo by <a href="https://unsplash.com/@spanic?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Damir Spanic</a> on <a href="https://unsplash.com/s/photos/cycling?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  
+-   Photo by <a href="https://unsplash.com/@jxk?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Jan Kopřiva</a> on <a href="https://unsplash.com/s/photos/cycling?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+
+**Tips**
+
+-   Photo by <a href="https://unsplash.com/@single_lens_reflex?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Dan Burton</a> on <a href="https://unsplash.com/s/photos/bicycle-maintenance?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  
+-   Photo by <a href="https://unsplash.com/@robertbye?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Robert Bye</a> on <a href="https://unsplash.com/s/photos/bicycle-maintenance?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  
+-   Photo by <a href="https://unsplash.com/@tecreate?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Tom Conway</a> on <a href="https://unsplash.com/s/photos/bike-repair?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  
+-   Photo by cottonbro from Pexels
+
+-   Photo by <a href="https://unsplash.com/@nate_dumlao?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Nathan Dumlao</a> on <a href="https://unsplash.com/s/photos/coffee-shops?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  
+-   Photo by Pavel Danilyuk from Pexels
+
+
 ### Acknowledgements
 
 -   [Precious Ijege](https://www.linkedin.com/in/precious-ijege-908a00168/?originalSubdomain=ng) for mentor guidance and support.

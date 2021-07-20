@@ -24,7 +24,7 @@
 <div class="container">
   <div class="row">
     {% for route in routes %}
-    <div class="col s12 m12 l6">
+    <div class="col s12 m6 l4">
       <div class="card grey lighten-5 z-depth-4">
         <div class="card-image">
           <img src="{{ route.route_image }}" alt="Route Image">
@@ -33,11 +33,16 @@
           <div id="card-name">
             <h6><strong>{{ route.route_name }}</strong></h6>
           </div>
-          <p id="card-description">{{ route.route_description}}</p><br>
-          <p><strong>Type: </strong>{{ route.category_name }}</p><br>
-          <p><strong>Distance: </strong>{{ route.route_distance }} km</p><br>
-          <p><strong>Difficulty: </strong>{{ route.route_difficulty }}</p><br>
-          <p><strong>Created By: </strong><em>{{ route.created_by }}</em></p><br>
+          <div>
+            <p class="card-description">{{ route.route_description}}</p><br>
+          </div>
+          <div>
+            <p><strong>Type: </strong>{{ route.category_name }}</p>
+            <p><strong>Country: </strong>{{ route.country_name }}</p>
+            <p><strong>Distance: </strong>{{ route.route_distance }} km</p>
+            <p><strong>Difficulty: </strong>{{ route.route_difficulty }}</p>
+            <p><strong>Created By: </strong><em>{{ route.created_by }}</em></p>
+          </div>
           <div class="card-buttons">
             <a href="{{ url_for('delete_route', route_id=route._id) }}"
               class="btn-small red accent-4 waves-effect modal-trigger" data-target="delete-route-modal">Delete</a>
@@ -56,8 +61,10 @@
         <p>Are you sure you want to permanently delete this route?</p>
       </div>
       <div class="modal-footer">
-        <a href="{{ url_for('profile', username=session['user']) }}" class="modal-close btn-small cyan darken-2 waves-effect">Cancel</a>
-        <a href="{{ url_for('delete_route', route_id=route._id) }}" class="modal-close btn-small red accent-4 waves-effect">Delete</a>
+        <a href="{{ url_for('profile', username=session['user']) }}"
+          class="modal-close btn-small cyan darken-2 waves-effect">Cancel</a>
+        <a href="{{ url_for('delete_route', route_id=route._id) }}"
+          class="modal-close btn-small red accent-4 waves-effect">Delete</a>
       </div>
     </div>
     {% endfor %}

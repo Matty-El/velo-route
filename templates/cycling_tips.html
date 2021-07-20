@@ -13,8 +13,8 @@
           <img src="{{ cycling_tip.cycling_tip_image }}" alt="Cycling Tip Image">
         </div>
         <div class="card-content">
-          <h6><strong>{{ cycling_tip.cycling_tip_name }}</strong></h6><br>
-          <p class="card-description">{{ cycling_tip.cycling_tip_description}}</p><br>
+          <h6 class="card-name"><strong>{{ cycling_tip.cycling_tip_name }}</strong></h6><br>
+          <p class="card-description flow-text">{{ cycling_tip.cycling_tip_description}}</p><br>
           <div>
             {% if session.user|lower == cycling_tip.created_by|lower %}
               <a href="{{ url_for('delete_cycling_tip', cycling_tip_id=cycling_tip._id) }}"

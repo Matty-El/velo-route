@@ -24,27 +24,34 @@
           </div>
         </div>
       </div>
-    </form>
   </div>
+  </form>
+</div>
 
-  <!-- routes search display -->
+<!-- routes search display -->
+<div class="container">
   {% if routes.count() > 0 %}
   <div class="row">
     {% for route in routes %}
-    <div class="col s12 m12 l6">
+    <div class="col s12 m6 l4">
       <div class="card grey lighten-5 z-depth-4">
         <div class="card-image">
           <img src="{{ route.route_image }}" alt="Route Image">
         </div>
         <div class="card-content">
-          <div>
-          <h6 id="card-name"><strong>{{ route.route_name }}</strong></h6><br>
+          <div class="card-name">
+            <h6><strong>{{ route.route_name }}</strong></h6>
           </div>
-          <p id="card-description">{{ route.route_description}}</p><br>
-          <p><strong>Type: </strong>{{ route.category_name }}</p><br>
-          <p><strong>Distance: </strong>{{ route.route_distance }} km</p><br>
-          <p><strong>Difficulty: </strong>{{ route.route_difficulty }}</p><br>
-          <p><strong>Created By: </strong><em>{{ route.created_by }}</em></p><br>
+          <div>
+            <p class="card-description">{{ route.route_description}}</p><br>
+          </div>
+          <div>
+            <p><strong>Type: </strong>{{ route.category_name }}</p>
+            <p><strong>Country: </strong>{{ route.country_name }}</p>
+            <p><strong>Distance: </strong>{{ route.route_distance }} km</p>
+            <p><strong>Difficulty: </strong>{{ route.route_difficulty }}</p>
+            <p><strong>Created By: </strong><em>{{ route.created_by }}</em></p>
+          </div>
         </div>
         <div class="card-action">
           <a class="light-blue-text darken-2" href="{{ route.route_link }}" target="_blank">Route Link</a>
@@ -52,15 +59,15 @@
       </div>
     </div>
     {% endfor %}
-    {% else %}
-    <!-- search no results message -->
-      <div class="row">
-        <div class="col s12"></div>
-        <h4 class="blue-grey-text center-align">No results found! Please try another search.</h4>
-      </div>
   </div>
-  {% endif %}
 </div>
+{% else %}
+<!-- search no results message -->
+<div class="row">
+  <div class="col s12"></div>
+  <h4 class="blue-grey-text center-align">No results found! Please try another search.</h4>
+</div>
+{% endif %}
 </div>
 
 {% endblock %}

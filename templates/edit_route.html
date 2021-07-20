@@ -28,7 +28,7 @@
                 <div class="input-field col s12">
                     <i class="fas fa-dumbbell prefix blue-grey-text"></i>
                     <select id="route_difficulty" name="route_difficulty" class="validate" required>
-                        <option value="" disabled>Choose category</option>
+                        <option value="" disabled>Choose difficulty level</option>
                         {% for difficulty_level in difficulty_levels %}
                         {% if difficulty_level.route_difficulty == route.route_difficulty %}
                         <option value="{{ difficulty_level.route_difficulty }}" selected>
@@ -40,6 +40,25 @@
                         {% endfor %}
                     </select>
                     <label for="route_difficulty">Difficulty</label>
+                </div>
+            </div>
+            <!-- country selector -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-globe-europe prefix blue-grey-text"></i>
+                    <select id="country_name" name="country_name" class="validate" required>
+                        <option value="" disabled>Choose country</option>
+                        {% for country in countries %}
+                        {% if country.country_name == route.country_name %}
+                        <option value="{{ country.country_name }}" selected>
+                            {{- country.country_name -}}
+                            {% else %}
+                        <option value="{{ country.country_name }}">{{ country.country_name }}
+                        </option>
+                        {% endif %}
+                        {% endfor %}
+                    </select>
+                    <label for="country_name">Country</label>
                 </div>
             </div>
             <!-- route name -->

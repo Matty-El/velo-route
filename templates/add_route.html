@@ -33,6 +33,20 @@
                     <label for="route_difficulty">Difficulty</label>
                 </div>
             </div>
+            <!-- route difficulty selector-->
+            <div class="row">
+                <div class="input-field">
+                    <i class="fas fa-globe-europe prefix blue-grey-text"></i>
+                    <select id="country_name" name="country_name" class="validate" required>
+                        <option value="" disabled selected>Choose country</option>
+                        {% for country in countries %}
+                        <option value="{{ country.country_name }}">{{ country.country_name }}
+                        </option>
+                        {% endfor %}
+                    </select>
+                    <label for="country_name">Country</label>
+                </div>
+            </div>
             <!-- route name -->
             <div class="row">
                 <div class="input-field">

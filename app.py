@@ -92,11 +92,11 @@ def login():
                         "profile", username=session["user"]))
                 else:
                     # passwords do not match
-                    flash("Incorrect Username and/or Password")
+                    flash("Incorrect Username or Password")
                     return redirect(url_for("login"))
             else:
                 # username does not exist
-                flash("Incorrect Username and/or Password")
+                flash("Incorrect Username or Password")
                 return redirect(url_for("login"))
 
         return render_template("login.html")
@@ -132,11 +132,11 @@ def profile(username):
     if session["user"]:
         # admin can view / edit all routes
         if session["user"] == "admin":
-            routes = list(mongo.db.routes.find())
+            routes = list(mongo.db.routes.find().sort("_id", -1))
         else:
             # user can view / edit own routes
             routes = list(
-                mongo.db.routes.find({"created_by": session["user"]}))
+                mongo.db.routes.find({"created_by": session["user"]}).sort("_id", -1))
 
         return render_template("profile.html", username=username,
                                first_name=first_name, last_name=last_name,
@@ -174,6 +174,7 @@ def add_route():
             "route_image": request.form.get("route_image"),
             "route_distance": request.form.get("route_distance"),
             "route_difficulty": request.form.get("route_difficulty"),
+            "country_name": request.form.get("country_name"),
             "route_description": request.form.get("route_description"),
             "route_link": request.form.get("route_link"),
             "created_by": session["user"]
@@ -186,8 +187,10 @@ def add_route():
     categories = mongo.db.categories.find().sort("category_name", 1)
     difficulty_levels = mongo.db.difficulty_levels.find().sort(
         "route_difficulty", 1)
+    countries = mongo.db.countries.find().sort("country_name", 1)
     return render_template("add_route.html", categories=categories,
-                           difficulty_levels=difficulty_levels)
+                           difficulty_levels=difficulty_levels,
+                           countries=countries)
 
 
 @app.route("/edit_route/<route_id>", methods=["GET", "POST"])
@@ -205,6 +208,7 @@ def edit_route(route_id):
             "route_image": request.form.get("route_image"),
             "route_distance": request.form.get("route_distance"),
             "route_difficulty": request.form.get("route_difficulty"),
+            "country_name": request.form.get("country_name"),
             "route_description": request.form.get("route_description"),
             "route_link": request.form.get("route_link"),
             "created_by": session["user"]
@@ -218,9 +222,10 @@ def edit_route(route_id):
     categories = mongo.db.categories.find().sort("category_name", 1)
     difficulty_levels = mongo.db.difficulty_levels.find().sort(
         "route_difficulty", 1)
+    countries = mongo.db.countries.find().sort("country_name", 1)
     return render_template("edit_route.html", route=route,
                            categories=categories,
-                           difficulty_levels=difficulty_levels)
+                           difficulty_levels=difficulty_levels, countries=countries)
 
 
 @app.route("/delete_route/<route_id>")
@@ -231,7 +236,7 @@ def delete_route(route_id):
         flash("Please join us for full user access.")
         return render_template("403.html")
 
-    mongo.db.routes.remove({"_id": ObjectId(route_id)})
+    mongo.db.routes.delete_one({"_id": ObjectId(route_id)})
     flash("Route Successfully Deleted")
     return redirect(url_for("profile", username=session['user']))
 
@@ -320,7 +325,7 @@ def delete_cycling_tip(cycling_tip_id):
     else:
         # admin only access
         if session["user"] == "admin":
-            mongo.db.cycling_tips.remove({"_id": ObjectId(cycling_tip_id)})
+            mongo.db.cycling_tips.delete_one({"_id": ObjectId(cycling_tip_id)})
             flash("Cycling Tip Deleted")
             return redirect(url_for("get_cycling_tips"))
         else:
@@ -414,7 +419,7 @@ def delete_category(category_id):
     else:
         # admin only access
         if session["user"] == "admin":
-            mongo.db.categories.remove({"_id": ObjectId(category_id)})
+            mongo.db.categories.delete_one({"_id": ObjectId(category_id)})
             flash("Category Deleted")
             return redirect(url_for("get_categories"))
 
@@ -486,7 +491,7 @@ def delete_cycling_tip_category(cycling_tip_category_id):
     else:
         # admin only access
         if session["user"] == "admin":
-            mongo.db.cycling_tip_categories.remove(
+            mongo.db.cycling_tip_categories.delete_one(
                 {"_id": ObjectId(cycling_tip_category_id)})
             flash("Cycling Tip Category Deleted")
             return redirect(url_for("get_categories"))
@@ -555,7 +560,7 @@ def delete_difficulty_level(difficulty_level_id):
     else:
         # admin only access
         if session["user"] == "admin":
-            mongo.db.difficulty_levels.remove(
+            mongo.db.difficulty_levels.delete_one(
                 {"_id": ObjectId(difficulty_level_id)})
             flash("Difficulty Level Deleted")
             return redirect(url_for("get_categories"))
