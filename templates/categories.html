@@ -33,7 +33,7 @@
           <p>Are you sure you want to permanently delete this route category?</p>
         </div>
         <div class="modal-footer">
-          <a href="{{ url_for('get_cycling_tips') }}"
+          <a href="{{ url_for('get_categories') }}"
             class="modal-close btn-small cyan darken-2 waves-effect">Cancel</a>
           <a href="{{ url_for('delete_category', category_id=category._id) }}"
             class="modal-close btn-small red accent-4 waves-effect">Delete</a>
@@ -75,7 +75,7 @@
           <p>Are you sure you want to permanently delete this cycling tip category?</p>
         </div>
         <div class="modal-footer">
-          <a href="{{ url_for('get_cycling_tips') }}"
+          <a href="{{ url_for('get_categories') }}"
             class="modal-close btn-small cyan darken-2 waves-effect">Cancel</a>
           <a href="{{ url_for('delete_cycling_tip_category', cycling_tip_category_id=cycling_tip_category._id) }}"
             class="modal-close btn-small red accent-4 waves-effect">Delete</a>
@@ -117,7 +117,7 @@
           <p>Are you sure you want to permanently delete this difficulty level?</p>
         </div>
         <div class="modal-footer">
-          <a href="{{ url_for('get_cycling_tips') }}"
+          <a href="{{ url_for('get_categories') }}"
             class="modal-close btn-small cyan darken-2 waves-effect">Cancel</a>
           <a href="{{ url_for('delete_difficulty_level', difficulty_level_id=difficulty_level._id) }}"
             class="modal-close btn-small red accent-4 waves-effect">Delete</a>

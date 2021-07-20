@@ -47,7 +47,6 @@ The key goals for developing the website are:
 #### Website Owner
 
 -   As the website owner, I want branding to be clear and consistent across the website so that the user has a consistent experience.
--   As the website owner, I want the website latency to be optimised so that users are less likely to abandon the website whilst using it.
 -   As the website owner, I want the website to be search engine optimised so that users can easily find our website.
 -   As the website owner, I want the website to be accessible to all users so that all users can use our website.
 -   As the website owner, I want the website to be conformant to web development best practices so that I know the development quality meets required standards.
@@ -71,7 +70,8 @@ The key goals for developing the website are:
 
 -   As an admin user, I want to be able to log in to VeloRoute and have access to the same functionality that a standard website user has.
 -   As an admin user, I want to be able to edit cycling route categories.
--   As an admin user I want to be able to edit cycling tips so that I can add or delete cycling tips.
+-   As an admin user I want to be able to edit cycling tips so that I can edit or delete cycling tips.
+-   As an admin user I want to be able to add cycling tips so that I can present new cycling tips to VeloRoute users.
 
 ### Structure
 
@@ -80,7 +80,7 @@ The VeloRoute website has been designed to provide an attractive, simple and eas
 The website has the following key elements:
 
 -   A simple landing page design that provides information about VeloRoute and that presents cycling routes to the user.
--   A registration page that allows users to register with VeloRoute.
+-   A join us page that allows users to register with VeloRoute.
 -   A log in page so that registered users can log in to VeloRoute.
 -   A Routes page that allows users to search rides that have been submitted by registered users.
 -   An Add Route page for users to add their favourite cycling routes to VeloRoute.

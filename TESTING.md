@@ -59,7 +59,6 @@ The user stories below have all been tested against defined acceptance criteria.
 ### Website Owner
 
 -   As the website owner, I want branding to be clear and consistent across the website so that the user has a consistent experience.
--   As the website owner, I want the website latency to be optimised so that users are less likely to abandon the website whilst using it.
 -   As the website owner, I want the website to be search engine optimised so that users can easily find our website.
 -   As the website owner, I want the website to be accessible to all users so that all users can use our website.
 -   As the website owner, I want the website to be conformant to web development best practices so that I know the development quality meets required standards.
@@ -82,12 +81,29 @@ The user stories below have all been tested against defined acceptance criteria.
 -   As an admin user, I want to be able to log in to VeloRoute and have access to the same functionality that a standard website user has.
 -   As an admin user, I want to be able to edit cycling route, cycling tip and difficulty level categories.
 -   As an admin user I want to be able to edit cycling tips so that I can add or delete cycling tips.
+-   As an admin user I want to be able to add cycling tips so that I can present new cycling tips to VeloRoute users.
 
 ---
 
-## Defensive Design 
+## Defensive Design & Testing
 
 1. When deleting routes, cycling tips or categories on the site a modal will appear where the user has to confirm that they want to delete the item. Once they have confirmed then the item will be deleted.
+2. Validation has been included on all form fields as listed and tested below:
+
+**Join Us form**
+
+-   Field one
+-   Field two
+
+**Log In form**
+
+**Add Route form**
+
+**Add Cycling Tip form**
+
+**Add Category forms**
+
+
 
 ---
 
