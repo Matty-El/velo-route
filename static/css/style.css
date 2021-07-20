@@ -90,6 +90,10 @@ main {
     height: 200px;
 }
 
+.card-action-categories {
+    height: 125px;
+}
+
 #card-name {
     height: 75px;
     padding-bottom: 10px;
@@ -113,10 +117,12 @@ nav .sidenav-trigger i {
 
 .sidenav li>a {
     color: #263238;
+    text-transform: uppercase;
 }
 
 .navbar-li {
     padding-top: 20px;
+    text-transform: uppercase;
 }
 
 nav ul a {

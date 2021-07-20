@@ -91,11 +91,6 @@ The website has the following key elements:
 -   A add cycling tips page for admin users to add and to edit or delete cycling tips.
 -   A footer containing information about the VeloRoute team, social media links and copyright information.
 
-
-_Notes:_
-
-_........_
-
 ### Skeleton
 
 #### Wireframes
@@ -112,15 +107,25 @@ After the initial design was finalised the following changes were made:
 
 ### Surface
 
-VeloRoute features a clean and simple design with #263238 used for dark backgrounds and text and #fafafa for light backgrounds and text to provide good contrast. 
+VeloRoute features a clean and simple design with #263238 used for dark backgrounds and text and #FAFAFA for light backgrounds and text to provide good contrast. 
 
 #### Branding
 
 A simple VeloRoute logo was created using Canva.
 
+[VeloRoute logo](https://velo-route.herokuapp.com/)
+
 #### Colours
 
-A simple colour palette using #263238 for navigation and footer backgrounds and #fafafa for text to provide a good contrast whilst avoiding the potential eyestrain of using pure black and white. Images are used to add colour to the website. All icons with the exception of the social media icons use colour #607d8b. Social media icons use #fafafa.
+![Colour scheme](readme-files/veloroute-colour-palette.png)
+
+A simple colour palette using #263238 for navigation and footer backgrounds and #FAFAFA for text to provide a good contrast whilst avoiding the potential eyestrain of using pure black and white.
+
+All icons with the exception of the social media icons use colour #607D8B. Social media icons in footer are the same colour as the footer text #FAFAFA.
+
+Colours have been used for flash messages and action buttons. #4DD0E1 has been used for the flash messages background, #F57C00 for the call to action button on the home page, #0097A7 for action buttons throughout the site and #D50000 for all cancel and delete buttons.
+
+Images are used to add some additional colour to the website.
 
 #### Typography
 
@@ -134,47 +139,65 @@ Raleway font has been utilised for all text across the website. This is a simple
 
 #### Sections
 
-#### Landing Page
+#### Home Page
 
--   VeloRoute logo that links to the home page.
--   A navigation menu on the top right of the website hero section that allows the user to navigate the website by clicking the navigation links. The navigation menu collapses to a burger icon on smaller devices.
--   A call to action button prompting users to join us at VeloRoute.
--   The six most recently added routes are displayed on medium and larger devices and the three most recently added routes are displayed on small devices.
-
-#### Join Us Page
-
--   The Join Us page has a form for the user to provide their details so that the user can be registered.
--   Upon registration the user's details are stored in the MongoDB database with the password hashed for additional security.
-
-#### Log In Page
-
--   The log in page provides a form for the user to log in to VeloRoute with the details they provided on registration.
--   The user is directed to their profile page when they log in.
-
-#### Profile Page
-
--   The profile page displays the logged in user's profile details and the routes they have added which are displayed with the most recently added listed first.
--   The routes dsplyed can be edited by selecting the edit button or they can be deleted.
+-   VeloRoute logo with links to the home page.
+-   A navigation menu on the top right of the website hero section that allows the user to navigate the website by clicking the navigation links. The navigation menu collapses to a burger icon with sidenav menu on smaller devices. Only the navigation links for Home, Routes, Cycling Tips, Log In and Join Us pages are visible to users who are not logged in to the site.
+-   Section one of the Home page includes a hero image and tagline.
+-   Section two of the Home page includes introductory text and a call to action button prompting users to join us at VeloRoute.
+-   Section three of the Home page includes the six most recently added routes displayed on medium and larger devices and the three most recently added routes are displayed on small devices.
 
 #### Routes Page
 
--   A section with introductory text and a map section with dropdown boxes to select a region and a race.
--   On selecting a region the user is presented with races in that region. On selecting a race the information section is populated with details about the race and the map is centred on the race location and a marker added to the map.
+-   The Routes page displays all routes that have been added to VeloRoute.
+-   There is the option to search routes to find routes matching specific text search criteria.
 
 #### Cycling Tips Page
 
--   A section with introductory text and a map section with dropdown boxes to select a region and a race.
--   On selecting a region the user is presented with races in that region. On selecting a race the information section is populated with details about the race and the map is centred on the race location and a marker added to the map.
+-   The Cycling Tips page displays cards with cycling tips relating to categories such as bicycle maintenance, saftey and nutrition.
+-   Cycling Tips are added by the administrator user and can not be edited by other users.
+
+#### Log In Page
+
+-   The log in page provides a simple form for the user to log in to VeloRoute with the details they provided on registration.
+-   The user is directed to their profile page when they log in.
+
+#### Join Us Page
+
+-   The Join Us page has a simple form for the user to provide their details so that the user can be registered. All inputs are validated.
+-   Upon registration the user's details are stored in a MongoDB database with the password hashed for additional security.
+
+#### Profile Page
+
+-   The profile page displays the logged in user's profile details and the routes they have added which are displayed with the most recently added routes listed first.
+-   The displayed routes can be edited by selecting the edit button or they can be deleted. There is a cancel button if the user decides that they do not wish to edit the route which returns the user to their profile page.
+
+#### Add Routes Page
+
+-   The Add Routes page allows users who are logged in to the site to add new routes.
+-   There is a simple input form that has dropdown select options for choosing a route category and difficulty level and input fields for users to add a route name, route image, route description, route distance and a link to the route on the users favourite GPS activity platform, e.g. Strava.
+
+#### Add Cycling Tip Page
+
+-   The Add Cycling Tips page allows administration users to add new cycling tips to the VeloRoute website.
+-   There is a simple input form that has dropdown select option for choosing a cycling tip category and input fields for the administration user to add a cycling tip name, an image, a cycling tip description and a link to further information related to the cycling tip.
+
+#### Manage Categories Page
+
+-   The Manage Categories page allows administration users to add, edit and delete the categories used for the dropdown select options on the Add Route and Add Cycling Tips pages.
+-   The categories are displayed as simple cards categorised by each category type with buttons for adding, editing and deleting the categories
 
 #### Footer Section
 
--   This section has copyright wording and links to Facebook, Twitter, YouTube, Instagram and Pinterest social media sites.
+-   This section has information about the VeloRoute team, copyright wording and links to Facebook, Twitter, Instagram and Pinterest social media sites.
 
 _Note: The social media links currently link to the social media websites and not VeloRoute specific pages_
 
 #### Future features
 
 -   The ability for users to add ratings to the routes that have been added.
+-   Additional route categories such as countries to broaden the available search options.
+-   A newsletter for users to sign up to updates relating to VeloRoute.
 
 ---
 
@@ -199,11 +222,9 @@ The following technologies have been used to complete the UX design, capture use
 -   [Font Awesome](https://fontawesome.com/) - used to source icons for use throughout website.
 -   [Balsamiq](https://balsamiq.com/) - utilised for the development of the website wireframes.
 -   [Canva](https://canva.com/) - used for the design of the VeloRoute website logo.
--   [Beautify Tools](https://beautifytools.com/javascript-validator.php) - for the validation of the JavaScript code.
--   [Markup validation service](https://validator.w3.org/) - for the validation of HTML5 code.
--   [CSS validation service](https://jigsaw.w3.org/css-validator/) - for the validation of the CSS3 code.
+-   [Coolors](https://coolors.co/) - used for create the colour palette image.
 
-### Testing tools used
+### Testing Tools Used
 
 -   [Google Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools) - used to edit changes prior to implementing the code changes, to diagnose problems and for performance, accessibility, best practice and search engine optimisation testing.
 -   [Autoprefixer](https://autoprefixer.github.io/) - Autoprefixer is used to parse the CSS and to add vendor prefixes to CSS rules. 
@@ -216,7 +237,7 @@ The following technologies have been used to complete the UX design, capture use
 
 ## Testing
 
-Full details of testing are contained in the [testing document](README.md).
+Full details of testing are contained in the [testing document](TESTING.md).
 
 ### Deployment
 
@@ -224,7 +245,7 @@ Full details of testing are contained in the [testing document](README.md).
 
 To be able to deploy this project you will need the following:
 
-- Python3 
+- Python3 installed
 - A Github account 
 - A MongoDB account 
 - A Heroku account
@@ -247,7 +268,7 @@ To clone this project from GitHub.
     - Signup or login to your MongoDB account.
     - Create a cluster and a database.
     - Create six collections in the database: **categories, cycling_tips, cycling_tip_categories, difficulty_levels, routes, users.**
-    - Add the data to the collections. See <a href="#ux-architecture">my Information architecture</a> how the database is set up for this project.
+    - Add the data to the collections. See [database schema](TESTING.md) for details on how the database is set up for this project.
 3. Create the environment variables 
     - Create a .gitignore file in the root directory of the project.
     - Add the env.py file in the .gitignore.
@@ -261,7 +282,7 @@ To clone this project from GitHub.
     os.environ.setdefault("MONGO_URI", "Added by developer")
     os.environ.setdefault("MONGO_DBNAME", "Added by developer")
     ```
-4. Run the app: Open your terminal window in your IDE. Type python3 app.py and run the app.
+4. Run the app: Open your terminal window in your IDE. Type python3 app.py to run the app.
 
 #### Heroku Deployment  
 1. Set up local workspace for Heroku 
@@ -270,8 +291,8 @@ To clone this project from GitHub.
 2. Set up Heroku: create a Heroku account and create a new app and select your region. 
 3. Deployment method 'Github'
     - Click on the **Connect to GitHub** section in the deploy tab in Heroku. 
-        - Search your repository to connect with it.
-        - When your repository appears click on **connect** to connect your repository with the Heroku. 
+        - Search for your Github repository to connect to it.
+        - When your repository appears click on **connect** to connect your repository to Heroku. 
     - Go to the settings app in Heroku and go to **Config Vars**. Click on **Reveal Config Vars**.
         - Enter the variables contained in your env.py file. it is about: **IP, PORT, SECRET_KEY, MONGO_URI, MONGO_DBNAME**
 4. Push the requirements.txt and Procfile to repository. 
@@ -286,7 +307,6 @@ To clone this project from GitHub.
 
 Heroku will receive the code from Github and host the app using the required packages. 
 Click on **Open app** in the right corner of your Heroku account. The app wil open and the live link is available from the address bar. 
-
 
 **To run the project locally**
 

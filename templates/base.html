@@ -22,11 +22,11 @@
   <nav class="nav-extended blue-grey darken-4 grey-text text-lighten-5 active">
     <div class="nav-wrapper">
       <a href="{{ url_for('index') }}">
-      <img class="brand-logo" id="logo"
-        src="{{ url_for('static', filename='images/veloroute_logo_crop.png') }}" height="60" width="150"
-        alt="VeloRoute Logo"></img>
+        <img class="brand-logo" id="logo" src="{{ url_for('static', filename='images/veloroute_logo_crop.png') }}"
+          height="60" width="150" alt="VeloRoute Logo"></img>
       </a>
-      <a href="#" data-target="mobile-nav" class="sidenav-trigger right"><i class="fas fa-bars grey-text text-lighten-5"></i></a>
+      <a href="#" data-target="mobile-nav" class="sidenav-trigger right"><i
+          class="fas fa-bars grey-text text-lighten-5"></i></a>
       <ul class="right hide-on-med-and-down">
         <li class="navbar-li"><a href="{{ url_for('index') }}">Home</a></li>
         <li class="navbar-li"><a href="{{ url_for('get_routes') }}">Routes</a></li>
@@ -36,7 +36,7 @@
         <li class="navbar-li"><a href="{{ url_for('add_route') }}">Add Route</a></li>
         {% if session.user|lower == "admin"|lower %}
         <li class="navbar-li"><a href="{{ url_for('add_cycling_tip') }}">Add Cycling Tip</a></li>
-        <li class="navbar-li"><a href="{{ url_for('get_categories') }}">Categories</a></li>
+        <li class="navbar-li"><a href="{{ url_for('get_categories') }}">Manage Categories</a></li>
         {% endif %}
         <li class="navbar-li"><a href="{{ url_for('logout') }}">Log Out</a></li>
         {% else %}
@@ -60,7 +60,7 @@
     <li><a href="{{ url_for('add_route') }}">Add Route</a></li>
     {% if session.user|lower == "admin"|lower %}
     <li><a href="{{ url_for('add_cycling_tip') }}">Add Cycling Tip</a></li>
-    <li><a href="{{ url_for('get_categories') }}">Categories</a></li>
+    <li><a href="{{ url_for('get_categories') }}">Manage Categories</a></li>
     {% endif %}
     <li><a href="{{ url_for('logout') }}">Log Out</a></li>
     {% else %}
@@ -113,12 +113,26 @@
       <div class="col l4 offset-l2 s12">
         <h5>Social Media</h5>
         <ul>
-          <li><a class="grey-text text-lighten-5 social-media-icons" href="https://pinterest.com/"><i
-                class="fab fa-pinterest-square"></i></a></li>
-          <li><a class="grey-text text-lighten-5 social-media-icons" href="https://www.instagram.com/"><i
-                class="fab fa-instagram-square"></i></a></li>
-          <li><a class="grey-text text-lighten-5 social-media-icons" href="https://www.facebook.com/"><i
-                class="fab fa-facebook-square"></i></a></li>
+          <li>
+            <a class="grey-text text-lighten-5 social-media-icons" href="https://www.facebook.com/" target="_blank">
+              <i class="fab fa-facebook-square"></i>
+            </a>
+          </li>
+          <li>
+            <a class="grey-text text-lighten-5 social-media-icons" href="https://twitter.com/" target="_blank">
+              <i class="fab fa-twitter-square"></i>
+            </a>
+          </li>
+          <li>
+            <a class="grey-text text-lighten-5 social-media-icons" href="https://www.instagram.com/" target="_blank">
+              <i class="fab fa-instagram-square"></i>
+            </a>
+          </li>
+          <li>
+            <a class="grey-text text-lighten-5 social-media-icons" href="https://pinterest.com/" target="_blank">
+              <i class="fab fa-pinterest-square"></i>
+            </a>
+          </li>
         </ul>
       </div>
     </div>
