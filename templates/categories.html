@@ -21,22 +21,27 @@
           <span class="card-title valign">{{ category.category_name }}</span>
         </div>
         <div class="card-action card-action-categories">
-          <a href="{{ url_for('delete_category', category_id=category._id) }}"
-            class="btn-small red accent-4 waves-effect modal-trigger" data-target="delete-category-modal">Delete</a>
           <a href="{{ url_for('edit_category', category_id=category._id) }}"
-            class="btn-small cyan darken-2 waves-effect waves-effect">Edit</a>
-        </div>
-      </div>
-      <div id="delete-category-modal" class="modal">
-        <div class="modal-content s4">
-          <h5>Delete Route Category</h5>
-          <p>Are you sure you want to permanently delete this route category?</p>
-        </div>
-        <div class="modal-footer">
-          <a href="{{ url_for('get_categories') }}"
-            class="modal-close btn-small cyan darken-2 waves-effect">Cancel</a>
-          <a href="{{ url_for('delete_category', category_id=category._id) }}"
-            class="modal-close btn-small red accent-4 waves-effect">Delete</a>
+            class="btn-small cyan darken-2 waves-effect waves-effect">Edit
+          </a>
+          <!-- delete route category modal trigger -->
+          <a class="modal-trigger btn-small red accent-4 waves-effect" href="#delete-modal{{ categories[loop.index0] }}">Delete</a>
+          <!-- delete route category modal -->
+          <div id="delete-modal{{ categories[loop.index0] }}" class="modal">
+            <div class="modal-content">
+              <h5>Delete Cycling Route Category</h5>
+              <p>Are you sure you want to permanently delete the <strong>{{ category.category_name }}</strong> route
+                category?</p>
+            </div>
+            <div class="modal-footer">
+              <a href="{{ url_for('get_categories') }}"
+                class="modal-close btn-small cyan darken-2 waves-effect waves-effect">Cancel
+              </a>
+              <a href="{{ url_for('delete_category', category_id=category._id) }}"
+                class="modal-close btn-small red accent-4 waves-effect">Delete
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -62,23 +67,28 @@
           <span class="card-title">{{ cycling_tip_category.category_name }}</span>
         </div>
         <div class="card-action card-action-categories">
-          <a href="{{ url_for('delete_cycling_tip_category', cycling_tip_category_id=cycling_tip_category._id) }}"
-            class="btn-small red accent-4 waves-effect modal-trigger"
-            data-target="delete-cycling-tip-category-modal">Delete</a>
           <a href="{{ url_for('edit_cycling_tip_category', cycling_tip_category_id=cycling_tip_category._id) }}"
-            class="btn-small cyan darken-2 waves-effect">Edit</a>
-        </div>
-      </div>
-      <div id="delete-cycling-tip-category-modal" class="modal">
-        <div class="modal-content s4">
-          <h5>Delete Cycling Tip Category</h5>
-          <p>Are you sure you want to permanently delete this cycling tip category?</p>
-        </div>
-        <div class="modal-footer">
-          <a href="{{ url_for('get_categories') }}"
-            class="modal-close btn-small cyan darken-2 waves-effect">Cancel</a>
-          <a href="{{ url_for('delete_cycling_tip_category', cycling_tip_category_id=cycling_tip_category._id) }}"
-            class="modal-close btn-small red accent-4 waves-effect">Delete</a>
+            class="btn-small cyan darken-2 waves-effect waves-effect">Edit
+          </a>
+          <!-- delete cycling tip category modal trigger -->
+          <a class="modal-trigger btn-small red accent-4 waves-effect" href="#delete-modal{{ cycling_tip_categories[loop.index0] }}">Delete
+          </a>
+          <!-- delete cycling tip category modal -->
+          <div id="delete-modal{{ cycling_tip_categories[loop.index0] }}" class="modal">
+            <div class="modal-content">
+              <h5>Delete Cycling Tip Category</h5>
+              <p>Are you sure you want to permanently delete the <strong>{{ cycling_tip_category.category_name }}</strong> route
+                category?</p>
+            </div>
+            <div class="modal-footer">
+              <a href="{{ url_for('get_categories') }}"
+                class="modal-close btn-small cyan darken-2 waves-effect waves-effect">Cancel
+              </a>
+              <a href="{{ url_for('delete_cycling_tip_category', cycling_tip_category_id=cycling_tip_category._id) }}"
+                class="modal-close btn-small red accent-4 waves-effect">Delete
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -104,23 +114,28 @@
           <span class="card-title">{{ difficulty_level.route_difficulty }}</span>
         </div>
         <div class="card-action card-action-categories">
-          <a href="{{ url_for('delete_difficulty_level', difficulty_level_id=difficulty_level._id) }}"
-            class="btn-small red accent-4 waves-effect modal-trigger"
-            data-target="delete-difficulty-level-modal">Delete</a>
           <a href="{{ url_for('edit_difficulty_level', difficulty_level_id=difficulty_level._id) }}"
-            class="btn-small cyan darken-2 waves-effect">Edit</a>
-        </div>
-      </div>
-      <div id="delete-difficulty-level-modal" class="modal">
-        <div class="modal-content s4">
-          <h5>Delete Difficulty Level</h5>
-          <p>Are you sure you want to permanently delete this difficulty level?</p>
-        </div>
-        <div class="modal-footer">
-          <a href="{{ url_for('get_categories') }}"
-            class="modal-close btn-small cyan darken-2 waves-effect">Cancel</a>
-          <a href="{{ url_for('delete_difficulty_level', difficulty_level_id=difficulty_level._id) }}"
-            class="modal-close btn-small red accent-4 waves-effect">Delete</a>
+            class="btn-small cyan darken-2 waves-effect waves-effect">Edit
+          </a>
+          <!-- delete difficulty level modal trigger -->
+          <a class="modal-trigger btn-small red accent-4 waves-effect" href="#delete-difficulty-level-modal{{ difficulty_levels[loop.index0] }}">Delete
+          </a>
+          <!-- delete difficulty level modal -->
+          <div id="delete-difficulty-level-modal{{ difficulty_levels[loop.index0] }}" class="modal">
+            <div class="modal-content">
+              <h5>Delete Difficulty Level Category</h5>
+              <p>Are you sure you want to permanently delete the <strong>{{ difficulty_level.route_difficulty }}</strong> route
+                category?</p>
+            </div>
+            <div class="modal-footer">
+              <a href="{{ url_for('get_categories') }}"
+                class="modal-close btn-small cyan darken-2 waves-effect waves-effect">Cancel
+              </a>
+              <a href="{{ url_for('delete_difficulty_level', difficulty_level_id=difficulty_level._id) }}"
+                class="modal-close btn-small red accent-4 waves-effect">Delete
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </div>

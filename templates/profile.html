@@ -44,10 +44,13 @@
             <p><strong>Created By: </strong><em>{{ route.created_by }}</em></p>
           </div>
           <div class="card-buttons">
-            <a href="{{ url_for('delete_route', route_id=route._id) }}"
-              class="btn-small red accent-4 waves-effect modal-trigger" data-target="delete-route-modal">Delete</a>
             <a href="{{ url_for('edit_route', route_id=route._id) }}"
-              class="btn-small cyan darken-2 waves-effect">Edit</a>
+              class="btn-small cyan darken-2 waves-effect">Edit
+            </a>
+            <!-- delete route modal trigger -->
+            <a href="#delete-modal{{ loop.index0 }}"
+              class="btn-small red accent-4 waves-effect modal-trigger">Delete
+            </a>
           </div>
         </div>
         <div class="card-action">
@@ -55,10 +58,11 @@
         </div>
       </div>
     </div>
-    <div id="delete-route-modal" class="modal">
+    <!-- delete route modal -->
+    <div id="delete-modal{{ loop.index0 }}" class="modal">
       <div class="modal-content s4">
         <h5>Delete Route</h5>
-        <p>Are you sure you want to permanently delete this route?</p>
+        <p>Are you sure you want to permanently delete the <strong>{{ route.route_name }}</strong>?</p>
       </div>
       <div class="modal-footer">
         <a href="{{ url_for('profile', username=session['user']) }}"
