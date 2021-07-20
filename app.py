@@ -136,7 +136,8 @@ def profile(username):
         else:
             # user can view / edit own routes
             routes = list(
-                mongo.db.routes.find({"created_by": session["user"]}).sort("_id", -1))
+                mongo.db.routes.find({"created_by": session["user"]}).sort(
+                    "_id", -1))
 
         return render_template("profile.html", username=username,
                                first_name=first_name, last_name=last_name,
@@ -225,7 +226,8 @@ def edit_route(route_id):
     countries = mongo.db.countries.find().sort("country_name", 1)
     return render_template("edit_route.html", route=route,
                            categories=categories,
-                           difficulty_levels=difficulty_levels, countries=countries)
+                           difficulty_levels=difficulty_levels,
+                           countries=countries)
 
 
 @app.route("/delete_route/<route_id>")
