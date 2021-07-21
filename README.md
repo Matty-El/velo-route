@@ -114,7 +114,7 @@ VeloRoute features a clean and simple design with #263238 used for dark backgrou
 
 A simple VeloRoute logo was created using Canva.
 
-![VeloRoute logo](images/veloroute-logo-crop.png)
+![VeloRoute logo](static/images/veloroute-logo-crop.png)
 
 #### Colours
 
