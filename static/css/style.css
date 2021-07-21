@@ -5,10 +5,15 @@
 
 .btn-small {
     margin: 5px;
+    width: 75px;
 }
 
 .btn {
     margin: 5px;
+}
+
+.search-btn {
+    width: 60px;
 }
 
 /*------------------------------------- forms */
@@ -72,21 +77,26 @@ main {
 
 /*------------------------------------- cards */
 
-/*.card-image {
-    max-height: 350px;
-}*/
-
 .card-title {
-    min-height: 100px;
+    min-height: 75px;
     padding-bottom: 10px;
 }
 
 .card-title.activator {
-    font-size: 16px;
+    font-size: 20px;
 }
 
 .card-buttons {
     padding-bottom: 20px;
+}
+
+.card {
+    border-radius: 10px;
+}
+
+.card .card-image img {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
 /*------------------------------------- navbar */

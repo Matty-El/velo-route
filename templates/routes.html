@@ -8,17 +8,17 @@
   <div class="row card-panel z-depth-0" id="route-search">
     <form action="{{ url_for('route_search') }}" method="POST" class="col s12">
       <div class="row valign-wrapper center-align">
-        <div class="input-field col s8">
+        <div class="input-field col s10">
           <input type="text" name="route_query" id="route_query" minlength="3" class="validate" required>
           <label for="route_query" id="search-label">Search Routes</label>
         </div>
         <div class="row valign-wrapper center-align"></div>
         <div class="col s4">
-          <button type="submit" class="btn-small cyan darken-2 waves-effects center-align">
+          <button type="submit" class="btn-small search-btn cyan darken-2 waves-effects center-align">
             <i class="i fas fa-search"></i>
           </button>
           <div>
-            <a href="{{ url_for('get_routes') }}" class="btn-small red accent-4 waves-effect">
+            <a href="{{ url_for('get_routes') }}" class="btn-small search-btn red accent-4 waves-effect">
               <i class="i fas fa-undo"></i>
             </a>
           </div>
@@ -33,7 +33,7 @@
   {% if routes.count() > 0 %}
   <div class="row">
     {% for route in routes %}
-    <div class="col s12 l4">
+    <div class="col s12 m6 l4">
       <div class="card grey lighten-5 z-depth-4">
         <div class="card-image waves-effect waves-block waves-light">
           <img class="activator" src="{{ route.route_image }}" alt="Route Image">
@@ -41,11 +41,12 @@
         <div class="card-content">
           <span class="card-title activator">{{ route.route_name }}<i
                 class="material-icons right">more_vert</i></span>
-          <p><a class="light-blue-text darken-2" href="{{ route.route_link }}" target="_blank">Route Link</a></p>
+          <p><a class="light-blue-text darken-2" href="{{ route.route_link }}" target="_blank">ROUTE LINK</a></p>
         </div>
         <div class="card-reveal">
           <span class="card-title activator">{{ route.route_name }}<i class="material-icons right">close</i></span>
-          <p class="card-description">{{ route.route_description}}</p><br />
+          <p class="card-description">{{ route.route_description}}</p>
+          <p><a class="light-blue-text darken-2" href="{{ route.route_link }}" target="_blank">ROUTE LINK</a></p>
           <p><strong>Type: </strong>{{ route.category_name }}</p>
           <p><strong>Country: </strong>{{ route.country_name }}</p>
           <p><strong>Distance: </strong>{{ route.route_distance }} km</p>
