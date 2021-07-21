@@ -114,7 +114,7 @@ VeloRoute features a clean and simple design with #263238 used for dark backgrou
 
 A simple VeloRoute logo was created using Canva.
 
-![VeloRoute logo](static/images/veloroute_logo_crop.png)
+![VeloRoute logo](staticdesign/images/veloroute_logo_crop.png)
 
 #### Colours
 
@@ -124,7 +124,7 @@ A simple colour palette using #263238 for navigation and footer backgrounds and 
 
 All icons with the exception of the social media icons use colour #607D8B. Social media icons in footer are the same colour as the footer text #FAFAFA.
 
-Colours have been used for flash messages and action buttons. #4DD0E1 has been used for the flash messages background, #F57C00 for the call to action button on the home page, #0097A7 for action buttons throughout the site and #D50000 for all delete buttons.
+Colours have been used for flash messages and action buttons. #4DD0E1 has been used for the flash messages background, #EF6C00 for the call to action button on the home page, #0097A7 for action buttons throughout the site and #D50000 for all delete buttons.
 
 Images are used to add some additional colour to the website.
 
@@ -316,7 +316,7 @@ To clone this project from GitHub.
 
 #### Heroku Deployment  
 1. Set up local workspace for Heroku 
-    - In terminal window of your IDE type: **pip3 freeze -- local > requirements.txt.** (The file is needed for Heroku to know which filed to install.)
+    - In terminal window of your IDE type: **pip3 freeze -- local > requirements.txt.** (The file is needed for Heroku to know which files to install.)
     - In termial window of your IDE type: **python app.py > Procfile** (The file is needed for Heroku to know which file is needed as entry point.)
 2. Set up Heroku: create a Heroku account and create a new app and select your region. 
 3. Deployment method 'Github'

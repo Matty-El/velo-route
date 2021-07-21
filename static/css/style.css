@@ -95,6 +95,7 @@ main {
 }
 
 .card .card-image img {
+    max-height: 300px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
@@ -130,16 +131,16 @@ nav ul a {
 
 /*------------------------------------- home page */
 #hero-image {
-    background: url("https://i.postimg.cc/rmNDq4C7/pexels-pixabay-163305.jpg");
+    background: url("https://i.postimg.cc/DZfqQtgv/veloroute-hero-image.jpg");
     background-size: cover;
     background-position: right center;
-    min-height: 450px;
+    min-height: 50vh;
     width: 100%;
     padding: 15px;
 }
 
 #tagline {
-    padding-top: 15%;
+    padding-top: 10%;
     padding-left: 55%;
     margin-bottom: 0;
     color: #fafafa;
@@ -151,7 +152,9 @@ nav ul a {
 }
 
 #join-us-button {
+    border-radius: 10px !important;
     margin-top: 50px;
+    font-size: 30px;
 }
 
 /*------------------------------------- search */

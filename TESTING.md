@@ -110,7 +110,8 @@ The user stories below have all been tested against defined acceptance criteria.
 ## Defects
 
 1.  It was discovered during testing that the Matrialize modals implementented to confirm the deletion of items across the app were deleting the wrong object. This was resolved by implementing loop indexing which had to be further refined on the Manage Categories page to loop through the individual gategory types to ensure the correct object id was sourced for deletion.
-2.  It was noticed during testing that the Materialize sticky footer functionality had stopped working. This was resolved by changing the code for the base.html page to revise the structure and removing an erroneous character from the related CSS code. 
+2.  It was noticed during testing that the Materialize sticky footer functionality had stopped working. This was resolved by changing the code for the base.html page to revise the structure and removing an erroneous character from the related CSS code.
+3.  A defect was discovered that the images that were presented on the home page were in the reverse order to those on the routes and profile page. This was corrected by adding a reverse sort order to the query for the home page display for small and medium/large devices. The images now display with the most recently added first as with the profile and home pages.
 
 ---
 
