@@ -66,7 +66,7 @@
                 <div class="input-field col s12">
                     <i class="fas fa-map-signs prefix blue-grey-text"></i>
                     <input id="route_name" name="route_name" type="text"
-                        value="{{- route.route_name -}}" pattern="([^\s][A-z0-9À-ž\s]+){5,70}$" class="validate" required>
+                        value="{{- route.route_name -}}" minlength="5" maxlength="70" pattern="([^\s][A-z0-9À-ž\s]+)$" class="validate" required>
                     <label for="route_name">Route Name</label>
                     <span class="helper-text" data-error="5-70 characters, letters and numbers only" data-success="Valid Input"></span>
                 </div>

@@ -33,29 +33,24 @@
   {% if routes.count() > 0 %}
   <div class="row">
     {% for route in routes %}
-    <div class="col s12 m6 l4">
+    <div class="col s12 l6">
       <div class="card grey lighten-5 z-depth-4">
-        <div class="card-image">
-          <img src="{{ route.route_image }}" alt="Route Image">
+        <div class="card-image waves-effect waves-block waves-light">
+          <img class="activator" src="{{ route.route_image }}" alt="Route Image">
         </div>
         <div class="card-content">
-          <div class="card-name">
-            <h6><strong>{{ route.route_name }}</strong></h6>
-          </div>
-          <div>
-            <p class="card-description">{{ route.route_description}}</p><br>
-          </div>
-          <div>
+          <span class="card-title activator"><strong>{{ route.route_name }}<i class="material-icons right">more_vert</i></strong></span>
+          <p><a class="light-blue-text darken-2" href="{{ route.route_link }}" target="_blank">Route Link</a></p>
+        </div>
+          <div class="card-reveal">
+            <span class="card-title activator">{{ route.route_name }}<i class="material-icons right">close</i></span>
+            <p class="card-description">{{ route.route_description}}</p><br />
             <p><strong>Type: </strong>{{ route.category_name }}</p>
             <p><strong>Country: </strong>{{ route.country_name }}</p>
             <p><strong>Distance: </strong>{{ route.route_distance }} km</p>
             <p><strong>Difficulty: </strong>{{ route.route_difficulty }}</p>
             <p><strong>Created By: </strong><em>{{ route.created_by }}</em></p>
           </div>
-        </div>
-        <div class="card-action">
-          <a class="light-blue-text darken-2" href="{{ route.route_link }}" target="_blank">Route Link</a>
-        </div>
       </div>
     </div>
     {% endfor %}

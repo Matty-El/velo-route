@@ -37,10 +37,6 @@ input {
     font-size: 1.5rem;
 }
 
-/*.footer {
-    color: #fafafa;
-}*/
-
 /*------------------------------------- general */
 #body {
     font-family: 'Roboto' sans-serif !important;
@@ -75,16 +71,7 @@ main {
 }
 
 /*------------------------------------- cards */
-
-.card-content {
-    height: 600px;
-    color: #263238;
-}
-
-.card-action {
-    height: 75px;
-    font-size: 1rem;
-}
+/*
 
 .card-description {
     height: 250px;
@@ -94,19 +81,23 @@ main {
     height: 125px;
 }
 
-.card-name {
-    height: 75px;
+*/
+
+.card-image {
+    min-height: 400px;
+}
+
+.card-title {
+    min-height: 100px;
     padding-bottom: 10px;
 }
 
-.card-buttons {
-    height: 50px;
-    padding-top: 20px;
-    padding-bottom: 20px;
+.card-title.activator {
+    font-size: 1.5rem;
 }
 
-#tip-card-description {
-    white-space: pre-line;
+.card-buttons {
+    padding-bottom: 20px;
 }
 
 /*------------------------------------- navbar */

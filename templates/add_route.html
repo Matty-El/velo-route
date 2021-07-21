@@ -51,7 +51,7 @@
             <div class="row">
                 <div class="input-field">
                     <i class="fas fa-map-signs prefix blue-grey-text"></i>
-                    <input id="route_name" name="route_name" type="text" pattern="([^\s][A-z0-9À-ž\s]+){5,70}$" class="validate" required>
+                    <input id="route_name" name="route_name" type="text" minlength="5" maxlength="70" pattern="([^\s][A-z0-9À-ž\s]+)$" class="validate" required>
                     <label for="route_name" class="routes-label">Route Name</label>
                     <span class="helper-text" data-error="5-70 characters, letters and numbers only" data-success="Valid Input"></span>
                 </div>

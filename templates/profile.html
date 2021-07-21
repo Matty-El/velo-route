@@ -11,9 +11,6 @@
       <p class="center-align blue-grey-text">
         <strong>Name:</strong> {{ first_name }} {{ last_name }}
       </p>
-      <p class="center-align blue-grey-text">
-        <strong>Email Address:</strong> {{ email }}
-      </p>
     </div>
   </div>
 </div>
@@ -24,51 +21,45 @@
 <div class="container">
   <div class="row">
     {% for route in routes %}
-    <div class="col s12 m6 l4">
+    <div class="col s12 l6">
       <div class="card grey lighten-5 z-depth-4">
-        <div class="card-image">
-          <img src="{{ route.route_image }}" alt="Route Image">
+        <div class="card-image waves-effect waves-block waves-light">
+          <img class="activator" src="{{ route.route_image }}" alt="Route Image">
         </div>
         <div class="card-content">
-          <div id="card-name">
-            <h6><strong>{{ route.route_name }}</strong></h6>
+          <span class="card-title activator">{{ route.route_name }}<i class="material-icons right">more_vert</i></span>
+          <p><a class="light-blue-text darken-2" href="{{ route.route_link }}" target="_blank">Route Link</a></p>
+        </div>
+        <div class="card-reveal">
+          <span class="card-title activator"><strong>{{ route.route_name }}<i
+                class="material-icons right">close</i></strong></span>
+          <p class="card-description">{{ route.route_description}}</p><br />
+          <p><strong>Type: </strong>{{ route.category_name }}</p>
+          <p><strong>Country: </strong>{{ route.country_name }}</p>
+          <p><strong>Distance: </strong>{{ route.route_distance }} km</p>
+          <p><strong>Difficulty: </strong>{{ route.route_difficulty }}</p>
+          <p><strong>Created By: </strong><em>{{ route.created_by }}</em></p>
+        </div>
+        <div class="card-buttons center-align">
+          <a href="{{ url_for('edit_route', route_id=route._id) }}" class="btn-small cyan darken-2 waves-effect">Edit
+          </a>
+          <!-- delete route modal trigger -->
+          <a href="#delete-modal{{ loop.index0 }}" class="btn-small red accent-4 waves-effect modal-trigger">Delete
+          </a>
+        </div>
+        <!-- delete route modal -->
+        <div id="delete-modal{{ loop.index0 }}" class="modal">
+          <div class="modal-content s4">
+            <h5>Delete Route</h5>
+            <p>Are you sure you want to permanently delete the <strong>{{ route.route_name }}</strong>?</p>
           </div>
-          <div>
-            <p class="card-description">{{ route.route_description}}</p><br>
-          </div>
-          <div>
-            <p><strong>Type: </strong>{{ route.category_name }}</p>
-            <p><strong>Country: </strong>{{ route.country_name }}</p>
-            <p><strong>Distance: </strong>{{ route.route_distance }} km</p>
-            <p><strong>Difficulty: </strong>{{ route.route_difficulty }}</p>
-            <p><strong>Created By: </strong><em>{{ route.created_by }}</em></p>
-          </div>
-          <div class="card-buttons">
-            <a href="{{ url_for('edit_route', route_id=route._id) }}"
-              class="btn-small cyan darken-2 waves-effect">Edit
-            </a>
-            <!-- delete route modal trigger -->
-            <a href="#delete-modal{{ loop.index0 }}"
-              class="btn-small red accent-4 waves-effect modal-trigger">Delete
-            </a>
+          <div class="modal-footer">
+            <a href="{{ url_for('profile', username=session['user']) }}"
+              class="modal-close btn-small cyan darken-2 waves-effect">Cancel</a>
+            <a href="{{ url_for('delete_route', route_id=route._id) }}"
+              class="modal-close btn-small red accent-4 waves-effect">Delete</a>
           </div>
         </div>
-        <div class="card-action">
-          <a class="light-blue-text darken-2" href="{{ route.route_link }}" target="_blank">Route Link</a>
-        </div>
-      </div>
-    </div>
-    <!-- delete route modal -->
-    <div id="delete-modal{{ loop.index0 }}" class="modal">
-      <div class="modal-content s4">
-        <h5>Delete Route</h5>
-        <p>Are you sure you want to permanently delete the <strong>{{ route.route_name }}</strong>?</p>
-      </div>
-      <div class="modal-footer">
-        <a href="{{ url_for('profile', username=session['user']) }}"
-          class="modal-close btn-small cyan darken-2 waves-effect">Cancel</a>
-        <a href="{{ url_for('delete_route', route_id=route._id) }}"
-          class="modal-close btn-small red accent-4 waves-effect">Delete</a>
       </div>
     </div>
     {% endfor %}
