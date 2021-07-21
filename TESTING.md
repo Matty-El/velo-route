@@ -54,7 +54,9 @@
 
 ## User Story Testing
 
-The user stories below have all been tested against defined acceptance criteria. The full test results for all user stories are detailed in attached ![testing report](testing-files/browser-compatibility.png).
+The user stories below have all been tested against defined acceptance criteria. The full test results for all user stories are detailed in attached testing report.
+
+![testing report](testing-files/veloroute-user-story-testing.pdf).
 
 ### Website Owner
 
@@ -108,7 +110,9 @@ The user stories below have all been tested against defined acceptance criteria.
 ---
 
 ## Defects
-1. 
+
+1.  It was discovered during testing that the Matrialize modals implementented to confirm the deletion of items across the app were deleting the wrong object. This was resolved by implementing loop indexing which had to be further refined on the Manage Categories page to loop through the individual gategory types to ensure the correct object id was sourced for deletion.
+2.  It was noticed during testing that the Materialize sticky footer functionality had stopped working. This was resolved by changing the code for the base.html page to revise the structure and removing an erroneous character from the related CSS code. 
 
 ---
 

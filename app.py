@@ -45,16 +45,14 @@ def join_us():
                 {"username": request.form.get("username").lower()})
 
             if existing_user:
-                flash("Username already exists")
-                return redirect(url_for("join_us"))
+                flash("Username already exists. Please log in.")
+                return redirect(url_for("login"))
 
             join_us = {
                 "username": request.form.get("username").lower(),
                 "first_name": request.form.get("first_name"),
                 "last_name": request.form.get("last_name"),
                 "email": request.form.get("email"),
-                # remember to add password confirmation
-                # remember to add user type
                 "password": generate_password_hash(
                     request.form.get("password"))
             }

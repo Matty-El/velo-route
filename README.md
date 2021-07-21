@@ -100,19 +100,21 @@ The wireframes were developed using [Balsamiq](https://balsamiq.com/).
 -   Medium device [wireframes](design/veloroute-medium-device.png).
 -   Large device [wireframes](design/veloroute-large-device.png).
 
-After the initial design was finalised the following changes were made:
+The following changes were made after the initial design.
 
--   Change one ......
+-   Addition of user profile page with ability for users to edit their previously submitted routes on the profile page.
+-   Expanding card panels whish can be clicked to reveal the underlying information on routes and cycling tips.
+
 
 ### Surface
 
-VeloRoute features a clean and simple design with #263238 used for dark backgrounds and text and #FAFAFA for light backgrounds and text to provide good contrast. 
+VeloRoute features a clean and simple design with #263238 used for dark backgrounds and text and #FAFAFA for light backgrounds and text to provide good contrast. Colour is added to the site through the use of images and buttons as detailed in the colour scheme below.
 
 #### Branding
 
 A simple VeloRoute logo was created using Canva.
 
-[VeloRoute logo](images/veloroute-logo-crop.png)
+![VeloRoute logo](images/veloroute-logo-crop.png)
 
 #### Colours
 
@@ -128,7 +130,7 @@ Images are used to add some additional colour to the website.
 
 #### Typography
 
-Raleway font has been utilised for all text across the website. This is a simple and modern font available from the Google Fonts library which is unobtrusive and easy to read. Font Awesome icons have been utilised for icons throughout the site.
+Raleway font has been utilised for all text across the website. This is a simple and modern font available from the Google Fonts library which is unobtrusive and easy to read. Font Awesome icons have been utilised for icons throughout the site, with the exception of the card reveal and close icons which are Materialize icons.
 
 #### Defensive Design
 
@@ -154,7 +156,7 @@ Join Us Form:
 
 The MongoDB VeloRoute database has seven collections.
 
-[VeloRoute Data Model](readme-files/veloroute-data-model.png)
+![VeloRoute Data Model](readme-files/veloroute-data-model.png)
 
 
 
