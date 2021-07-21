@@ -138,7 +138,7 @@ The website has been developed incorporating the following defensive design aspe
 
 **Error Handling**
 
-Error pages for 403, 404 and 500 errors......
+Error pages for 403, 404 and 500 errors which will be displayed to the user if any of these errors occur.
 
 **Confirm on Delete**
 
@@ -170,7 +170,7 @@ The MongoDB VeloRoute database has seven collections.
 
 #### Home Page
 
--   VeloRoute logo with links to the home page.
+-   VeloRoute logo with a link to the home page.
 -   A navigation menu on the top right of the website hero section that allows the user to navigate the website by clicking the navigation links. The navigation menu collapses to a burger icon with sidenav menu on smaller devices. Only the navigation links for Home, Routes, Cycling Tips, Log In and Join Us pages are visible to users who are not logged in to the site.
 -   Section one of the Home page includes a hero image and tagline.
 -   Section two of the Home page includes introductory text and a call to action button prompting users to join us at VeloRoute.
@@ -178,13 +178,13 @@ The MongoDB VeloRoute database has seven collections.
 
 #### Routes Page
 
--   The Routes page displays all routes that have been added to VeloRoute.
+-   The Routes page displays all routes that have been added to VeloRoute, with the most recently added routes displayed first.
 -   There is the option to search routes to find routes matching specific text search criteria.
 
 #### Cycling Tips Page
 
 -   The Cycling Tips page displays cards with cycling tips relating to categories such as bicycle maintenance, saftey and nutrition.
--   Cycling Tips are added by the administrator user and can not be edited by other users.
+-   Cycling Tips are added by the admin user and can not be edited by other users. Admin users can edit or delete cycling tips and the delete button is linked to a modal to confirm if the user definitely wants to dlete the cycling tip.
 
 #### Log In Page
 
@@ -199,22 +199,22 @@ The MongoDB VeloRoute database has seven collections.
 #### Profile Page
 
 -   The profile page displays the logged in user's profile details and the routes they have added which are displayed with the most recently added routes listed first.
--   The displayed routes can be edited by selecting the edit button or they can be deleted. There is a cancel button if the user decides that they do not wish to edit the route which returns the user to their profile page.
+-   The displayed routes can be edited by selecting the edit button or they can be deleted. There is a cancel button if the user decides that they do not wish to edit the route which returns the user to their profile page. The delete button is linked to a modal that displays a message to ask if the use definitely wants to delete the route.
 
 #### Add Routes Page
 
 -   The Add Routes page allows users who are logged in to the site to add new routes.
--   There is a simple input form that has dropdown select options for choosing a route category and difficulty level and input fields for users to add a route name, route image, route description, route distance and a link to the route on the users favourite GPS activity platform, e.g. Strava.
+-   There is a simple input form that has dropdown select options for choosing a route category, country and difficulty level and input fields for users to add a route name, route image, route description, route distance and a link to the route on the users favourite GPS activity platform, e.g. Strava.
 
 #### Add Cycling Tip Page
 
--   The Add Cycling Tips page allows administration users to add new cycling tips to the VeloRoute website.
--   There is a simple input form that has dropdown select option for choosing a cycling tip category and input fields for the administration user to add a cycling tip name, an image, a cycling tip description and a link to further information related to the cycling tip.
+-   The Add Cycling Tips page allows admin users to add new cycling tips to the VeloRoute website.
+-   There is a simple input form that has a dropdown select option for choosing a cycling tip category and input fields for the admin user to add a cycling tip name, an image, a cycling tip description and a link to further information related to the cycling tip.
 
 #### Manage Categories Page
 
 -   The Manage Categories page allows administration users to add, edit and delete the categories used for the dropdown select options on the Add Route and Add Cycling Tips pages.
--   The categories are displayed as simple cards categorised by each category type with buttons for adding, editing and deleting the categories
+-   The categories are displayed as simple cards categorised by each category type with buttons for adding, editing and deleting the categories.
 
 #### Footer Section
 
@@ -224,9 +224,9 @@ _Note: The social media links currently link to the social media websites and no
 
 #### Future features
 
--   The ability for users to add ratings to the routes that have been added.
--   Additional route categories such as countries to broaden the available search options.
--   Addition of a separate cycling tips page to link from cycling tips.
+-   The ability for users to add ratings to the routes that have been added to VeloRoute.
+-   Additional country categorisation to include states, regions, counties etc.
+-   Addition of a separate cycling tips page to link from each of the cycling tips to provide a more detailed overview and instructions.
 -   A newsletter for users to sign up to updates relating to VeloRoute.
 
 ---
@@ -298,7 +298,7 @@ To clone this project from GitHub.
     - Signup or login to your MongoDB account.
     - Create a cluster and a database.
     - Create six collections in the database: **categories, cycling_tips, cycling_tip_categories, difficulty_levels, routes, users.**
-    - Add the data to the collections. See [database schema](TESTING.md) for details on how the database is set up for this project.
+    - Add the data to the collections. See [Data Model](#data-model) for details on how the data has been modelled for this project.
 3. Create the environment variables 
     - Create a .gitignore file in the root directory of the project.
     - Add the env.py file in the .gitignore.
@@ -349,60 +349,45 @@ To clone this project from GitHub.
 5.  Type **git clone**, enter a space and then paste the URL copied from GitHub.
 6.  Press **Enter** and the local clone will be created in the specified directory.
 
+---
+
 ## Credits
 
 ### Content
 
-All text content included in the Urban Paws website is my own.
-
-Comments have been included in the code for code that has been sourced and adapted for this website.
+All text content included in this project is my own..
 
 ### Media
 
--   All images, have been sourced from Unsplash or Pexels.
+All images are my own, have been licensed from Adobe Stock or are freely available on Unsplash. Credits are listed below.
 
 **Hero Image**
 
--   
+-   The hero image is licensed from Adobe Stock.
 
 **Routes Images**
 
--   Photo by <a href="https://unsplash.com/@ocen?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Coen van de Broek</a> on <a href="https://unsplash.com/s/photos/cycling?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+-   The Brossac, Chatignac and Berneuil route photo is my own.
   
--   Photo by <a href="https://unsplash.com/@xokvictor?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Viktor Bystrov</a> on <a href="https://unsplash.com/s/photos/cycling?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+-   Wokingham CC SUnday ride route: Photo by <a href="https://unsplash.com/@mmagnemyr?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Martin Magnemyr</a> on Unsplash
   
--   Photo by <a href="https://unsplash.com/@davidmarcu?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">David Marcu</a> on <a href="https://unsplash.com/s/photos/cycling?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-  
--   Photo by <a href="https://unsplash.com/@mmagnemyr?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Martin Magnemyr</a> on <a href="https://unsplash.com/s/photos/cycling?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-  
--   Photo by <a href="https://unsplash.com/@munbaik_cycling?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Munbaik Cycling Clothing</a> on <a href="https://unsplash.com/s/photos/cycling?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+-   Beauty of the Peak District ride: Photo by <a href="https://unsplash.com/@minkus?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Minkus</a> on Unsplash
 
--   Photo by <a href="https://unsplash.com/@nincsapro?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Yury Kirillov</a> on <a href="https://unsplash.com/s/photos/cycling?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+-   Epic French Pyrenees route: Photo by <a href="https://unsplash.com/@nincsapro?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Yury Kirillov</a> on Unsplash
   
--   Photo by <a href="https://unsplash.com/@polina_art?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Polina Rytova</a> on <a href="https://unsplash.com/s/photos/cycling?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+-   Coast to Alicante route: Photo by <a href="https://unsplash.com/@polina_art?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Polina Rytova</a> on Unsplash
   
--   Photo by <a href="https://unsplash.com/@jeremy0?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Jeremy Zero</a> on <a href="https://unsplash.com/s/photos/cycling?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-  
--   Photo by <a href="https://unsplash.com/@vaccinium?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Dmitrii Vaccinium</a> on <a href="https://unsplash.com/s/photos/cycling?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-  
--   Photo by <a href="https://unsplash.com/@spanic?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Damir Spanic</a> on <a href="https://unsplash.com/s/photos/cycling?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-  
--   Photo by <a href="https://unsplash.com/@jxk?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Jan Kopřiva</a> on <a href="https://unsplash.com/s/photos/cycling?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+-   Mountain trails route: Photo by <a href="https://unsplash.com/@jxk?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Jan Kopřiva</a> on Unsplash
 
 **Cycling Tips Images**
 
--   Photo by <a href="https://unsplash.com/@single_lens_reflex?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Dan Burton</a> on <a href="https://unsplash.com/s/photos/bicycle-maintenance?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+-   Clean and maintain your bike cycling tip: Photo by <a href="https://unsplash.com/@single_lens_reflex?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Dan Burton</a> on Unsplash
   
--   Photo by <a href="https://unsplash.com/@robertbye?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Robert Bye</a> on <a href="https://unsplash.com/s/photos/bicycle-maintenance?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-  
--   Photo by <a href="https://unsplash.com/@tecreate?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Tom Conway</a> on <a href="https://unsplash.com/s/photos/bike-repair?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-  
--   Photo by cottonbro from Pexels
+-   The M Check cycling tip: Photo by <a href="https://unsplash.com/@robertbye?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Robert Bye</a> on Unsplash
 
--   Photo by <a href="https://unsplash.com/@nate_dumlao?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Nathan Dumlao</a> on <a href="https://unsplash.com/s/photos/coffee-shops?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+-   Coffee and cake cycling tip: Photo by <a href="https://unsplash.com/@nate_dumlao?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Nathan Dumlao</a> on Unsplash
   
--   Photo by Pavel Danilyuk from Pexels
-
+-   Clean your chain cycling tip: Phto is licensed from Adobe Stock
 
 ### Acknowledgements
 
