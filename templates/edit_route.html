@@ -23,7 +23,7 @@
                     <label for="category_name">Category</label>
                 </div>
             </div>
-            <!-- route difficulty -->
+            <!-- route difficulty selector -->
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-dumbbell prefix blue-grey-text"></i>
@@ -65,25 +65,26 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-map-signs prefix blue-grey-text"></i>
-                    <input id="route_name" name="route_name" minlength="10" maxlength="60" type="text"
-                        value="{{- route.route_name -}}" class="materialize-textarea validate" required>
+                    <input id="route_name" name="route_name" type="text"
+                        value="{{- route.route_name -}}" pattern="([^\s][A-z0-9À-ž\s]+){5,70}$" class="validate" required>
                     <label for="route_name">Route Name</label>
+                    <span class="helper-text" data-error="5-70 characters, letters and numbers only" data-success="Valid Input"></span>
                 </div>
             </div>
             <!-- route image -->
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-image prefix blue-grey-text"></i>
-                    <input id="route_image" name="route_image" minlength="2" maxlength="200" type="text"
-                        value="{{- route.route_image -}}" class="materialize-textarea validate" required>
+                    <input id="route_image" name="route_image" minlength="2" maxlength="200" type="text" value="{{- route.route_image -}}" pattern="^https?://(?:[a-z0-9\-]+\.)+[a-z]{2,6}(?:/[^/#?]+)+\.(?:jpg|jpeg|gif|png)$" class="validate" required>
                     <label for="route_image">Route Image</label>
+                    <span class="helper-text" data-error="Please enter a valid image URL" data-success="Valid Input"></span>
                 </div>
             </div>
             <!-- route description -->
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-align-left prefix blue-grey-text"></i>
-                    <input id="route_description" name="route_description" minlength="10" maxlength="300" type="text" value="{{- route.route_description -}}" class="materialize-textarea validate" required>
+                    <input id="route_description" name="route_description" value="{{- route.route_description -}}" pattern="([^\s][A-z0-9À-ž\s]+){10,300}$" class="materialize-textarea validate" required>
                     <label for="route_description">Route Description</label>
                 </div>
             </div>
@@ -91,17 +92,18 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-route prefix blue-grey-text"></i>
-                    <input id="route_distance" name="route_distance" minlength="1" maxlength="10" type="text" value="{{- route.route_distance -}}" class="materialize-textarea validate" required>
+                    <input id="route_distance" name="route_distance" minlength="1" maxlength="6" type="text" value="{{- route.route_distance -}}" pattern="^[1-9][0-9]*$" class="validate" required>
                     <label for="route_distance">Route Distance</label>
+                    <span class="helper-text" data-error="Please enter numbers only" data-success="Valid Input"></span>
                 </div>
             </div>
             <!-- route link -->
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-link prefix blue-grey-text"></i>
-                    <input id="route_link" name="route_link" minlength="1" maxlength="200" type="text" value="{{- route.route_link -}}"
-                        class="materialize-textarea validate" required>
+                    <input id="route_link" name="route_link" minlength="1" maxlength="200" type="url" value="{{- route.route_link -}}" class="validate" required>
                     <label for="route_link">Route Link</label>
+                    <span class="helper-text" data-error="Please enter a valid URL" data-success="Valid Input"></span>
                 </div>
             </div>
             <!-- edit route buttons -->

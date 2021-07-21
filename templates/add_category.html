@@ -10,10 +10,10 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-folder-open prefix blue-grey-text"></i>
-                    <input id="category_name" name="category_name" minlength="3" maxlength="25" type="text"
-                        pattern="^[A-Za-z ]{3,25}$" class="validate" required>
+                    <input id="category_name" name="category_name" type="text"
+                    pattern="([^\s][A-z\s]+){3,25}$" class="validate" required>
                     <label for="category_name" id="add-category-label">Category Name</label>
-                    <span class="helper-text" data-error="3-25 characters, letters only" data-success="Valid Input">3-25 characters, letters only</span>
+                    <span class="helper-text" data-error="3-25 characters, letters and spaces only" data-success="Valid Input">3-25 characters, letters and spaces only</span>
                 </div>
             </div>
             <div class="row">

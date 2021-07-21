@@ -17,11 +17,12 @@ View the live website [here.](https://velo-route.herokuapp.com/)
 ## Contents
 
 1.  [User Experience Design](#user-experience-design)
-2.  [Features](#features)
-3.  [Technologies Used](#technologies-used)
-4.  [Testing](#testing)
-5.  [Deployment](#deployment)
-6.  [Credits](#credits)
+2.  [Information Architecture](#information-architecture)
+3.  [Features](#features)
+4.  [Technologies Used](#technologies-used)
+5.  [Testing](#testing)
+6.  [Deployment](#deployment)
+7.  [Credits](#credits)
 
 ---
 
@@ -31,14 +32,12 @@ View the live website [here.](https://velo-route.herokuapp.com/)
 
 The key goals for developing the website are:
 
--   To provide users with an attractive interactive website that enables them to search for and find new cycling routes
-    and find tips relating to cycling and cycling safety.
+-   To provide users with an attractive and intuitive interactive website that enables them to search for and find new cycling routes and find tips relating to cycling and cycling safety.
 -   To allow users to securely register with VeloRoute and set up a username and password.
 -   To allow returning users to log in to VeloRoute.
 -   To enable users to add their favourite cycling routes.
 -   To allow users to edit or delete their cycling routes.
--   To allow users to rate cycling routes that have been added to VeloRoute.
--   To allow admin users to edit cycling route categories and cycling tips.
+-   To allow admin users to edit cycling routes, cycling tips and categories.
 
 ### Scope
 
@@ -75,7 +74,7 @@ The key goals for developing the website are:
 
 ### Structure
 
-The VeloRoute website has been designed to provide an attractive, simple and easy to navigate website. The site has been developed to enable visitors to search for rides that have been submitted by users and to securely register and submit their own cycling routes.
+The VeloRoute website has been designed to provide an attractive, intuitive and easy to navigate website. The site has been developed to enable visitors to search for rides that have been submitted by users and to securely register and submit their own cycling routes.
 
 The website has the following key elements:
 
@@ -123,13 +122,34 @@ A simple colour palette using #263238 for navigation and footer backgrounds and 
 
 All icons with the exception of the social media icons use colour #607D8B. Social media icons in footer are the same colour as the footer text #FAFAFA.
 
-Colours have been used for flash messages and action buttons. #4DD0E1 has been used for the flash messages background, #F57C00 for the call to action button on the home page, #0097A7 for action buttons throughout the site and #D50000 for all cancel and delete buttons.
+Colours have been used for flash messages and action buttons. #4DD0E1 has been used for the flash messages background, #F57C00 for the call to action button on the home page, #0097A7 for action buttons throughout the site and #D50000 for all delete buttons.
 
 Images are used to add some additional colour to the website.
 
 #### Typography
 
 Raleway font has been utilised for all text across the website. This is a simple and modern font available from the Google Fonts library which is unobtrusive and easy to read. Font Awesome icons have been utilised for icons throughout the site.
+
+#### Defensive Design
+
+The website has been developed incorporating the following defensive design aspects.
+
+**Error Handling**
+
+Error pages for 403, 404 and 500 errors......
+
+**Confirm on Delete**
+
+All areas of the website where users can delete data incorporate modals to prompt the user if they really want to permanently delete the data.
+
+**Data Input Validation**
+
+Data validation is incorporated on all data input fields with the following validation applied to:
+
+Join Us Form:
+
+-   .......
+
 
 ---
 
@@ -197,6 +217,7 @@ _Note: The social media links currently link to the social media websites and no
 
 -   The ability for users to add ratings to the routes that have been added.
 -   Additional route categories such as countries to broaden the available search options.
+-   Addition of a separate cycling tips page to link from cycling tips.
 -   A newsletter for users to sign up to updates relating to VeloRoute.
 
 ---
@@ -329,9 +350,13 @@ Comments have been included in the code for code that has been sourced and adapt
 
 ### Media
 
--   All images, with the exception of the topography image below, were licensed for use from [Adobe Stock](https://stock.adobe.com/).
+-   All images, have been sourced from Unsplash or Pexels.
 
-**Routes**
+**Hero Image**
+
+-   
+
+**Routes Images**
 
 -   Photo by <a href="https://unsplash.com/@ocen?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Coen van de Broek</a> on <a href="https://unsplash.com/s/photos/cycling?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
   
@@ -355,7 +380,7 @@ Comments have been included in the code for code that has been sourced and adapt
   
 -   Photo by <a href="https://unsplash.com/@jxk?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Jan Kopřiva</a> on <a href="https://unsplash.com/s/photos/cycling?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 
-**Tips**
+**Cycling Tips Images**
 
 -   Photo by <a href="https://unsplash.com/@single_lens_reflex?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Dan Burton</a> on <a href="https://unsplash.com/s/photos/bicycle-maintenance?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
   
