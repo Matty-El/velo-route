@@ -23,9 +23,9 @@ mongo = PyMongo(app)
 @app.route("/")
 def index():
     # first six routes for medium and large devices
-    med_large_routes = mongo.db.routes.find().limit(6)
+    med_large_routes = mongo.db.routes.find().sort("_id",-1).limit(6)
     # first four routes for mobile devices
-    small_routes = mongo.db.routes.find().limit(3)
+    small_routes = mongo.db.routes.find().sort("_id",-1).limit(3)
     return render_template(
         "index.html", med_large_routes=med_large_routes,
         small_routes=small_routes)
