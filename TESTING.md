@@ -54,9 +54,7 @@
 
 ## User Story Testing
 
-The user stories below have all been tested against defined acceptance criteria. The full test results for all user stories are detailed in attached testing report.
-
-![testing report](testing-files/veloroute-user-story-testing.pdf).
+The user stories below have all been tested against defined acceptance criteria. The full test results for all user stories are detailed in attached [testing report](testing-files/veloroute-user-story-testing.pdf).
 
 ### Website Owner
 
