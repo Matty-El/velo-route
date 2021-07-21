@@ -13,13 +13,11 @@
           <img class="activator" src="{{ cycling_tip.cycling_tip_image }}" alt="Cycling Tip Image">
         </div>
         <div class="card-content">
-          <span class="card-title activator">{{ cycling_tip.cycling_tip_name }}<i
-              class="material-icons right">more_vert</i></span>
+          <span class="card-title activator"><i class="far fa-hand-pointer"></i> {{ cycling_tip.cycling_tip_name }}</span>
           <a class="light-blue-text darken-2" href="{{ cycling_tip.cycling_tip_link }}" target="_blank">TIP LINK</a>
         </div>
         <div class="card-reveal">
-          <span class="card-title activator">{{ cycling_tip.cycling_tip_name }}<i
-              class="material-icons right">close</i></span>
+          <span class="card-title activator"><strong>{{ cycling_tip.cycling_tip_name }}</strong><i class="fas fa-times right"></i></span>
           <p class="card-description">{{ cycling_tip.cycling_tip_description}}</p>
           <a class="light-blue-text darken-2" href="{{ cycling_tip.cycling_tip_link }}" target="_blank">TIP LINK</a>
         </div>
