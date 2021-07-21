@@ -17,7 +17,7 @@ View the live website [here.](https://velo-route.herokuapp.com/)
 ## Contents
 
 1.  [User Experience Design](#user-experience-design)
-2.  [Information Architecture](#information-architecture)
+2.  [Data Model](#data-model)
 3.  [Features](#features)
 4.  [Technologies Used](#technologies-used)
 5.  [Testing](#testing)
@@ -112,7 +112,7 @@ VeloRoute features a clean and simple design with #263238 used for dark backgrou
 
 A simple VeloRoute logo was created using Canva.
 
-[VeloRoute logo](https://velo-route.herokuapp.com/)
+[VeloRoute logo](images/veloroute-logo-crop.png)
 
 #### Colours
 
@@ -149,6 +149,13 @@ Data validation is incorporated on all data input fields with the following vali
 Join Us Form:
 
 -   .......
+
+## Data Model
+
+The MongoDB VeloRoute database has seven collections.
+
+[VeloRoute Data Model](readme-files/veloroute-data-model.png)
+
 
 
 ---
