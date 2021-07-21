@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
     integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
     crossorigin="anonymous" referrerpolicy="no-referrer" type="text/css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
     type="text/css">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
@@ -18,131 +18,130 @@
   <title>VeloRoute</title>
 </head>
 
-<header>
-  <!-- main navigation menu -->
-  <nav class="nav-extended blue-grey darken-4 grey-text text-lighten-5 active">
-    <div class="nav-wrapper">
-      <a href="{{ url_for('index') }}">
-        <img class="brand-logo" id="logo" src="{{ url_for('static', filename='images/veloroute_logo_crop.png') }}"
-          height="60" width="150" alt="VeloRoute Logo"></img>
-      </a>
-      <a href="#" data-target="mobile-nav" class="sidenav-trigger right"><i
-          class="fas fa-bars grey-text text-lighten-5"></i></a>
-      <ul class="right hide-on-med-and-down">
-        <li class="navbar-li"><a href="{{ url_for('index') }}">Home</a></li>
-        <li class="navbar-li"><a href="{{ url_for('get_routes') }}">Routes</a></li>
-        <li class="navbar-li"><a href="{{ url_for('get_cycling_tips') }}">Cycling Tips</a></li>
-        {% if session.user %}
-        <li class="navbar-li"><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
-        <li class="navbar-li"><a href="{{ url_for('add_route') }}">Add Route</a></li>
-        {% if session.user|lower == "admin"|lower %}
-        <li class="navbar-li"><a href="{{ url_for('add_cycling_tip') }}">Add Cycling Tip</a></li>
-        <li class="navbar-li"><a href="{{ url_for('get_categories') }}">Manage Categories</a></li>
-        {% endif %}
-        <li class="navbar-li"><a href="{{ url_for('logout') }}">Log Out</a></li>
-        {% else %}
-        <li class="navbar-li"><a href="{{ url_for('login') }}">Log In</a></li>
-        <li class="navbar-li"><a href="{{ url_for('join_us') }}">Join Us</a></li>
-        {% endif %}
-      </ul>
-    </div>
-  </nav>
-  <!-- mobile collabsible side navigation menu -->
-  <ul class="sidenav right" id="mobile-nav">
-    <li>
-      <img class="center-align" height="120" width="300"
-        src="{{ url_for('static', filename='images/veloroute_logo_crop.png') }}"></img>
-    </li>
-    <li><a href="{{ url_for('index') }}">Home</a></li>
-    <li><a href="{{ url_for('get_routes') }}">Routes</a></li>
-    <li><a href="{{ url_for('get_cycling_tips') }}">Cycling Tips</a></li>
-    {% if session.user %}
-    <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
-    <li><a href="{{ url_for('add_route') }}">Add Route</a></li>
-    {% if session.user|lower == "admin"|lower %}
-    <li><a href="{{ url_for('add_cycling_tip') }}">Add Cycling Tip</a></li>
-    <li><a href="{{ url_for('get_categories') }}">Manage Categories</a></li>
-    {% endif %}
-    <li><a href="{{ url_for('logout') }}">Log Out</a></li>
-    {% else %}
-    <li><a href="{{ url_for('login') }}">Log In</a></li>
-    <li><a href="{{ url_for('join_us') }}">Join Us</a></li>
-    {% endif %}
-  </ul>
-</header>
-
-<main>
-  <section>
-    <!-- display flash messages -->
-    {% with messages = get_flashed_messages() %}
-    {% if messages %}
-    {% for message in messages %}
-    <div class="row flashes">
-      <div class="col s8 offset-s2 center-align">
-        <h5 class="center-align cyan lighten-2 white-text">{{ message }}</h5>
-      </div>
-    </div>
-    {% endfor %}
-    {% endif %}
-    {% endwith %}
-  </section>
-
-  <body>
-    {% block content %}
-
-    {% endblock %}
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
-    {% block scripts %}
-    {% endblock %}
-  </body>
-</main>
-
-<footer class="page-footer blue-grey darken-4 grey-text text-lighten-5">
-  <div class="container">
-    <div class="row">
-      <div class="col l6 s12">
-        <h5>About Us</h5>
-        <p>The team at VeloRoute have a passion for all things cycling related.</p>
-        <p>We try to cycle every day, whether that be the commute to work, a morning blast around the local trails, a
-          quick evening ride or a weekend epic. We hope you enjoy exploring new cycling routes and adding your
-          favourites for other VeloRoute members to explore.</p>
-        <p>Enjoy the ride!</p>
-      </div>
-      <div class="col l4 offset-l2 s12">
-        <h5>Social Media</h5>
-        <ul>
-          <li>
-            <a class="grey-text text-lighten-5 social-media-icons" href="https://www.facebook.com/" target="_blank">
-              <i class="fab fa-facebook-square"></i>
-            </a>
-          </li>
-          <li>
-            <a class="grey-text text-lighten-5 social-media-icons" href="https://twitter.com/" target="_blank">
-              <i class="fab fa-twitter-square"></i>
-            </a>
-          </li>
-          <li>
-            <a class="grey-text text-lighten-5 social-media-icons" href="https://www.instagram.com/" target="_blank">
-              <i class="fab fa-instagram-square"></i>
-            </a>
-          </li>
-          <li>
-            <a class="grey-text text-lighten-5 social-media-icons" href="https://pinterest.com/" target="_blank">
-              <i class="fab fa-pinterest-square"></i>
-            </a>
-          </li>
+<body>
+  <header>
+    <!-- main navigation menu -->
+    <nav class="nav-extended blue-grey darken-4 grey-text text-lighten-5 active">
+      <div class="nav-wrapper">
+        <a href="{{ url_for('index') }}">
+          <img class="brand-logo" id="logo" src="{{ url_for('static', filename='images/veloroute_logo_crop.png') }}"
+            height="60" width="150" alt="VeloRoute Logo"></img>
+        </a>
+        <a href="#" data-target="mobile-nav" class="sidenav-trigger right"><i
+            class="fas fa-bars grey-text text-lighten-5"></i></a>
+        <ul class="right hide-on-med-and-down">
+          <li class="navbar-li"><a href="{{ url_for('index') }}">Home</a></li>
+          <li class="navbar-li"><a href="{{ url_for('get_routes') }}">Routes</a></li>
+          <li class="navbar-li"><a href="{{ url_for('get_cycling_tips') }}">Cycling Tips</a></li>
+          {% if session.user %}
+          <li class="navbar-li"><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
+          <li class="navbar-li"><a href="{{ url_for('add_route') }}">Add Route</a></li>
+          {% if session.user|lower == "admin"|lower %}
+          <li class="navbar-li"><a href="{{ url_for('add_cycling_tip') }}">Add Cycling Tip</a></li>
+          <li class="navbar-li"><a href="{{ url_for('get_categories') }}">Manage Categories</a></li>
+          {% endif %}
+          <li class="navbar-li"><a href="{{ url_for('logout') }}">Log Out</a></li>
+          {% else %}
+          <li class="navbar-li"><a href="{{ url_for('login') }}">Log In</a></li>
+          <li class="navbar-li"><a href="{{ url_for('join_us') }}">Join Us</a></li>
+          {% endif %}
         </ul>
       </div>
+    </nav>
+    <!-- mobile collabsible side navigation menu -->
+    <ul class="sidenav right" id="mobile-nav">
+      <li>
+        <img class="center-align" height="120" width="300"
+          src="{{ url_for('static', filename='images/veloroute_logo_crop.png') }}"></img>
+      </li>
+      <li><a href="{{ url_for('index') }}">Home</a></li>
+      <li><a href="{{ url_for('get_routes') }}">Routes</a></li>
+      <li><a href="{{ url_for('get_cycling_tips') }}">Cycling Tips</a></li>
+      {% if session.user %}
+      <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
+      <li><a href="{{ url_for('add_route') }}">Add Route</a></li>
+      {% if session.user|lower == "admin"|lower %}
+      <li><a href="{{ url_for('add_cycling_tip') }}">Add Cycling Tip</a></li>
+      <li><a href="{{ url_for('get_categories') }}">Manage Categories</a></li>
+      {% endif %}
+      <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+      {% else %}
+      <li><a href="{{ url_for('login') }}">Log In</a></li>
+      <li><a href="{{ url_for('join_us') }}">Join Us</a></li>
+      {% endif %}
+    </ul>
+  </header>
+
+  <main>
+    {% block content %}
+    <section>
+      <!-- display flash messages -->
+      {% with messages = get_flashed_messages() %}
+      {% if messages %}
+      {% for message in messages %}
+      <div class="row flashes">
+        <div class="col s8 offset-s2 center-align">
+          <h5 class="center-align cyan lighten-2 white-text">{{ message }}</h5>
+        </div>
+      </div>
+      {% endfor %}
+      {% endif %}
+      {% endwith %}
+    </section>
+    {% endblock %}
+  </main>
+
+  <footer class="page-footer blue-grey darken-4 grey-text text-lighten-5">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5>About Us</h5>
+          <p>The team at VeloRoute have a passion for all things cycling related.</p>
+          <p>We try to cycle every day, whether that be the commute to work, a morning blast around the local trails, a
+            quick evening ride or a weekend epic. We hope you enjoy exploring new cycling routes and adding your
+            favourites for other VeloRoute members to explore.</p>
+          <p>Enjoy the ride!</p>
+        </div>
+        <div class="col l4 offset-l2 s12">
+          <h5>Social Media</h5>
+          <ul>
+            <li>
+              <a class="grey-text text-lighten-5 social-media-icons" href="https://www.facebook.com/" target="_blank">
+                <i class="fab fa-facebook-square"></i>
+              </a>
+            </li>
+            <li>
+              <a class="grey-text text-lighten-5 social-media-icons" href="https://twitter.com/" target="_blank">
+                <i class="fab fa-twitter-square"></i>
+              </a>
+            </li>
+            <li>
+              <a class="grey-text text-lighten-5 social-media-icons" href="https://www.instagram.com/" target="_blank">
+                <i class="fab fa-instagram-square"></i>
+              </a>
+            </li>
+            <li>
+              <a class="grey-text text-lighten-5 social-media-icons" href="https://pinterest.com/" target="_blank">
+                <i class="fab fa-pinterest-square"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
-  </div>
-  <div class="footer-copyright">
-    <div class="container grey-text text-lighten-5">
-      © 2021 Matthew Leach
+    <div class="footer-copyright">
+      <div class="container grey-text text-lighten-5">
+        © 2021 Matthew Leach
+      </div>
     </div>
-  </div>
-</footer>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  {% block scripts %}
+  {% endblock %}
+</body>
 
 </html>

@@ -24,13 +24,6 @@
     </div>
 </div>
 
-<!-- call to action to join us
-    <div class="blue-grey darken-3" id="join-us">
-        <h4 class="center-align grey-text text-lighten-5">SHARE YOUR FAVOURITE ROUTES FOR OTHER CYCLISTS TO ENJOY.</h4>
-        <p class="center-align grey-text text-lighten-5"><a href="{{ url_for('join_us') }}">Join Us</a></p>
-    </div>
--->
-
 <div class="container" id="home-routes-section">
     <!-- small device routes display  -->
     <div class="row show-on-small hide-on-med-and-up">
@@ -40,9 +33,20 @@
                 <div class="card-image">
                     <img src="{{ route.route_image }}" alt="Route Image">
                 </div>
-                <div class="card-action card-action-home">
-                    <a class="light-blue-text darken-2" href="{{ route.route_link }}" target="_blank">{{ route.route_name }}</a>
-                </div>
+                <div class="card-content">
+                    <span class="card-title activator">{{ route.route_name }}<i class="material-icons right">more_vert</i></span>
+                    <p><a class="light-blue-text darken-2" href="{{ route.route_link }}" target="_blank">Route Link</a></p>
+                  </div>
+                  <div class="card-reveal">
+                    <span class="card-title activator"><strong>{{ route.route_name }}<i
+                          class="material-icons right">close</i></strong></span>
+                    <p class="card-description">{{ route.route_description}}</p><br />
+                    <p><strong>Type: </strong>{{ route.category_name }}</p>
+                    <p><strong>Country: </strong>{{ route.country_name }}</p>
+                    <p><strong>Distance: </strong>{{ route.route_distance }} km</p>
+                    <p><strong>Difficulty: </strong>{{ route.route_difficulty }}</p>
+                    <p><strong>Created By: </strong><em>{{ route.created_by }}</em></p>
+                  </div>
             </div>
         </div>
         {% endfor %}
@@ -51,16 +55,25 @@
     <!-- medium and large device routes display  -->
     <div class="row hide-on-small-only">
         {% for route in med_large_routes %}
-        <div class="col s12 m6 l4">
+        <div class="col s12 m6 xl4">
             <div class="card z-depth-4">
                 <div class="card-image">
-                    <a href="">
                     <img src="{{ route.route_image }}" alt="Route Image">
-                </a>
                 </div>
-                <div class="card-action card-action-home divert-text">
-                    <a class="light-blue-text darken-2" href="{{ route.route_link }}" target="_blank">{{ route.route_name }}</a>
-                </div>
+                <div class="card-content">
+                    <span class="card-title activator">{{ route.route_name }}<i class="material-icons right">more_vert</i></span>
+                    <p><a class="light-blue-text darken-2" href="{{ route.route_link }}" target="_blank">Route Link</a></p>
+                  </div>
+                  <div class="card-reveal">
+                    <span class="card-title activator"><strong>{{ route.route_name }}<i
+                          class="material-icons right">close</i></strong></span>
+                    <p class="card-description">{{ route.route_description}}</p><br />
+                    <p><strong>Type: </strong>{{ route.category_name }}</p>
+                    <p><strong>Country: </strong>{{ route.country_name }}</p>
+                    <p><strong>Distance: </strong>{{ route.route_distance }} km</p>
+                    <p><strong>Difficulty: </strong>{{ route.route_difficulty }}</p>
+                    <p><strong>Created By: </strong><em>{{ route.created_by }}</em></p>
+                  </div>
             </div>
         </div>
         {% endfor %}

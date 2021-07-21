@@ -294,6 +294,7 @@ def edit_cycling_tip(cycling_tip_id):
         if session["user"] == "admin":
             if request.method == "POST":
                 submit_cycling_tip = {
+                    "category_name": request.form.get("category_name"),
                     "cycling_tip_name": request.form.get("cycling_tip_name"),
                     "cycling_tip_description": request.form.get(
                         "cycling_tip_description"),

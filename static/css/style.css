@@ -38,7 +38,7 @@ input {
 }
 
 /*------------------------------------- general */
-#body {
+body {
     font-family: 'Roboto' sans-serif !important;
     color: #263238;
     display: -webkit-box;
@@ -71,21 +71,10 @@ main {
 }
 
 /*------------------------------------- cards */
-/*
 
-.card-description {
-    height: 250px;
-}
-
-.card-action-categories {
-    height: 125px;
-}
-
-*/
-
-.card-image {
-    min-height: 400px;
-}
+/*.card-image {
+    max-height: 350px;
+}*/
 
 .card-title {
     min-height: 100px;
@@ -93,7 +82,7 @@ main {
 }
 
 .card-title.activator {
-    font-size: 1.5rem;
+    font-size: 16px;
 }
 
 .card-buttons {
