@@ -1,8 +1,8 @@
-[<img src="static/images/veloroute_logo_crop.png" width="250">](https://velo-route.herokuapp.com/)
+[<img src="static/images/veloroute-logo-crop.png" width="250">](https://velo-route.herokuapp.com/)
 
 # VeloRoute Website
 
-![VeloRoute](readme-files/velo-route-presented.png)
+![VeloRoute](readme-files/veloroute-presented.png)
 
 Cycling is a global and accessible sport that has shown a huge increase in popularity over recent years. The global market is for bicycles alone is in excess of $54 billion dollars. Alongside the growth in bicycle sales there has been significant growth in cycling related products such as GPS cycle computers and related software platforms that allow users to record, analyse and share their rides.
 
@@ -119,7 +119,7 @@ VeloRoute features a clean and simple design with #263238 used for dark backgrou
 
 A simple VeloRoute logo was created using Canva.
 
-![VeloRoute logo](staticdesign/images/veloroute_logo_crop.png)
+![VeloRoute logo](staticdesign/images/veloroute-logo-crop.png)
 
 #### Colours
 
@@ -137,19 +137,19 @@ Images are used to add some additional colour to the website.
 
 Raleway font has been utilised for all text across the website. This is a simple and modern font available from the Google Fonts library which is unobtrusive and easy to read. Font Awesome icons have been utilised for icons throughout the site.
 
-#### Defensive Design
+### Defensive Design
 
 The website has been developed incorporating the following defensive design aspects.
 
-**Error Handling**
+#### Error Handling
 
-Error pages for 403, 404 and 500 errors which will be displayed to the user if any of these errors occur.
+-   Error pages for 403, 404 and 500 errors which will be displayed to the user if any of these errors occur.
 
-**Confirm on Delete**
+#### Confirm on Delete
 
-All areas of the website where users can delete data incorporate modals to prompt the user if they really want to permanently delete the data.
+-   All areas of the website where users can delete data incorporate modals to prompt the user if they really want to permanently delete the data.
 
-**Segregation of Duties**
+#### Segregation of Duties**
 
 -   The standard users of the website can only create, update and delete routes and can only update and delete routes they have added to Veloroute.
 
@@ -157,7 +157,7 @@ All areas of the website where users can delete data incorporate modals to promp
 
 -   A further role of IT user has been added who can only create, update and delete categories as an understanding of the data model is required prior to any changes to these categories. 
 
-**Data Input Validation**
+#### Data Input Validation
 
 Data validation is incorporated on all data input fields with the following validation applied to:
 
