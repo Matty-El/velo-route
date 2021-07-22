@@ -1,4 +1,4 @@
-[<img src="design/velo-route-logo-crop.png" width="250">](https://velo-route.herokuapp.com/)
+[<img src="static/images/velo-route-logo-crop.png" width="250">](https://velo-route.herokuapp.com/)
 
 # VeloRoute Website
 
@@ -119,7 +119,7 @@ VeloRoute features a clean and simple design with #263238 used for dark backgrou
 
 A simple VeloRoute logo was created using Canva.
 
-![VeloRoute logo](design/images/velo-route-logo-crop.png)
+![VeloRoute logo](static/images/velo-route-logo-crop.png)
 
 #### Colours
 
