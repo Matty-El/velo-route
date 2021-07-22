@@ -18,12 +18,28 @@
  - **[HTML Validator](https://validator.w3.org/):**
     - ...
 
+### CSS Code Validation
 
-- **[CSS Validator](https://jigsaw.w3.org/css-validator/):**
+The CSS code was validated using the [W3.org CSS validation service](https://jigsaw.w3.org/css-validator/).
+
+![CSS Validator](testing-files/velo-route-css-validation.png)
 
 - **[JS Hint](https://jshint.com/):**
 
-- **[Python validator | PEP8](http://pep8online.com/):** 
+
+### jQuery Code Validation
+
+The jQuery code was validated using the [JSHint validation service](https://jshint.com/).
+
+![PEP 8 Validator](testing-files/velo-route-pep8-validation.png)
+
+
+### Python Code Validation
+
+The Python code was validated using the [PEP 8 Online Validation Service](http://pep8online.com/).
+
+![PEP 8 Validator](testing-files/velo-route-pep8-validation.png)
+
 
 
 
