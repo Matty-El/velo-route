@@ -178,13 +178,17 @@ Add Route / Edit Route Form:
 -   The route link is validated to ensure it is a valid URL.
 -   The same validation is in place when a user comes to edit a route.
 
-Add Cycling Tip:
+Add Cycling Tip Form:
 
 -   The category is populated form the database.
 -   The cycling tip name is validated for a maximum of 30 characters which must be letters and spaces.
 -   The cycling tip image is validated to ensure it is a valid URL and has a recognised jpg, jpeg, gif or png extension.
 -   The cycling tip description is validated to ensure that it is of length between 10 - 300 characters consisting of letters, numbers and standard punctuation.
 -   The cycling tip link is validated to ensure it is a valid URL.
+
+Add Categories Form:
+
+-   The category input is validated to ensure the user only inputs letter, spaces and no special characters
 
 ---
 
@@ -332,7 +336,7 @@ To clone this project from GitHub.
     - Signup or login to your MongoDB account.
     - Create a cluster and a database.
     - Create seven collections in the database: **categories, cycling_tips, cycling_tip_categories, difficulty_levels, routes, users, countries.**
-    - Add the data to the collections. See [Data Model](#data-model) for details on how the data has been modelled for this project.
+    - Add the data to the collections. See the VeloRoute [Data Model](#data-model) for details on how the data has been modelled for this project.
 3. Create the environment variables 
     - Create a .gitignore file in the root directory of the project.
     - Add the env.py file in the .gitignore.
@@ -382,6 +386,16 @@ To clone this project from GitHub.
 4.  Change the current working directory to the location where you want the cloned directory to be created.
 5.  Type **git clone**, enter a space and then paste the URL copied from GitHub.
 6.  Press **Enter** and the local clone will be created in the specified directory.
+
+---
+
+## Challenges
+
+Two significant challenges were encountered late on in the project:
+
+1.  The Materialize grid system presented an issue where the cards that were utilised flexed perfectly within the Materialize columns to become a uniform width but the image element within the card-image div did not flex perfectly proportionately to the width. As a reult the cards were very slightly different heights resulting in gaps in the rows of cards as they flexed to fill the parent container. I thought that if a container can be utilized as a parent to the image and the image constrained within that container as it flexed then maybe I could achieve a uniform height for all card images. After lots of searching on Google I came across <a href="https://css-tricks.com/scaled-proportional-blocks-with-css-and-javascript/"></a> which seemed to describe what i was thinking. After adapting the code I achieved the desired result. Images with a uniform height and cards aligned.
+
+2.  The second challenge was when the realisation hit me that if my admin user has access to change or delete categories that have been set up in the system that could break the functionality related to other aspects of the site. To resolve this I created an IT user and assigned the ability to create , update and delete categories to this user as this user will understand the data model and can assess any required change before implementing the change and can consult the developer as required. 
 
 ---
 

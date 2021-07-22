@@ -10,7 +10,7 @@
 4.  [Lighthouse Reports](#lighthouse-reports)
 5.  [User Story Testing](#user-story-testing)
 6.  [Defensive Design Testing](#defensive-design-testing)
-7.  [Defects](#defects)
+7.  [Defectsand Issues](#defects-and-issues)
 
 ---
 
@@ -24,14 +24,12 @@ The CSS code was validated using the [W3.org CSS validation service](https://jig
 
 ![CSS Validator](testing-files/velo-route-css-validation.png)
 
-- **[JS Hint](https://jshint.com/):**
-
 
 ### jQuery Code Validation
 
 The jQuery code was validated using the [JSHint validation service](https://jshint.com/).
 
-![PEP 8 Validator](testing-files/velo-route-pep8-validation.png)
+![JSHint Validator](testing-files/velo-route-jshint-validation.png)
 
 
 ### Python Code Validation
@@ -39,9 +37,6 @@ The jQuery code was validated using the [JSHint validation service](https://jshi
 The Python code was validated using the [PEP 8 Online Validation Service](http://pep8online.com/).
 
 ![PEP 8 Validator](testing-files/velo-route-pep8-validation.png)
-
-
-
 
 ---
 
@@ -52,9 +47,6 @@ The Python code was validated using the [PEP 8 Online Validation Service](http:/
     - Mobile & Tablet: Galaxy S5, iPhone 5/SE, iPhone 6/7/8, iPhone 6/7/8 plus, iPhone x, iPad and  iPad Pro
 
 ![Responsiveness testing](testing-files/responsiveness-testing.png)
-
-### Notes
-- ....
 
 ---
 
@@ -109,31 +101,53 @@ The user stories below have all been tested against defined acceptance criteria.
 
 ## Defensive Design Testing
 
-1. When deleting routes, cycling tips or categories on the site a modal will appear where the user has to confirm that they want to delete the item. Once they have confirmed then the item will be deleted.
-2. Validation has been included on all form fields as listed and tested below:
+1. Tested in user story testing - When deleting routes, cycling tips or categories on the site a modal will appear where the user has to confirm that they want to delete the item. Once they have confirmed then the item will be deleted.
+2. Validation has been included on all form fields as listed below:
 
-**Join Us form**
+Join Us Form:
 
--   Field one
--   Field two
+-   Username validated to ensure that it is of length 5 - 15 characters and consists only of numbers and letters. The username is also checked to ensure it does not already exist in the database and a user is notified via a flash message if this is the case.
+-   First name and last name fields cannot begin with a space, with a required length between 2 - 20 and letters.
+-   Email address field is validated to ensure a valid email address in the correct format is entered.
+-   Password is validated to ensure it is between 8 - 15 characters and contains at least one number and one capital and one lowercase letter.
 
-**Log In form**
+Add Route / Edit Route Form:
 
-**Add Route form**
+-   Category, difficulty and country are dropdown fields with data populated from the database.
+-   Route name is validated to ensure it cannot start with a blank space and must consist only of letters with no special characters.
+-   The route image is validated to ensure it is a valid URL and has a recognised jpg, jpeg, gif or png extension.
+-   The route description is validated to ensure that it is of length between 10 - 300 characters consisting of letters, numbers and standard punctuation.
+-   The route distance is validated to ensure it is a number between 1 and 6 numbers in length, so a maximum of 99999.
+-   The route link is validated to ensure it is a valid URL.
+-   The same validation is in place when a user comes to edit a route.
 
-**Add Cycling Tip form**
+Add Cycling Tip Form:
 
-**Add Category forms**
+-   The category is populated form the database.
+-   The cycling tip name is validated for a maximum of 30 characters which must be letters and spaces.
+-   The cycling tip image is validated to ensure it is a valid URL and has a recognised jpg, jpeg, gif or png extension.
+-   The cycling tip description is validated to ensure that it is of length between 10 - 300 characters consisting of letters, numbers and standard punctuation.
+-   The cycling tip link is validated to ensure it is a valid URL.
 
+Add Categories Form:
 
+-   The category input is validated to ensure the user only inputs letter, spaces and no special characters.
 
 ---
 
-## Defects
+## Defects and Issues
+
+### Resolved
 
 1.  It was discovered during testing that the Matrialize modals implementented to confirm the deletion of items across the app were deleting the wrong object. This was resolved by implementing loop indexing which had to be further refined on the Manage Categories page to loop through the individual gategory types to ensure the correct object id was sourced for deletion.
 2.  It was noticed during testing that the Materialize sticky footer functionality had stopped working. This was resolved by changing the code for the base.html page to revise the structure and removing an erroneous character from the related CSS code.
 3.  A defect was discovered that the images that were presented on the home page were in the reverse order to those on the routes and profile page. This was corrected by adding a reverse sort order to the query for the home page display for small and medium/large devices. The images now display with the most recently added first as with the profile and home pages.
+4.  The Materialize grid system presented an issue where the cards that were utilised flexed perfectly within the Materialize columns to become a uniform width but the image element within the card-image div did not flex perfectly proportionately to the width. As a reult the cards were very slightly different heights resulting in gaps in the rows of cards as they flexed to fill the parent container. I thought that if a container can be utilized as a parent to the image and the image constrained within that container as it flexed then maybe I could achieve a uniform height for all card images. After lots of searching on Google I came across <a href="https://css-tricks.com/scaled-proportional-blocks-with-css-and-javascript/"></a> which seemed to describe what i was thinking. After adapting the code I achieved the desired result. Images with a uniform height and cards aligned.
+5.  The realisation hit me that if my admin user has access to change or delete categories that have been set up in the system that could break the functionality related to other aspects of the site. To resolve this I created an IT user and assigned the ability to create , update and delete categories to this user as this user will understand the data model and can assess any required change before implementing the change and can consult the developer as required. 4.
+
+### Unresolved
+
+Bugs not resolved
 
 ---
 
