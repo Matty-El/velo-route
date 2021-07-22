@@ -335,7 +335,7 @@ def delete_cycling_tip(cycling_tip_id):
             return render_template("403.html")
 
 
-# ------------------------ categories -------------------------------------- #
+# ------------------------ categories WARNING ITUSER ACCESS ONLY -------------------------------------- #
 # get all categories
 @app.route("/get_categories")
 def get_categories():
@@ -343,8 +343,8 @@ def get_categories():
         flash("Please join Veloroute for full user access.")
         return render_template("403.html")
     else:
-        # admin only access
-        if session["user"] == "admin":
+        # ituser only access
+        if session["user"] == "ituser":
             categories = list(mongo.db.categories.find(
             ).sort("category_name", 1))
             cycling_tip_categories = list(
@@ -358,7 +358,7 @@ def get_categories():
                 difficulty_levels=difficulty_levels)
         else:
             # display 403 error page
-            flash("You have tried to access an admin only page.")
+            flash("You have tried to access an IT user only page.")
             return render_template("403.html")
 
 
@@ -369,8 +369,8 @@ def add_category():
         flash("Please join Veloroute for full user access.")
         return render_template("403.html")
     else:
-        # admin only access
-        if session["user"] == "admin":
+        # ituser only access
+        if session["user"] == "ituser":
             if request.method == "POST":
                 category = {
                     "category_name": request.form.get("category_name")
@@ -382,7 +382,7 @@ def add_category():
             return render_template("add_category.html")
         else:
             # display 403 error page
-            flash("You have tried to access an admin only page.")
+            flash("You have tried to access an IT user only page.")
             return render_template("403.html")
 
 
@@ -392,8 +392,8 @@ def edit_category(category_id):
         flash("Please join Veloroute for full user access.")
         return render_template("403.html")
     else:
-        # admin only access
-        if session["user"] == "admin":
+        # ituser only access
+        if session["user"] == "ituser":
             if request.method == "POST":
                 submit_route_category = {
                     "category_name": request.form.get("category_name")
@@ -409,7 +409,7 @@ def edit_category(category_id):
 
         else:
             # display 403 error page
-            flash("You have tried to access an admin only page.")
+            flash("You have tried to access an IT user only page.")
             return render_template("403.html")
 
 
@@ -419,15 +419,15 @@ def delete_category(category_id):
         flash("Please join Veloroute for full user access.")
         return render_template("403.html")
     else:
-        # admin only access
-        if session["user"] == "admin":
+        # ituser only access
+        if session["user"] == "ituser":
             mongo.db.categories.delete_one({"_id": ObjectId(category_id)})
             flash("Category Deleted")
             return redirect(url_for("get_categories"))
 
         else:
             # display 403 error page
-            flash("You have tried to access an admin only page.")
+            flash("You have tried to access an IT user only page.")
             return render_template("403.html")
 
 
@@ -438,8 +438,8 @@ def add_cycling_tip_category():
         flash("Please join Veloroute for full user access.")
         return render_template("403.html")
     else:
-        # admin only access
-        if session["user"] == "admin":
+        # ituser only access
+        if session["user"] == "ituser":
             if request.method == "POST":
                 cycling_tip_category = {
                     "category_name": request.form.get("category_name")
@@ -453,7 +453,7 @@ def add_cycling_tip_category():
 
         else:
             # display 403 error page
-            flash("You have tried to access an admin only page.")
+            flash("You have tried to access an IT user only page.")
             return render_template("403.html")
 
 
@@ -464,8 +464,8 @@ def edit_cycling_tip_category(cycling_tip_category_id):
         flash("Please join Veloroute for full user access.")
         return render_template("403.html")
     else:
-        # admin only access
-        if session["user"] == "admin":
+        # ituser only access
+        if session["user"] == "ituser":
             if request.method == "POST":
                 submit_cycling_tip_category = {
                     "category_name": request.form.get("category_name")
@@ -481,7 +481,7 @@ def edit_cycling_tip_category(cycling_tip_category_id):
                                    cycling_tip_category=cycling_tip_category)
         else:
             # display 403 error page
-            flash("You have tried to access an admin only page.")
+            flash("You have tried to access an IT user only page.")
             return render_template("403.html")
 
 
@@ -491,15 +491,15 @@ def delete_cycling_tip_category(cycling_tip_category_id):
         flash("Please join Veloroute for full user access.")
         return render_template("403.html")
     else:
-        # admin only access
-        if session["user"] == "admin":
+        # ituser only access
+        if session["user"] == "ituser":
             mongo.db.cycling_tip_categories.delete_one(
                 {"_id": ObjectId(cycling_tip_category_id)})
             flash("Cycling Tip Category Deleted")
             return redirect(url_for("get_categories"))
         else:
             # display 403 error page
-            flash("You have tried to access an admin only page.")
+            flash("You have tried to access an IT user only page.")
             return render_template("403.html")
 
 
@@ -510,8 +510,8 @@ def add_difficulty_level():
         flash("Please join Veloroute for full user access.")
         return render_template("403.html")
     else:
-        # admin only access
-        if session["user"] == "admin":
+        # ituser only access
+        if session["user"] == "ituser":
             if request.method == "POST":
                 difficulty_level = {
                     "route_difficulty": request.form.get("route_difficulty")
@@ -523,6 +523,7 @@ def add_difficulty_level():
             return render_template("add_difficulty_level.html")
         else:
             # display 403 error page
+            flash("You have tried to access an IT user only page.")
             return render_template("403.html")
 
 
@@ -533,8 +534,8 @@ def edit_difficulty_level(difficulty_level_id):
         flash("Please join Veloroute for full user access.")
         return render_template("403.html")
     else:
-        # admin only access
-        if session["user"] == "admin":
+        # ituser only access
+        if session["user"] == "ituser":
             if request.method == "POST":
                 submit_difficulty_level = {
                     "route_difficulty": request.form.get("route_difficulty")
@@ -551,6 +552,7 @@ def edit_difficulty_level(difficulty_level_id):
 
         else:
             # display 403 error page
+            flash("You have tried to access an IT user only page.")
             return render_template("403.html")
 
 
@@ -560,8 +562,8 @@ def delete_difficulty_level(difficulty_level_id):
         flash("Please join Veloroute for full user access.")
         return render_template("403.html")
     else:
-        # admin only access
-        if session["user"] == "admin":
+        # ituser only access
+        if session["user"] == "ituser":
             mongo.db.difficulty_levels.delete_one(
                 {"_id": ObjectId(difficulty_level_id)})
             flash("Difficulty Level Deleted")
@@ -569,6 +571,7 @@ def delete_difficulty_level(difficulty_level_id):
 
         else:
             # display 403 error page
+            flash("You have tried to access an IT user only page.")
             return render_template("403.html")
 
 

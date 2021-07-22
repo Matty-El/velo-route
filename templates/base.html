@@ -38,6 +38,8 @@
           <li class="navbar-li"><a href="{{ url_for('add_route') }}">Add Route</a></li>
           {% if session.user|lower == "admin"|lower %}
           <li class="navbar-li"><a href="{{ url_for('add_cycling_tip') }}">Add Cycling Tip</a></li>
+          {% endif %}
+          {% if session.user|lower == "ituser"|lower %}
           <li class="navbar-li"><a href="{{ url_for('get_categories') }}">Manage Categories</a></li>
           {% endif %}
           <li class="navbar-li"><a href="{{ url_for('logout') }}">Log Out</a></li>
@@ -54,21 +56,23 @@
         <img class="center-align" height="120" width="300"
           src="{{ url_for('static', filename='images/veloroute-logo-crop.png') }}"></img>
       </li>
-      <li><a href="{{ url_for('index') }}">Home</a></li>
-      <li><a href="{{ url_for('get_routes') }}">Routes</a></li>
-      <li><a href="{{ url_for('get_cycling_tips') }}">Cycling Tips</a></li>
-      {% if session.user %}
-      <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
-      <li><a href="{{ url_for('add_route') }}">Add Route</a></li>
-      {% if session.user|lower == "admin"|lower %}
-      <li><a href="{{ url_for('add_cycling_tip') }}">Add Cycling Tip</a></li>
-      <li><a href="{{ url_for('get_categories') }}">Manage Categories</a></li>
-      {% endif %}
-      <li><a href="{{ url_for('logout') }}">Log Out</a></li>
-      {% else %}
-      <li><a href="{{ url_for('login') }}">Log In</a></li>
-      <li><a href="{{ url_for('join_us') }}">Join Us</a></li>
-      {% endif %}
+      <li class="navbar-li"><a href="{{ url_for('index') }}">Home</a></li>
+          <li class="navbar-li"><a href="{{ url_for('get_routes') }}">Routes</a></li>
+          <li class="navbar-li"><a href="{{ url_for('get_cycling_tips') }}">Cycling Tips</a></li>
+          {% if session.user %}
+          <li class="navbar-li"><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
+          <li class="navbar-li"><a href="{{ url_for('add_route') }}">Add Route</a></li>
+          {% if session.user|lower == "admin"|lower %}
+          <li class="navbar-li"><a href="{{ url_for('add_cycling_tip') }}">Add Cycling Tip</a></li>
+          {% endif %}
+          {% if session.user|lower == "ituser"|lower %}
+          <li class="navbar-li"><a href="{{ url_for('get_categories') }}">Manage Categories</a></li>
+          {% endif %}
+          <li class="navbar-li"><a href="{{ url_for('logout') }}">Log Out</a></li>
+          {% else %}
+          <li class="navbar-li"><a href="{{ url_for('login') }}">Log In</a></li>
+          <li class="navbar-li"><a href="{{ url_for('join_us') }}">Join Us</a></li>
+          {% endif %}
     </ul>
   </header>
 
