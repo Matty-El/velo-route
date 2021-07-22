@@ -25,7 +25,8 @@
             class="btn-small cyan darken-2 waves-effect waves-effect">Edit
           </a>
           <!-- delete route category modal trigger -->
-          <a class="modal-trigger btn-small red accent-4 waves-effect" href="#delete-modal{{ categories[loop.index0] }}">Delete</a>
+          <a class="modal-trigger btn-small red accent-4 waves-effect"
+            href="#delete-modal{{ categories[loop.index0] }}">Delete</a>
           <!-- delete route category modal -->
           <div id="delete-modal{{ categories[loop.index0] }}" class="modal">
             <div class="modal-content">
@@ -71,13 +72,15 @@
             class="btn-small cyan darken-2 waves-effect waves-effect">Edit
           </a>
           <!-- delete cycling tip category modal trigger -->
-          <a class="modal-trigger btn-small red accent-4 waves-effect" href="#delete-modal{{ cycling_tip_categories[loop.index0] }}">Delete
+          <a class="modal-trigger btn-small red accent-4 waves-effect"
+            href="#delete-modal{{ cycling_tip_categories[loop.index0] }}">Delete
           </a>
           <!-- delete cycling tip category modal -->
           <div id="delete-modal{{ cycling_tip_categories[loop.index0] }}" class="modal">
             <div class="modal-content">
               <h5>Delete Cycling Tip Category</h5>
-              <p>Are you sure you want to permanently delete the <strong>{{ cycling_tip_category.category_name }}</strong> route
+              <p>Are you sure you want to permanently delete the <strong>{{ cycling_tip_category.category_name
+                  }}</strong> route
                 category?</p>
             </div>
             <div class="modal-footer">
@@ -118,13 +121,15 @@
             class="btn-small cyan darken-2 waves-effect waves-effect">Edit
           </a>
           <!-- delete difficulty level modal trigger -->
-          <a class="modal-trigger btn-small red accent-4 waves-effect" href="#delete-difficulty-level-modal{{ difficulty_levels[loop.index0] }}">Delete
+          <a class="modal-trigger btn-small red accent-4 waves-effect"
+            href="#delete-difficulty-level-modal{{ difficulty_levels[loop.index0] }}">Delete
           </a>
           <!-- delete difficulty level modal -->
           <div id="delete-difficulty-level-modal{{ difficulty_levels[loop.index0] }}" class="modal">
             <div class="modal-content">
               <h5>Delete Difficulty Level Category</h5>
-              <p>Are you sure you want to permanently delete the <strong>{{ difficulty_level.route_difficulty }}</strong> route
+              <p>Are you sure you want to permanently delete the <strong>{{ difficulty_level.route_difficulty
+                  }}</strong> route
                 category?</p>
             </div>
             <div class="modal-footer">

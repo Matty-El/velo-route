@@ -5,17 +5,18 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="VeloRoute is where cyclists share their cycling routes. FInd routes from all over the world"/>
+  <meta name="description"
+    content="VeloRoute is where cyclists share their cycling routes. FInd routes from all over the world" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
     integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
     crossorigin="anonymous" referrerpolicy="no-referrer" type="text/css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
     type="text/css">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
-  <link rel="icon" href="{{ url_for('static', filename='images/bicycle-solid.svg') }}">
   {% block styles %}
   {% endblock %}
   <title>VeloRoute</title>
+  <link rel="icon" href="{{ url_for('static', filename='images/bicycle-solid.svg') }}">
 </head>
 
 <body>
@@ -25,7 +26,7 @@
       <div class="nav-wrapper">
         <a href="{{ url_for('index') }}">
           <img class="brand-logo" id="logo" src="{{ url_for('static', filename='images/velo-route-logo-crop.png') }}"
-            height="60" width="150" alt="VeloRoute Logo"></img>
+            height="60" width="150" alt="VeloRoute Logo">
         </a>
         <a href="#" data-target="mobile-nav" class="sidenav-trigger right"><i
             class="fas fa-bars grey-text text-lighten-5"></i></a>
@@ -54,25 +55,25 @@
     <ul class="sidenav right" id="mobile-nav">
       <li>
         <img class="center-align" height="120" width="300"
-          src="{{ url_for('static', filename='images/velo-route-logo-crop.png') }}"></img>
+          src="{{ url_for('static', filename='images/velo-route-logo-crop.png') }}" alt="VeloRoute Logo">
       </li>
       <li class="navbar-li"><a href="{{ url_for('index') }}">Home</a></li>
-          <li class="navbar-li"><a href="{{ url_for('get_routes') }}">Routes</a></li>
-          <li class="navbar-li"><a href="{{ url_for('get_cycling_tips') }}">Cycling Tips</a></li>
-          {% if session.user %}
-          <li class="navbar-li"><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
-          <li class="navbar-li"><a href="{{ url_for('add_route') }}">Add Route</a></li>
-          {% if session.user|lower == "admin"|lower %}
-          <li class="navbar-li"><a href="{{ url_for('add_cycling_tip') }}">Add Cycling Tip</a></li>
-          {% endif %}
-          {% if session.user|lower == "ituser"|lower %}
-          <li class="navbar-li"><a href="{{ url_for('get_categories') }}">Manage Categories</a></li>
-          {% endif %}
-          <li class="navbar-li"><a href="{{ url_for('logout') }}">Log Out</a></li>
-          {% else %}
-          <li class="navbar-li"><a href="{{ url_for('login') }}">Log In</a></li>
-          <li class="navbar-li"><a href="{{ url_for('join_us') }}">Join Us</a></li>
-          {% endif %}
+      <li class="navbar-li"><a href="{{ url_for('get_routes') }}">Routes</a></li>
+      <li class="navbar-li"><a href="{{ url_for('get_cycling_tips') }}">Cycling Tips</a></li>
+      {% if session.user %}
+      <li class="navbar-li"><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
+      <li class="navbar-li"><a href="{{ url_for('add_route') }}">Add Route</a></li>
+      {% if session.user|lower == "admin"|lower %}
+      <li class="navbar-li"><a href="{{ url_for('add_cycling_tip') }}">Add Cycling Tip</a></li>
+      {% endif %}
+      {% if session.user|lower == "ituser"|lower %}
+      <li class="navbar-li"><a href="{{ url_for('get_categories') }}">Manage Categories</a></li>
+      {% endif %}
+      <li class="navbar-li"><a href="{{ url_for('logout') }}">Log Out</a></li>
+      {% else %}
+      <li class="navbar-li"><a href="{{ url_for('login') }}">Log In</a></li>
+      <li class="navbar-li"><a href="{{ url_for('join_us') }}">Join Us</a></li>
+      {% endif %}
     </ul>
   </header>
 
@@ -110,22 +111,26 @@
           <h5>Social Media</h5>
           <ul>
             <li>
-              <a class="grey-text text-lighten-5 social-media-icons" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
+              <a class="grey-text text-lighten-5 social-media-icons" href="https://www.facebook.com/" target="_blank"
+                rel="noopener noreferrer">
                 <i class="fab fa-facebook-square"></i>
               </a>
             </li>
             <li>
-              <a class="grey-text text-lighten-5 social-media-icons" href="https://twitter.com/" target="_blank" rel="noopener noreferrer">
+              <a class="grey-text text-lighten-5 social-media-icons" href="https://twitter.com/" target="_blank"
+                rel="noopener noreferrer">
                 <i class="fab fa-twitter-square"></i>
               </a>
             </li>
             <li>
-              <a class="grey-text text-lighten-5 social-media-icons" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
+              <a class="grey-text text-lighten-5 social-media-icons" href="https://www.instagram.com/" target="_blank"
+                rel="noopener noreferrer">
                 <i class="fab fa-instagram-square"></i>
               </a>
             </li>
             <li>
-              <a class="grey-text text-lighten-5 social-media-icons" href="https://pinterest.com/" target="_blank" rel="noopener noreferrer">
+              <a class="grey-text text-lighten-5 social-media-icons" href="https://pinterest.com/" target="_blank"
+                rel="noopener noreferrer">
                 <i class="fab fa-pinterest-square"></i>
               </a>
             </li>

@@ -2,24 +2,22 @@
 {% block content %}
 
 <!-- hero image -->
-<div class="row" id="hero-image">
-    <div class="col s12 intro-text">
-        <h3 id="tagline"></h3>
-    </div>
-</div>
+<div class="row" id="hero-image"></div>
 
 <!-- intro -->
 <div class="container"></div>
-    <div class="row blue-grey-text text-darken-4">
-        <div class="col s12">
-            <h3 class="center-align">Find new cycling routes</h3>
-            <h5 class="center-align">
-                Road, gravel, trail or commute?<br><br>Want to try a new route but stuck for ideas?<br><br>Our members submit their favourite cycling routes so you can quickly find a new route or add your own for others to enjoy.
-            </h5>
-            <div class="row">
-                <a href="{{ url_for('join_us') }}" id="join-us-button" class="col s6 offset-s3 m4 offset-m4 btn-large orange darken-3">Join Us
-                </a>
-            </div>
+<div class="row blue-grey-text text-darken-4">
+    <div class="col s12">
+        <h3 class="center-align">Find new cycling routes</h3>
+        <h5 class="center-align">
+            Road, gravel, trail or commute?<br><br>Want to try a new route but stuck for ideas?<br><br>Our members
+            submit their favourite cycling routes so you can quickly find a new route or add your own for others to
+            enjoy.
+        </h5>
+        <div class="row">
+            <a href="{{ url_for('join_us') }}" id="join-us-button"
+                class="col s6 offset-s3 m4 offset-m4 btn-large orange darken-3">Join Us
+            </a>
         </div>
     </div>
 </div>
@@ -35,17 +33,19 @@
                 </div>
                 <div class="card-content">
                     <span class="card-title activator"><i class="far fa-hand-pointer"></i> {{ route.route_name }}</span>
-                    <p><a class="light-blue-text text-darken-4" href="{{ route.route_link }}" target="_blank">Route Link</a></p>
-                  </div>
-                  <div class="card-reveal">
-                    <span class="card-title activator"><strong>{{ route.route_name }}</strong><i class="fas fa-times right"></i></span>
+                    <p><a class="light-blue-text text-darken-4" href="{{ route.route_link }}" target="_blank">Route
+                            Link</a></p>
+                </div>
+                <div class="card-reveal">
+                    <span class="card-title activator"><strong>{{ route.route_name }}</strong><i
+                            class="fas fa-times right"></i></span>
                     <p class="card-description">{{ route.route_description}}</p><br />
                     <p><strong>Type: </strong>{{ route.category_name }}</p>
                     <p><strong>Country: </strong>{{ route.country_name }}</p>
                     <p><strong>Distance: </strong>{{ route.route_distance }} km</p>
                     <p><strong>Difficulty: </strong>{{ route.route_difficulty }}</p>
                     <p><strong>Created By: </strong><em>{{ route.created_by }}</em></p>
-                  </div>
+                </div>
             </div>
         </div>
         {% endfor %}
@@ -61,18 +61,21 @@
                 </div>
                 <div class="card-content">
                     <span class="card-title activator"><i class="far fa-hand-pointer"></i> {{ route.route_name }}</span>
-                    <p><a class="light-blue-text text-darken-4" href="{{ route.route_link }}" target="_blank">ROUTE LINK</a></p>
-                  </div>
-                  <div class="card-reveal">
-                    <span class="card-title activator"><strong>{{ route.route_name }}</strong><i class="fas fa-times right"></i></span>
-                    <p class="card-description">{{ route.route_description}}</p><br/>
-                    <p><a class="light-blue-text text-darken-4" href="{{ route.route_link }}" target="_blank">ROUTE LINK</a></p>
+                    <p><a class="light-blue-text text-darken-4" href="{{ route.route_link }}" target="_blank">ROUTE
+                            LINK</a></p>
+                </div>
+                <div class="card-reveal">
+                    <span class="card-title activator"><strong>{{ route.route_name }}</strong><i
+                            class="fas fa-times right"></i></span>
+                    <p class="card-description">{{ route.route_description}}</p><br />
+                    <p><a class="light-blue-text text-darken-4" href="{{ route.route_link }}" target="_blank">ROUTE
+                            LINK</a></p>
                     <p><strong>Type: </strong>{{ route.category_name }}</p>
                     <p><strong>Country: </strong>{{ route.country_name }}</p>
                     <p><strong>Distance: </strong>{{ route.route_distance }} km</p>
                     <p><strong>Difficulty: </strong>{{ route.route_difficulty }}</p>
                     <p><strong>Created By: </strong><em>{{ route.created_by }}</em></p>
-                  </div>
+                </div>
             </div>
         </div>
         {% endfor %}

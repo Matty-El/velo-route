@@ -1,14 +1,15 @@
 % extends "base.html" %}
 {% block content %}
 
-    <div class="container">
-        <div class="row">
-            <div class="col s12">
-                <h3 class="center-align">500 - Internal Server Error </h3>
-                <h5 class="center-align">The server encountered an unexpected condition that prevented it from fulfilling the request.</h5>
-                <h5 class="center-align"><a href="{{ url_for('index') }}">Go to Home page</a></h5> 
-            </div>       
-        </div> 
+<div class="container">
+    <div class="row">
+        <div class="col s12">
+            <h3 class="center-align">500 - Internal Server Error </h3>
+            <h5 class="center-align">The server encountered an unexpected condition that prevented it from fulfilling
+                the request.</h5>
+            <h5 class="center-align"><a href="{{ url_for('index') }}">Go to Home page</a></h5>
+        </div>
     </div>
+</div>
 
 {% endblock %}

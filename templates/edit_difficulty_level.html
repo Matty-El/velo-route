@@ -5,14 +5,18 @@
 
 <div class="container">
     <div class="row card-panel grey lighten-5">
-        <form class="" method="POST" action="{{ url_for('edit_difficulty_level', difficulty_level_id=difficulty_level._id) }}">
+        <form class="" method="POST"
+            action="{{ url_for('edit_difficulty_level', difficulty_level_id=difficulty_level._id) }}">
             <!-- route name -->
             <div class="row">
                 <div class="input-field col s8">
                     <i class="fas fa-folder-open prefix blue-grey-text"></i>
-                    <input id="route_difficulty" name="route_difficulty" type="text" value="{{ difficulty_level.route_difficulty }}" minlength="3" maxlength="25" pattern="([^\s][A-z\s]+)$" class="validate" required>
+                    <input id="route_difficulty" name="route_difficulty" type="text"
+                        value="{{ difficulty_level.route_difficulty }}" minlength="3" maxlength="25"
+                        pattern="([^\s][A-z\s]+)$" class="validate" required>
                     <label for="route_difficulty" id="add-category-label">Difficulty Level</label>
-                    <span class="helper-text" data-error="3-25 characters, letters and spaces only" data-success="Valid Input">3-25 characters, letters and spaces only</span>
+                    <span class="helper-text" data-error="3-25 characters, letters and spaces only"
+                        data-success="Valid Input">3-25 characters, letters and spaces only</span>
                 </div>
             </div>
             <!-- add category button -->
