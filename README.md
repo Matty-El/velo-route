@@ -1,8 +1,8 @@
-[<img src="static/images/veloroute-logo-crop.png" width="250">](https://velo-route.herokuapp.com/)
+[<img src="design/velo-route-logo-crop.png" width="250">](https://velo-route.herokuapp.com/)
 
 # VeloRoute Website
 
-![VeloRoute](readme-files/veloroute-presented.png)
+![VeloRoute](readme-files/velo-route-presented.png)
 
 Cycling is a global and accessible sport that has shown a huge increase in popularity over recent years. The global market is for bicycles alone is in excess of $54 billion dollars. Alongside the growth in bicycle sales there has been significant growth in cycling related products such as GPS cycle computers and related software platforms that allow users to record, analyse and share their rides.
 
@@ -101,9 +101,9 @@ The website has the following key elements:
 
 The wireframes were developed using [Balsamiq](https://balsamiq.com/).
 
--   Small device [wireframes](design/veloroute-small-device.png).
--   Medium device [wireframes](design/veloroute-medium-device.png).
--   Large device [wireframes](design/veloroute-large-device.png).
+-   Small device [wireframes](design/velo-route-small-device.png).
+-   Medium device [wireframes](design/velo-route-medium-device.png).
+-   Large device [wireframes](design/velo-route-large-device.png).
 
 The following changes were made after the initial design.
 
@@ -119,11 +119,11 @@ VeloRoute features a clean and simple design with #263238 used for dark backgrou
 
 A simple VeloRoute logo was created using Canva.
 
-![VeloRoute logo](staticdesign/images/veloroute-logo-crop.png)
+![VeloRoute logo](design/images/velo-route-logo-crop.png)
 
 #### Colours
 
-![Colour scheme](design/veloroute-colour-palette.png)
+![Colour scheme](design/velo-route-colour-palette.png)
 
 A simple colour palette using #263238 for navigation and footer backgrounds and #FAFAFA for text to provide a good contrast whilst avoiding the potential eyestrain of using pure black and white.
 
@@ -192,7 +192,7 @@ Add Cycling Tip:
 
 The MongoDB VeloRoute database has seven collections as detailed in the attached diagram.
 
-![VeloRoute Data Model](readme-files/veloroute-data-model.png)
+![VeloRoute Data Model](readme-files/velo-route-data-model.png)
 
 ---
 
