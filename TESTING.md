@@ -10,7 +10,7 @@
 4.  [Lighthouse Reports](#lighthouse-reports)
 5.  [User Story Testing](#user-story-testing)
 6.  [Defensive Design Testing](#defensive-design-testing)
-7.  [Defectsand Issues](#defects-and-issues)
+7.  [Defects and Issues](#defects-and-issues)
 
 ---
 
