@@ -78,8 +78,7 @@ main {
 /*------------------------------------- cards */
 
 .card-title {
-    min-height: 75px;
-    padding-bottom: 10px;
+    min-height: 100px;
 }
 
 .card-title.activator {
@@ -147,8 +146,8 @@ nav ul a {
 }
 
 #tagline {
-    padding-top: 10%;
-    padding-left: 55%;
+    padding-top: 5%;
+    padding-left: 30%;
     margin-bottom: 0;
     color: #fafafa;
 

@@ -23,9 +23,9 @@ mongo = PyMongo(app)
 @app.route("/")
 def index():
     # first six routes for medium and large devices
-    med_large_routes = mongo.db.routes.find().sort("_id",-1).limit(6)
+    med_large_routes = mongo.db.routes.find().sort("_id", -1).limit(6)
     # first four routes for mobile devices
-    small_routes = mongo.db.routes.find().sort("_id",-1).limit(3)
+    small_routes = mongo.db.routes.find().sort("_id", -1).limit(3)
     return render_template(
         "index.html", med_large_routes=med_large_routes,
         small_routes=small_routes)
@@ -245,7 +245,7 @@ def delete_route(route_id):
 @app.route("/get_cycling_tips")
 def get_cycling_tips():
     cycling_tips = list(mongo.db.cycling_tips.find().sort(
-                        "_id", 1))
+                        "_id", -1))
     return render_template("cycling_tips.html", cycling_tips=cycling_tips)
 
 

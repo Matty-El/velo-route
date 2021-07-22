@@ -130,7 +130,7 @@ Images are used to add some additional colour to the website.
 
 #### Typography
 
-Raleway font has been utilised for all text across the website. This is a simple and modern font available from the Google Fonts library which is unobtrusive and easy to read. Font Awesome icons have been utilised for icons throughout the site, with the exception of the card reveal and close icons which are Materialize icons.
+Raleway font has been utilised for all text across the website. This is a simple and modern font available from the Google Fonts library which is unobtrusive and easy to read. Font Awesome icons have been utilised for icons throughout the site.
 
 #### Defensive Design
 
