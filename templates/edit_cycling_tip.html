@@ -36,7 +36,7 @@
             <div class="row">
                 <div class="input-field">
                     <i class="fas fa-image prefix blue-grey-text darken-5"></i>
-                    <input id="cycling_tip_image" name="cycling_tip_image" minlength="2" maxlength="200" type="text" value="{{- cycling_tip.cycling_tip_image -}}"  pattern="^https?://(?:[a-z0-9\-]+\.)+[a-z]{2,6}(?:/[^/#?]+)+\.(?:jpg|jpeg|gif|png)$" class="validate" required>
+                    <input id="cycling_tip_image" name="cycling_tip_image" type="text" value="{{- cycling_tip.cycling_tip_image -}}"  pattern="^https?://(?:[a-z0-9\-]+\.)+[a-z]{2,6}(?:/[^/#?]+)+\.(?:jpg|jpeg|gif|png)$" class="validate" required>
                     <label for="cycling_tip_image" class="routes-label">Cycling Tip Image (upload image URL)</label>
                     <span class="helper-text" data-error="Please enter a valid image URL" data-success="Valid Input"></span>
                 </div>
@@ -53,8 +53,8 @@
             <div class="row">
                 <div class="input-field">
                     <i class="fas fa-link prefix blue-grey-text"></i>
-                    <input id="cycling_tip_link" name="cycling_tip_link" minlength="5" maxlength="200" type="url" value="{{- cycling_tip.cycling_tip_link -}}" class="validate" required>
-                    <label for="cycling_tip_link" class="routes-label">Cycling Tip Link (link to cycling tip info)</label>
+                    <input id="cycling_tip_link" name="cycling_tip_link" type="url" value="{{- cycling_tip.cycling_tip_link -}}" class="validate" required>
+                    <label for="cycling_tip_link" class="routes-label">Cycling Tip Link (URL link to cycling tip info)</label>
                     <span class="helper-text" data-error="Please enter a valid URL" data-success="Valid Input"></span>
                 </div>
             </div>

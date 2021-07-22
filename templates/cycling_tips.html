@@ -14,12 +14,12 @@
         </div>
         <div class="card-content">
           <span class="card-title activator"><i class="far fa-hand-pointer"></i> {{ cycling_tip.cycling_tip_name }}</span>
-          <a class="light-blue-text darken-2" href="{{ cycling_tip.cycling_tip_link }}" target="_blank">TIP LINK</a>
+          <a class="light-blue-text text-darken-4" href="{{ cycling_tip.cycling_tip_link }}" target="_blank">TIP LINK</a>
         </div>
         <div class="card-reveal">
           <span class="card-title activator"><strong>{{ cycling_tip.cycling_tip_name }}</strong><i class="fas fa-times right"></i></span>
           <p class="card-description">{{ cycling_tip.cycling_tip_description}}</p>
-          <a class="light-blue-text darken-2" href="{{ cycling_tip.cycling_tip_link }}" target="_blank">TIP LINK</a>
+          <a class="light-blue-text text-darken-4" href="{{ cycling_tip.cycling_tip_link }}" target="_blank">TIP LINK</a>
         </div>
         <div class="center-align card-buttons">
           {% if session.user|lower == cycling_tip.created_by|lower %}

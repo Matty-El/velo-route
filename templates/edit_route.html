@@ -75,7 +75,7 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-image prefix blue-grey-text"></i>
-                    <input id="route_image" name="route_image" minlength="2" maxlength="200" type="text" value="{{- route.route_image -}}" pattern="^https?://(?:[a-z0-9\-]+\.)+[a-z]{2,6}(?:/[^/#?]+)+\.(?:jpg|jpeg|gif|png)$" class="validate" required>
+                    <input id="route_image" name="route_image" type="text" value="{{- route.route_image -}}" pattern="^https?://(?:[a-z0-9\-]+\.)+[a-z]{2,6}(?:/[^/#?]+)+\.(?:jpg|jpeg|gif|png)$" class="validate" required>
                     <label for="route_image">Route Image</label>
                     <span class="helper-text" data-error="Please enter a valid image URL" data-success="Valid Input"></span>
                 </div>
@@ -101,7 +101,7 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-link prefix blue-grey-text"></i>
-                    <input id="route_link" name="route_link" minlength="1" maxlength="200" type="url" value="{{- route.route_link -}}" class="validate" required>
+                    <input id="route_link" name="route_link" type="url" value="{{- route.route_link -}}" class="validate" required>
                     <label for="route_link">Route Link</label>
                     <span class="helper-text" data-error="Please enter a valid URL" data-success="Valid Input"></span>
                 </div>
