@@ -188,7 +188,7 @@ Add Cycling Tip Form:
 
 Add Categories Form:
 
--   The category input is validated to ensure the user only inputs letter, spaces and no special characters
+-   The category input is validated to ensure the user only inputs letter, spaces and no special characters.
 
 ---
 
@@ -403,7 +403,7 @@ Two significant challenges were encountered late on in the project:
 
 ### Content
 
-All text content included in this project is my own..
+All text content included in this project is my own.
 
 ### Media
 

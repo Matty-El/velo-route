@@ -48,12 +48,6 @@ Browser compatibility was good across Safari, Opera, Edge, Firefox and Chrome br
 
 ![Browser compatibility](testing-files/velo-route-browser-compatibility-testing.png)
 
-- Responsiveness of the site has been tested with [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools) and [Responsive Design Checker](https://www.responsivedesignchecker.com/).
-- The site has been tested on the following devices:
-
-    - Desktop: 1024px, > 1200px. 
-    - Mobile and Tablet: Galaxy S5/S6/S7, iPhone 5/SE, iPhone 6/7/8, iPhone 6/7/8 plus, iPhone x, iPad, iPad Pro, Kindle Fire and Nexus 9
-
 ---
 
 ## Responsiveness
@@ -77,7 +71,7 @@ Lighthouse reports were run for all pages of the website. A significant improvem
 
 ## User Story Testing
 
-The user stories below have all been tested against defined acceptance criteria. The full test results for all user stories are detailed in attached [testing report](testing-files/veloroute-user-story-testing-final.pdf).
+The user stories below have all been tested against defined acceptance criteria. The full test results for all user stories are detailed in attached [testing report](testing-files/velo-route-user-story-testing-final.pdf).
 
 ### Website Owner
 
@@ -160,7 +154,9 @@ Add Categories Form:
 
 ### Unresolved
 
-Bugs not resolved
+Bugs not resolved:
+
+- No specific bugs as such but would like to improve on the lighthouse reports performance metrics. After the first round of testing and fixing the performance was good but not above the 95% across the board I was hoping for. IMprovements to be made in this area.
 
 ---
 
