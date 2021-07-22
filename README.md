@@ -72,6 +72,11 @@ The key goals for developing the website are:
 -   As an admin user I want to be able to edit cycling tips so that I can edit or delete cycling tips.
 -   As an admin user I want to be able to add cycling tips so that I can present new cycling tips to VeloRoute users.
 
+#### IT Users
+
+-   As an IT user, I want to be create, edit and delete cycling route, cycling tip and difficulty level categories.
+
+
 ### Structure
 
 The VeloRoute website has been designed to provide an attractive, intuitive and easy to navigate website. The site has been developed to enable visitors to search for rides that have been submitted by users and to securely register and submit their own cycling routes.
@@ -144,21 +149,50 @@ Error pages for 403, 404 and 500 errors which will be displayed to the user if a
 
 All areas of the website where users can delete data incorporate modals to prompt the user if they really want to permanently delete the data.
 
+**Segregation of Duties**
+
+-   The standard users of the website can only create, update and delete routes and can only update and delete routes they have added to Veloroute.
+
+-   The admin user can view and edit any routes that have been added and have full functionality to create, edit and delete routes and cycling tips.
+
+-   A further role of IT user has been added who can only create, update and delete categories as an understanding of the data model is required prior to any changes to these categories. 
+
 **Data Input Validation**
 
 Data validation is incorporated on all data input fields with the following validation applied to:
 
 Join Us Form:
 
--   .......
+-   Username validated to ensure that it is of length 5 - 15 characters and consists only of numbers and letters. The username is also checked to ensure it does not already exist iin the database and a user is notified via a flash message if this is the case.
+-   First name and last name fields cannot begin with a space, with a required length between 2 - 20 and letters.
+-   Email address field is validated to ensure a valid email address in the correct format is entered.
+-   Password is validated to ensure it is between 8 - 15 characters and contains at least one number and one capital and one lowercase letter.
+
+Add Route / Edit Route Form:
+
+-   Category, difficulty and country are dropdown fields with data populated from the database.
+-   Route name is validated to ensure it cannot start with a blank space and must consist only of letters with no special characters.
+-   The route image is validated to ansure is is a valid URL and has a recognised jpg, jpeg, gif or png extension.
+-   The route description is validated to ensure that it is of length between 10 - 300 characters consisting of letters, numbers and standard punctuation.
+-   The route distance is validated to ensure it is a number between 1 and 6 numbers in length, so a maximum of 99999.
+-   The route link is validated to ensure it is a valid URL.
+-   The same validation is in place when a user comes to edit a route.
+
+Add Cycling Tip:
+
+-   The category is populated form the database.
+-   The cycling tip name is validated for a maximum of 30 characters which must be letters and spaces.
+-   The cycling tip image is validated to ansure is is a valid URL and has a recognised jpg, jpeg, gif or png extension.
+-   The cycling tip description is validated to ensure that it is of length between 10 - 300 characters consisting of letters, numbers and standard punctuation.
+-   The cycling tip link is validated to ensure it is a valid URL.
+
+---
 
 ## Data Model
 
-The MongoDB VeloRoute database has seven collections.
+The MongoDB VeloRoute database has seven collections as detailed in the attached diagram.
 
 ![VeloRoute Data Model](readme-files/veloroute-data-model.png)
-
-
 
 ---
 
