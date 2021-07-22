@@ -6,7 +6,7 @@
 
 Cycling is a global and accessible sport that has shown a huge increase in popularity over recent years. The global market is for bicycles alone is in excess of $54 billion dollars. Alongside the growth in bicycle sales there has been significant growth in cycling related products such as GPS cycle computers and related software platforms that allow users to record, analyse and share their rides.
 
-VeloRoute has been developed to allow users to share their favourite cycling routes, to search routes that other users have added to the site, to rate routes that have been added and to link to the routes that have been saved to platforms such as Strava and MapMyRide so that the routes can then be downloaded to their GPS devices.
+VeloRoute has been developed to allow users to share their favourite cycling routes, to search routes that other users have added to the site and to link to the routes that have been saved to platforms such as Strava and MapMyRide so that the routes can then be downloaded to their GPS devices.
 
 The site was developed using knowledge gained from the Code Institute HTML Essentials, CSS Essentials, User Centric Frontend Development, Interactive Frontend Development and Backend Development modules.
 
@@ -53,12 +53,12 @@ The key goals for developing the website are:
 
 #### Users
 
--   As a user, I want to be able to access the website on all types of device so that i can use the device that is most convenient to me at the time.
--   As a user, I want a website that is clearly laid out and easy to navigate so that I can find the information i am looking for.
+-   As a user, I want to be able to access the website on all types of device so that I can use the device that is most convenient to me at the time.
+-   As a user, I want a website that is clearly laid out and easy to navigate so that I can find the information I am looking for.
 -   As a user, I want to register with VeloRoute with a secure username and password.
 -   As a user, I want to find new cycling routes so that I can see try new recommended routes.
 -   As a user, I want to be able to add my favourite cycling routes to the website.
--   As a user, I want my routes to be displayed on my profile page so that I can see routes I have previosuly submitted.
+-   As a user, I want my routes to be displayed on my profile page so that I can see routes I have previously submitted.
 -   As a user, I want to be able to edit or delete routes that I have previously added to the VeloRoute.
 -   As a user, I want to be able to view cycling tips that have been added to VeloRoute so that I can find tips to help me with my cycling.
 -   As a user, I want to be able to rate cycling routes that have been added to the website.
@@ -74,7 +74,7 @@ The key goals for developing the website are:
 
 #### IT Users
 
--   As an IT user, I want to be create, edit and delete cycling route, cycling tip and difficulty level categories.
+-   As an IT user, I want to be able to create, edit and delete cycling route, cycling tip and difficulty level categories so that I can make updates to the database when new categories are required.
 
 
 ### Structure
@@ -108,7 +108,7 @@ The wireframes were developed using [Balsamiq](https://balsamiq.com/).
 The following changes were made after the initial design.
 
 -   Addition of user profile page with ability for users to edit their previously submitted routes on the profile page.
--   Expanding card panels whish can be clicked to reveal the underlying information on routes and cycling tips.
+-   Expanding card panels which can be clicked to reveal the underlying information on routes and cycling tips.
 
 
 ### Surface
@@ -135,7 +135,7 @@ Images are used to add some additional colour to the website.
 
 #### Typography
 
-Raleway font has been utilised for all text across the website. This is a simple and modern font available from the Google Fonts library which is unobtrusive and easy to read. Font Awesome icons have been utilised for icons throughout the site.
+Roboto font has been utilised for all text across the website. This is a simple and modern font available from the Google Fonts library which is unobtrusive and easy to read. Font Awesome icons have been utilised for icons throughout the site.
 
 ### Defensive Design
 
@@ -163,7 +163,7 @@ Data validation is incorporated on all data input fields with the following vali
 
 Join Us Form:
 
--   Username validated to ensure that it is of length 5 - 15 characters and consists only of numbers and letters. The username is also checked to ensure it does not already exist iin the database and a user is notified via a flash message if this is the case.
+-   Username validated to ensure that it is of length 5 - 15 characters and consists only of numbers and letters. The username is also checked to ensure it does not already exist in the database and a user is notified via a flash message if this is the case.
 -   First name and last name fields cannot begin with a space, with a required length between 2 - 20 and letters.
 -   Email address field is validated to ensure a valid email address in the correct format is entered.
 -   Password is validated to ensure it is between 8 - 15 characters and contains at least one number and one capital and one lowercase letter.
@@ -172,7 +172,7 @@ Add Route / Edit Route Form:
 
 -   Category, difficulty and country are dropdown fields with data populated from the database.
 -   Route name is validated to ensure it cannot start with a blank space and must consist only of letters with no special characters.
--   The route image is validated to ansure is is a valid URL and has a recognised jpg, jpeg, gif or png extension.
+-   The route image is validated to ensure it is a valid URL and has a recognised jpg, jpeg, gif or png extension.
 -   The route description is validated to ensure that it is of length between 10 - 300 characters consisting of letters, numbers and standard punctuation.
 -   The route distance is validated to ensure it is a number between 1 and 6 numbers in length, so a maximum of 99999.
 -   The route link is validated to ensure it is a valid URL.
@@ -182,7 +182,7 @@ Add Cycling Tip:
 
 -   The category is populated form the database.
 -   The cycling tip name is validated for a maximum of 30 characters which must be letters and spaces.
--   The cycling tip image is validated to ansure is is a valid URL and has a recognised jpg, jpeg, gif or png extension.
+-   The cycling tip image is validated to ensure it is a valid URL and has a recognised jpg, jpeg, gif or png extension.
 -   The cycling tip description is validated to ensure that it is of length between 10 - 300 characters consisting of letters, numbers and standard punctuation.
 -   The cycling tip link is validated to ensure it is a valid URL.
 
@@ -217,8 +217,8 @@ The MongoDB VeloRoute database has seven collections as detailed in the attached
 
 #### Cycling Tips Page
 
--   The Cycling Tips page displays cards with cycling tips relating to categories such as bicycle maintenance, saftey and nutrition.
--   Cycling Tips are added by the admin user and can not be edited by other users. Admin users can edit or delete cycling tips and the delete button is linked to a modal to confirm if the user definitely wants to dlete the cycling tip.
+-   The Cycling Tips page displays cards with cycling tips relating to categories such as bicycle maintenance, safety and nutrition.
+-   Cycling Tips are added by the admin user and cannot be edited by other users. Admin users can edit or delete cycling tips and the delete button is linked to a modal to confirm if the user definitely wants to delete the cycling tip.
 
 #### Log In Page
 
@@ -282,11 +282,11 @@ The following technologies have been used to complete the UX design, capture use
 -   [MongoDB](https://www.mongodb.com/) - used as the database for the project.
 -   [GitHub](https://github.com/) - for hosting the website repository.
 -   [GitPod](https://gitpod.io/) - used as the development environment for the website.
--   [Google Fonts](https://fonts.google.com/) - used to source the Raleway font used throughout the website.
+-   [Google Fonts](https://fonts.google.com/) - used to source the Roboto font used throughout the website.
 -   [Font Awesome](https://fontawesome.com/) - used to source icons for use throughout website.
 -   [Balsamiq](https://balsamiq.com/) - utilised for the development of the website wireframes.
 -   [Canva](https://canva.com/) - used for the design of the VeloRoute website logo.
--   [Coolors](https://coolors.co/) - used for create the colour palette image.
+-   [Coolors](https://coolors.co/) - used for creating the colour palette image.
 
 ### Testing Tools Used
 
@@ -331,12 +331,12 @@ To clone this project from GitHub.
 2. Create a database in MongoDB  
     - Signup or login to your MongoDB account.
     - Create a cluster and a database.
-    - Create six collections in the database: **categories, cycling_tips, cycling_tip_categories, difficulty_levels, routes, users.**
+    - Create seven collections in the database: **categories, cycling_tips, cycling_tip_categories, difficulty_levels, routes, users, countries.**
     - Add the data to the collections. See [Data Model](#data-model) for details on how the data has been modelled for this project.
 3. Create the environment variables 
     - Create a .gitignore file in the root directory of the project.
     - Add the env.py file in the .gitignore.
-    - Create the file env.py. This  will contain all the envornment variables.
+    - Create the file env.py. This  will contain all the environment variables.
 
     ```
     Import os
@@ -351,7 +351,7 @@ To clone this project from GitHub.
 #### Heroku Deployment  
 1. Set up local workspace for Heroku 
     - In terminal window of your IDE type: **pip3 freeze -- local > requirements.txt.** (The file is needed for Heroku to know which files to install.)
-    - In termial window of your IDE type: **python app.py > Procfile** (The file is needed for Heroku to know which file is needed as entry point.)
+    - In terminal window of your IDE type: **python app.py > Procfile** (The file is needed for Heroku to know which file is needed as entry point.)
 2. Set up Heroku: create a Heroku account and create a new app and select your region. 
 3. Deployment method 'Github'
     - Click on the **Connect to GitHub** section in the deploy tab in Heroku. 
@@ -367,10 +367,10 @@ To clone this project from GitHub.
     $ git add Procfile 
     $ git commit -m "Add Procfile"
     ```
-5. Automatic deployment: Go to the deploy tab in Heroku and scroll down to **Aotmatic deployments**. Click on **Enable Automatic Deploys**. By **Manual deploy** click on **Deploy Branch**.
+5. Automatic deployment: Go to the deploy tab in Heroku and scroll down to **Automatic deployments**. Click on **Enable Automatic Deploys**. By **Manual deploy** click on **Deploy Branch**.
 
 Heroku will receive the code from Github and host the app using the required packages. 
-Click on **Open app** in the right corner of your Heroku account. The app wil open and the live link is available from the address bar. 
+Click on **Open app** in the right corner of your Heroku account. The app will open and the live link is available from the address bar. 
 
 **To run the project locally**
 
@@ -403,7 +403,7 @@ All images are my own, have been licensed from Adobe Stock or are freely availab
 
 -   The Brossac, Chatignac and Berneuil route photo is my own.
   
--   Wokingham CC SUnday ride route: Photo by <a href="https://unsplash.com/@mmagnemyr?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Martin Magnemyr</a> on Unsplash
+-   Wokingham CC Sunday ride route: Photo by <a href="https://unsplash.com/@mmagnemyr?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Martin Magnemyr</a> on Unsplash
   
 -   Beauty of the Peak District ride: Photo by <a href="https://unsplash.com/@minkus?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Minkus</a> on Unsplash
 
@@ -421,7 +421,7 @@ All images are my own, have been licensed from Adobe Stock or are freely availab
 
 -   Coffee and cake cycling tip: Photo by <a href="https://unsplash.com/@nate_dumlao?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Nathan Dumlao</a> on Unsplash
   
--   Clean your chain cycling tip: Phto is licensed from Adobe Stock
+-   Clean your chain cycling tip: Photo is licensed from Adobe Stock
 
 ### Acknowledgements
 

@@ -335,7 +335,7 @@ def delete_cycling_tip(cycling_tip_id):
             return render_template("403.html")
 
 
-# ------------------------ categories WARNING ITUSER ACCESS ONLY -------------------------------------- #
+# ------------------------ categories WARNING ITUSER ACCESS ONLY ----------- #
 # get all categories
 @app.route("/get_categories")
 def get_categories():

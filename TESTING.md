@@ -66,12 +66,12 @@ The user stories below have all been tested against defined acceptance criteria.
 
 ### Users
 
--   As a user, I want to be able to access the website on all types of device so that i can use the device that is most convenient to me at the time.
--   As a user, I want a website that is clearly laid out and easy to navigate so that I can find the information i am looking for.
+-   As a user, I want to be able to access the website on all types of device so that I can use the device that is most convenient to me at the time.
+-   As a user, I want a website that is clearly laid out and easy to navigate so that I can find the information I am looking for.
 -   As a user, I want to register with VeloRoute with a secure username and password.
 -   As a user, I want to find new cycling routes so that I can see try new recommended routes.
 -   As a user, I want to be able to add my favourite cycling routes to the website.
--   As a user, I want my routes to be displayed on my profile page so that I can see routes I have previosuly submitted.
+-   As a user, I want my routes to be displayed on my profile page so that I can see routes I have previously submitted.
 -   As a user, I want to be able to edit or delete routes that I have previously added to the VeloRoute.
 -   As a user, I want to be able to view cycling tips that have been added to VeloRoute so that I can find tips to help me with my cycling.
 -   As a user, I want to be able to follow a link to cycling routes that have been added to VeloRoute so that I can view the cycling route on platforms such as Strava.
@@ -82,6 +82,12 @@ The user stories below have all been tested against defined acceptance criteria.
 -   As an admin user, I want to be able to edit cycling route, cycling tip and difficulty level categories.
 -   As an admin user I want to be able to edit cycling tips so that I can add or delete cycling tips.
 -   As an admin user I want to be able to add cycling tips so that I can present new cycling tips to VeloRoute users.
+
+#### IT Users
+
+-   As an IT user, I want to be able to create, edit and delete cycling route, cycling tip and difficulty level categories so that I can make updates to the database when new categories are required.
+
+
 
 ---
 
