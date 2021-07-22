@@ -14,23 +14,25 @@
 
 ---
 
-## Code Validation
- - **[HTML Validator](https://validator.w3.org/):**
-    - ...
-
 ### CSS Code Validation
 
-The CSS code was validated using the [W3.org CSS validation service](https://jigsaw.w3.org/css-validator/).
+The HTML code was validated using the [W3C CSS validation service](https://jigsaw.w3.org/css-validator/).
 
 ![CSS Validator](testing-files/velo-route-css-validation.png)
 
+### HTML Code Validation
+
+The HTML code was validated using the [W3C Markup validation service](https://validator.w3.org/).
+
+No significant errors and all resolved.
+
+This was a manual process to copy and paste the code from each page and review to highlight any errors that were not syntax errors as a result of using Flask and Jinja templates. The only errors found related to a few stray tags and some very minor duplication of attributes and an error stating that validation is not allowed on text area field inputs so this was removed.
 
 ### jQuery Code Validation
 
 The jQuery code was validated using the [JSHint validation service](https://jshint.com/).
 
 ![JSHint Validator](testing-files/velo-route-jshint-validation.png)
-
 
 ### Python Code Validation
 
@@ -40,29 +42,42 @@ The Python code was validated using the [PEP 8 Online Validation Service](http:/
 
 ---
 
-## Browser Compatibility 
-- Responsiveness of the site has been tested with [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools) and [Responsive Design Checker](https://www.responsivedesignchecker.com/).
-- The site has been tested on the following devices: 
-    - Desktop: 1024px, 1366px, 1440px, 1600px and 1680px. 
-    - Mobile & Tablet: Galaxy S5, iPhone 5/SE, iPhone 6/7/8, iPhone 6/7/8 plus, iPhone x, iPad and  iPad Pro
+## Browser Compatibility
 
-![Responsiveness testing](testing-files/responsiveness-testing.png)
+Browser compatibility was good across Safari, Opera, Edge, Firefox and Chrome browsers.
+
+![Browser compatibility](testing-files/velo-route-browser-compatibility-testing.png)
+
+- Responsiveness of the site has been tested with [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools) and [Responsive Design Checker](https://www.responsivedesignchecker.com/).
+- The site has been tested on the following devices:
+
+    - Desktop: 1024px, > 1200px. 
+    - Mobile and Tablet: Galaxy S5/S6/S7, iPhone 5/SE, iPhone 6/7/8, iPhone 6/7/8 plus, iPhone x, iPad, iPad Pro, Kindle Fire and Nexus 9
 
 ---
 
 ## Responsiveness
-![Browser compatibility](testing-files/browser-compatibility.png)
+
+Resonsiveness was good across all device sizes. Responsiveness of the site has been tested with [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools) and [Responsive Design Checker](https://www.responsivedesignchecker.com/).
+
+The site has been tested on the following devices:
+
+-   Desktop: 1024px, > 1200px. 
+-   Mobile and Tablet: Galaxy S5/S6/S7, iPhone 5/SE, iPhone 6/7/8, iPhone 6/7/8 plus, iPhone x, iPad, iPad Pro, Kindle Fire and Nexus 9
+
+![Responsiveness testing](testing-files/velo-route-responsiveness-testing.png)
 
 --- 
 
 ## Lighthouse Reports
-![Browser compatibility](testing-files/browser-compatibility.png)
+
+Lighthouse reports were run for all pages of the website. A significant improvement was seen following code validation and user story testing that resulted in issues being addressed such as a lack of a meta tag and missing alt attributes. The second run was not as high as the 95% mark that I initially set for all performance measures. In some cases 95% was exceeded and in others the performance was not optimal but there were no alarmingly low scores. This is something i would address at a future stage. As a result I have marked these as failed in the user story testing summary.
 
 --- 
 
 ## User Story Testing
 
-The user stories below have all been tested against defined acceptance criteria. The full test results for all user stories are detailed in attached [testing report](testing-files/veloroute-user-story-testing.pdf).
+The user stories below have all been tested against defined acceptance criteria. The full test results for all user stories are detailed in attached [testing report](testing-files/veloroute-user-story-testing-final.pdf).
 
 ### Website Owner
 
@@ -94,8 +109,6 @@ The user stories below have all been tested against defined acceptance criteria.
 #### IT Users
 
 -   As an IT user, I want to be able to create, edit and delete cycling route, cycling tip and difficulty level categories so that I can make updates to the database when new categories are required.
-
-
 
 ---
 
