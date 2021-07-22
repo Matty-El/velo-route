@@ -376,17 +376,6 @@ To clone this project from GitHub.
 Heroku will receive the code from Github and host the app using the required packages. 
 Click on **Open app** in the right corner of your Heroku account. The app will open and the live link is available from the address bar. 
 
-**To run the project locally**
-
-To clone this project from GitHub.
-
-1.  Open the project repository on GitHub and click the **Code** dropdown button.
-2.  Select the **HTTPS** tab and copy the URL.
-3.  Open your terminal (Mac OS, Linux) or Git-Bash terminal (Windows).
-4.  Change the current working directory to the location where you want the cloned directory to be created.
-5.  Type **git clone**, enter a space and then paste the URL copied from GitHub.
-6.  Press **Enter** and the local clone will be created in the specified directory.
-
 ---
 
 ## Challenges
